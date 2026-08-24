@@ -210,7 +210,7 @@
 
           extraSystemModules = [
             ./Packages/Spotify.nix
-            # ./Packages/VirtManager.nix
+            ./Packages/VirtManager.nix
           ];
 
           extraHomeArgs = {
