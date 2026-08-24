@@ -41,6 +41,26 @@
         "type": "github"
       }
     },
+    "NixOS-Hardware": {
+      "inputs": {
+        "nixpkgs": [
+          "NixPkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787144466,
+        "narHash": "sha256-HHfv2/HkNSKbbSyU9iD/g8lbP6r4tl33sSw1W4rXCk0=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "0471accf8d0a8210b31d947497d179ecc99e0021",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "NixPkgs": {
       "locked": {
         "lastModified": 1786384358,
@@ -105,6 +125,7 @@
       "inputs": {
         "HomeManager": "HomeManager",
         "NUR": "NUR",
+        "NixOS-Hardware": "NixOS-Hardware",
         "NixPkgs": "NixPkgs",
         "PlasmaManager": "PlasmaManager"
       }
