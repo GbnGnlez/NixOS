@@ -60,11 +60,11 @@
           "options" = {
             # Evaluates NixOS options dynamically for any host
             "nixos" = {
-              "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.<name>.options";
+              "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.Desktop.options";
             };
             # Evaluates Home Manager options for the 'nixos' user module
             "home-manager" = {
-              "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
+              "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.nixos.options";
             };
           };
         };
