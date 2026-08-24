@@ -4,10 +4,10 @@
 
 {
   imports = [
-    ./Packages/Git.nix
-    ./Packages/VSCode.nix
-    ./Packages/NixIDE.nix
-    ./Packages/GitHubActions.nix
+    ./Git.nix
+    ./VSCode.nix
+    ./NixIDE.nix
+    ./GitHubActions.nix
   ];
 
   programs.vscode = {
