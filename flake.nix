@@ -3,6 +3,7 @@
     extra-substituters = [
       "https://gbngnlez.cachix.org"
     ];
+
     extra-trusted-public-keys = [
       "gbngnlez.cachix.org-1:4087tPR0DCehBmp1z8gmoRk91VcUOjmcV9KdKI64MOU="
     ];
@@ -26,6 +27,11 @@
       inputs.nixpkgs.follows = "NixPkgs";
       inputs.home-manager.follows = "HomeManager";
     };
+
+    NixOS-Hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "NixPkgs";
+    };
   };
 
   outputs =
@@ -34,6 +40,7 @@
       HomeManager,
       PlasmaManager,
       NUR,
+      NixOS-Hardware,
       ...
     }:
     let
@@ -172,6 +179,9 @@
           kbdVariant = "colemak";
 
           extraSystemModules = [
+            # NixOS Hardware
+            NixOS-Hardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
+
             ./Packages/Spotify.nix
             # ./Packages/VirtManager.nix
           ];
