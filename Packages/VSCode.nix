@@ -58,15 +58,14 @@
             "command" = [ "nixfmt" ];
           };
           "options" = {
-            # Evaluates NixOS options for whichever host is defined first in your flake
+            # Evaluates NixOS options specifically for Desktop
             "nixos" = {
-              "expr" =
-                "(builtins.head (builtins.attrValues (builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations)).options";
+              "expr" = "(builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations.Desktop.options";
             };
-            # Evaluates Home Manager options directly from the integrated NixOS module
+            # Evaluates Home Manager options for the 'nixos' user under Desktop
             "home-manager" = {
               "expr" =
-                "(builtins.head (builtins.attrValues (builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations)).options.home-manager.users.type.getSubOptions [ ]";
+                "(builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations.Desktop.options.home-manager.users.type.getSubOptions [ ]";
             };
           };
         };
