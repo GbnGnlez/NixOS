@@ -10,8 +10,21 @@
   # Declarative Git configuration
   programs.git = {
     enable = true;
-    userName = "GbnGnlez";
-    userEmail = "GibranN.GonzalezS@outlook.com";
+
+    settings = {
+      user = {
+        name = "GbnGnlez";
+        email = "GibranN.GonzalezS@outlook.com";
+      };
+
+      init = {
+        defaultBranch = "main";
+      };
+
+      pull = {
+        rebase = true;
+      };
+    };
   };
 
   programs.vscode = {
