@@ -58,13 +58,15 @@
             "command" = [ "nixfmt" ];
           };
           "options" = {
-            # NixOS options evaluation
+            # Host-agnostic NixOS options
             "nixos" = {
-              "expr" = "(builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations.<hostname>.options";
+              "expr" =
+                "(builtins.head (builtins.attrValues (builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations)).options";
             };
-            # Home Manager options evaluation
+            # Host-agnostic Home Manager options (as a NixOS module)
             "home-manager" = {
-              "expr" = "(builtins.getFlake \"\${workspaceFolder}\").homeConfigurations.<username>.options";
+              "expr" =
+                "(builtins.head (builtins.attrValues (builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations)).options.home-manager.users.type.getSubOptions [ ]";
             };
           };
         };
