@@ -37,7 +37,7 @@
     overrideConfig = true;
 
     # KWallet
-    configFile."kwalletrc"."Wallet"."Enabled" = false;
+    # configFile."kwalletrc"."Wallet"."Enabled" = false;
 
     # Night Color
     configFile."kwinrc"."NightColor"."Active" = true;
