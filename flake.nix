@@ -12,6 +12,11 @@
   inputs = {
     NixPkgs.url = "github:NixOS/NixPkgs/nixos-unstable";
 
+    NixOSHardware = {
+      url = "github:NixOS/NixOS-Hardware";
+      inputs.nixpkgs.follows = "NixPkgs";
+    };
+
     NUR = {
       url = "github:Nix-Community/NUR";
       inputs.nixpkgs.follows = "NixPkgs";
@@ -28,9 +33,10 @@
       inputs.home-manager.follows = "HomeManager";
     };
 
-    NixOSHardware = {
-      url = "github:NixOS/NixOS-Hardware";
+    Stylix = {
+      url = "github:Nix-Community/Stylix";
       inputs.nixpkgs.follows = "NixPkgs";
+      inputs.home-manager.follows = "HomeManager";
     };
   };
 
@@ -41,6 +47,7 @@
       PlasmaManager,
       NUR,
       NixOSHardware,
+      Stylix,
       ...
     }:
     let
@@ -70,6 +77,9 @@
           modules = [
             # NUR
             NUR.modules.nixos.default
+
+            # Stylix
+            Stylix.nixosModules.stylix
 
             # Host
             ./Hosts/${hostName}/Configuration.nix
