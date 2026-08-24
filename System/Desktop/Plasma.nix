@@ -35,12 +35,6 @@
     # spectacle # Screenshot capture utility.
   ];
 
-  # If enabled, pam_wallet will attempt to automatically unlock the user's default KDE wallet upon login.
-  security.pam.services = {
-    login.kwallet.enable = lib.mkForce false;
-    kde.kwallet.enable = lib.mkForce false;
-  };
-
   # A set of environment variables used in the global environment.
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

@@ -3,7 +3,6 @@
   IconVariant ? "Light",
   CursorVariant ? "Classic",
   CursorSize ? 16,
-  FontSize ? 10,
   AccentColor ? "233,58,154",
   LookAndFeel ? "",
   ...
@@ -14,7 +13,7 @@
     # Include the results of the hardware scan.
     ./Plasma/KScreenLocker.nix
     ./Plasma/Panels.nix
-    (import ./Plasma/Fonts.nix { inherit FontSize; })
+    ./Plasma/Fonts.nix
   ];
 
   # Set resolution to 1280x720 automatically upon graphical session startup
