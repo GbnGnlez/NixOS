@@ -1,6 +1,6 @@
 # https://wiki.nixos.org/wiki/KDE
 
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   # Definition of systemd service units; see systemd.service(5).
