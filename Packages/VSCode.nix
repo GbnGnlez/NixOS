@@ -10,6 +10,12 @@
     nixfmt # Official formatter for Nix code.
   ];
 
+  programs.git = {
+    enable = true;
+    userName = "GbnGnlez";
+    userEmail = "GibranN.GonzalezS@outlook.com";
+  };
+
   programs.vscode = {
     enable = true; # Whether to enable VSCode editor.
     package = pkgs.vscode.fhs; # The vscode package to use.
