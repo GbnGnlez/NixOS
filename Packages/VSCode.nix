@@ -50,6 +50,10 @@
 
       "git.enableSmartCommit" = true;
 
+      # Disable extension server tracing
+      "nix.trace.server" = "off";
+
+      # LSP Configuration
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
       "nix.serverSettings" = {
@@ -58,11 +62,9 @@
             "command" = [ "nixfmt" ];
           };
           "options" = {
-            # Evaluates NixOS options specifically for Desktop
             "nixos" = {
               "expr" = "(builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations.Desktop.options";
             };
-            # Evaluates Home Manager options for the 'nixos' user under Desktop
             "home-manager" = {
               "expr" =
                 "(builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations.Desktop.options.home-manager.users.type.getSubOptions [ ]";
