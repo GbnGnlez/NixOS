@@ -32,11 +32,6 @@
       inputs.nixpkgs.follows = "NixPkgs";
       inputs.home-manager.follows = "HomeManager";
     };
-
-    Stylix = {
-      url = "github:Nix-Community/Stylix";
-      inputs.nixpkgs.follows = "NixPkgs";
-    };
   };
 
   outputs =
@@ -46,7 +41,6 @@
       PlasmaManager,
       NUR,
       NixOSHardware,
-      Stylix,
       ...
     }:
     let
@@ -76,9 +70,6 @@
           modules = [
             # NUR
             NUR.modules.nixos.default
-
-            # Stylix
-            Stylix.nixosModules.stylix
 
             # Host
             ./Hosts/${hostName}/Configuration.nix
