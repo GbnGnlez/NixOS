@@ -36,7 +36,6 @@
     Stylix = {
       url = "github:Nix-Community/Stylix";
       inputs.nixpkgs.follows = "NixPkgs";
-      inputs.home-manager.follows = "HomeManager";
     };
   };
 
