@@ -1,247 +1,93 @@
+{ pkgs, ... }:
+
 {
-  nixConfig = {
-    extra-substituters = [
-      "https://gbngnlez.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "gbngnlez.cachix.org-1:4087tPR0DCehBmp1z8gmoRk91VcUOjmcV9KdKI64MOU="
-    ];
-  };
+  # The set of packages to appear in the user environment.
+  home.packages = with pkgs; [
+    nixd # Nix language server with option search and evaluation.
+    nixfmt # Official formatter for Nix code.
+  ];
 
-  inputs = {
-    NixPkgs.url = "github:NixOS/NixPkgs/nixos-unstable";
+  # Declarative Git configuration
+  programs.git = {
+    enable = true;
 
-    NUR = {
-      url = "github:Nix-Community/NUR";
-      inputs.nixpkgs.follows = "NixPkgs";
-    };
+    settings = {
+      user = {
+        name = "GbnGnlez";
+        email = "GibranN.GonzalezS@outlook.com";
+      };
 
-    HomeManager = {
-      url = "github:Nix-Community/Home-Manager";
-      inputs.nixpkgs.follows = "NixPkgs";
-    };
+      init = {
+        defaultBranch = "main";
+      };
 
-    PlasmaManager = {
-      url = "github:Nix-Community/Plasma-Manager";
-      inputs.nixpkgs.follows = "NixPkgs";
-      inputs.home-manager.follows = "HomeManager";
+      pull = {
+        rebase = true;
+      };
     };
   };
 
-  outputs =
-    {
-      NixPkgs,
-      HomeManager,
-      PlasmaManager,
-      NUR,
-      ...
-    }:
-    let
-      mkHost =
-        {
-          hostName,
-          GPU ? "amdgpu",
-          sysLocale ? "es_MX.UTF-8",
-          kbdLayout ? "latam",
-          kbdVariant ? "",
-          extraHomeArgs ? { },
-          extraSystemModules ? [ ],
-          extraHomeModules ? [ ],
-        }:
-        NixPkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.fhs;
 
-          specialArgs = {
-            inherit
-              GPU
-              sysLocale
-              kbdLayout
-              kbdVariant
-              ;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
+      github.vscode-github-actions
+      redhat.vscode-yaml
+    ];
+
+    profiles.default.userSettings = {
+      "[nix]" = {
+        "editor.defaultFormatter" = "jnoortheen.nix-ide";
+        "editor.formatOnSave" = true;
+      };
+
+      "[yaml]" = {
+        "editor.defaultFormatter" = "redhat.vscode-yaml";
+        "editor.formatOnSave" = true;
+      };
+
+      "git.enableSmartCommit" = true;
+
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nixd";
+      "nix.serverSettings" = {
+        "nixd" = {
+          "formatting" = {
+            "command" = [ "nixfmt" ];
           };
-
-          modules = [
-            # NUR
-            NUR.modules.nixos.default
-
-            # Host
-            ./Hosts/${hostName}/Configuration.nix
-            ./Hosts/Common.nix
-
-            # System
-            ./System/Plymouth.nix
-            ./System/PipeWire.nix
-            ./Services/Avahi.nix
-            ./Services/GarbageCollector.nix
-            ./System/Desktop/Plasma.nix
-
-            # Hostname
-            {
-              networking.hostName = hostName;
-            }
-          ]
-          ++ extraSystemModules
-          ++ [
-            # Home Manager
-            HomeManager.nixosModules.default
-
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-
-                backupFileExtension = "backup";
-                overwriteBackup = true;
-
-                extraSpecialArgs = extraHomeArgs // {
-                  CursorSize = 16;
-                  FontSize = 10;
-                };
-
-                users.nixos = {
-                  imports = [
-                    ./Hosts/${hostName}/${hostName}.nix
-
-                    # Plasma Manager
-                    PlasmaManager.homeModules.plasma-manager
-
-                    # Shared Home Manager configuration
-                    ./System/Desktop/Plasma-Home.nix
-                    ./Hosts/Common-Home.nix
-
-                    # Common packages
-                    ./Packages/Firefox.nix
-                    ./Packages/OnlyOffice.nix
-                  ]
-                  ++ extraHomeModules;
-                };
-              };
-            }
-          ];
-        };
-    in
-    {
-      nixosConfigurations = {
-        IdeaCentre = mkHost {
-          hostName = "IdeaCentre";
-
-          extraHomeArgs = {
-            ThemeColor = "pink";
-            IconVariant = "Light";
-            CursorVariant = "Classic";
-            AccentColor = "233,58,154";
-            LookAndFeel = "";
+          "options" = {
+            "nixos" = {
+              "expr" = "(builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations.Desktop.options";
+            };
+            "home-manager" = {
+              "expr" = "(builtins.getFlake \"\${workspaceFolder}\").homeConfigurations.nixos.options";
+            };
           };
-        };
-
-        IdeaPad = mkHost {
-          hostName = "IdeaPad";
-
-          extraHomeArgs = {
-            ThemeColor = "pink";
-            IconVariant = "Dark";
-            CursorVariant = "Ice";
-            AccentColor = "233,58,154";
-            LookAndFeel = "dark";
-          };
-        };
-
-        Pavilion = mkHost {
-          hostName = "Pavilion";
-
-          GPU = "i915";
-
-          extraSystemModules = [
-            ./Packages/Spotify.nix
-          ];
-
-          extraHomeArgs = {
-            ThemeColor = "pink";
-            IconVariant = "Light";
-            CursorVariant = "Classic";
-            AccentColor = "233,58,154";
-            LookAndFeel = "";
-          };
-        };
-
-        ThinkPad = mkHost {
-          hostName = "ThinkPad";
-
-          sysLocale = "en_US.UTF-8";
-          kbdLayout = "us";
-          kbdVariant = "colemak";
-
-          extraSystemModules = [
-            ./Packages/Spotify.nix
-            # ./Packages/VirtManager.nix
-          ];
-
-          extraHomeArgs = {
-            ThemeColor = "blue";
-            IconVariant = "Dark";
-            CursorVariant = "Ice";
-            AccentColor = "61,174,233";
-            LookAndFeel = "dark";
-          };
-
-          extraHomeModules = [
-            ./Packages/Firefox.nix
-            ./Packages/PhotoGIMP.nix
-            ./Packages/VSCode.nix
-          ];
-        };
-
-        Desktop = mkHost {
-          hostName = "Desktop";
-
-          sysLocale = "en_US.UTF-8";
-          kbdLayout = "us";
-          kbdVariant = "colemak_dh";
-
-          extraSystemModules = [
-            ./Packages/Spotify.nix
-            # ./Packages/VirtManager.nix
-          ];
-
-          extraHomeArgs = {
-            ThemeColor = "blue";
-            IconVariant = "Dark";
-            CursorVariant = "Ice";
-            AccentColor = "61,174,233";
-            LookAndFeel = "dark";
-          };
-
-          extraHomeModules = [
-            ./Packages/Firefox.nix
-            ./Packages/PhotoGIMP.nix
-            ./Packages/VSCode.nix
-          ];
         };
       };
 
-      # Standalone target required for (getFlake ...).homeConfigurations.nixos.options
-      homeConfigurations = {
-        nixos = HomeManager.lib.homeManagerConfiguration {
-          pkgs = NixPkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-            ThemeColor = "blue";
-            IconVariant = "Dark";
-            CursorVariant = "Ice";
-            AccentColor = "61,174,233";
-            LookAndFeel = "dark";
-            CursorSize = 16;
-            FontSize = 10;
-          };
-          modules = [
-            PlasmaManager.homeModules.plasma-manager
-            ./System/Desktop/Plasma-Home.nix
-            ./Hosts/Common-Home.nix
-            ./Packages/Firefox.nix
-            ./Packages/OnlyOffice.nix
-            ./Packages/PhotoGIMP.nix
-            ./Packages/VSCode.nix
-          ];
-        };
-      };
+      "yaml.disableSchemaDetection" = [
+        "**/.github/workflows/*.yml"
+        "**/.github/workflows/*.yaml"
+        "**/.gitea/workflows/*.yml"
+        "**/.gitea/workflows/*.yaml"
+        "**/.forgejo/workflows/*.yml"
+        "**/.forgejo/workflows/*.yaml"
+      ];
     };
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+
+    defaultApplications = {
+      "text/plain" = [ "code.desktop" ];
+      "text/x-nix" = [ "code.desktop" ];
+      "text/csv" = [ "code.desktop" ];
+      "text/yaml" = [ "code.desktop" ];
+      "application/x-yaml" = [ "code.desktop" ];
+    };
+  };
 }
