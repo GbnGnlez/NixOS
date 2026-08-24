@@ -5,7 +5,6 @@
 {
   imports = [
     ./Git.nix
-    ./VSCode.nix
     ./NixIDE.nix
     ./GitHubActions.nix
   ];
