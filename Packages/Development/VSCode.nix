@@ -6,8 +6,8 @@
   imports = [
     ./Packages/Git.nix
     ./Packages/VSCode.nix
-    ./Packages/VSCode-NixIDE.nix
-    ./Packages/VSCode-GitHubActions.nix
+    ./Packages/NixIDE.nix
+    ./Packages/GitHubActions.nix
   ];
 
   programs.vscode = {
