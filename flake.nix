@@ -218,5 +218,30 @@
           ];
         };
       };
+
+      # Standalone target required for (getFlake ...).homeConfigurations.nixos.options
+      homeConfigurations = {
+        nixos = HomeManager.lib.homeManagerConfiguration {
+          pkgs = NixPkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = {
+            ThemeColor = "blue";
+            IconVariant = "Dark";
+            CursorVariant = "Ice";
+            AccentColor = "61,174,233";
+            LookAndFeel = "dark";
+            CursorSize = 16;
+            FontSize = 10;
+          };
+          modules = [
+            PlasmaManager.homeModules.plasma-manager
+            ./System/Desktop/Plasma-Home.nix
+            ./Hosts/Common-Home.nix
+            ./Packages/Firefox.nix
+            ./Packages/OnlyOffice.nix
+            ./Packages/PhotoGIMP.nix
+            ./Packages/VSCode.nix
+          ];
+        };
+      };
     };
 }
