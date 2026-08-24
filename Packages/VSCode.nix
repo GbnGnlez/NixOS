@@ -1,9 +1,12 @@
+# https://wiki.nixos.org/wiki/Visual_Studio_Code
+# https://github.com/nix-community/vscode-nix-ide
+
 { pkgs, ... }:
 
 {
   # The set of packages to appear in the user environment.
   home.packages = with pkgs; [
-    nixd # Nix language server with option search and evaluation.
+    nil # Yet another language server for Nix.
     nixfmt # Official formatter for Nix code.
   ];
 
@@ -50,25 +53,13 @@
 
       "git.enableSmartCommit" = true;
 
-      # Disable extension server tracing
-      "nix.trace.server" = "off";
-
-      # LSP Configuration
+      # LSP Configuration for Nil
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nixd";
+      "nix.serverPath" = "nil";
       "nix.serverSettings" = {
-        "nixd" = {
+        "nil" = {
           "formatting" = {
             "command" = [ "nixfmt" ];
-          };
-          "options" = {
-            "nixos" = {
-              "expr" = "(builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations.Desktop.options";
-            };
-            "home-manager" = {
-              "expr" =
-                "(builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations.Desktop.options.home-manager.users.type.getSubOptions [ ]";
-            };
           };
         };
       };
