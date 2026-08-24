@@ -58,11 +58,15 @@
             "command" = [ "nixfmt" ];
           };
           "options" = {
+            # Evaluates NixOS options dynamically for any host
             "nixos" = {
-              "expr" = "(builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations.Desktop.options";
+              "expr" =
+                "(builtins.head (builtins.attrValues (builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations)).options";
             };
+            # Evaluates Home Manager options for the 'nixos' user module
             "home-manager" = {
-              "expr" = "(builtins.getFlake \"\${workspaceFolder}\").homeConfigurations.nixos.options";
+              "expr" =
+                "(builtins.head (builtins.attrValues (builtins.getFlake \"\${workspaceFolder}\").nixosConfigurations)).options.home-manager.users.type.getSubOptions [ ]";
             };
           };
         };
