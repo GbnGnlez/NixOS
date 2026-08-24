@@ -28,8 +28,8 @@
       inputs.home-manager.follows = "HomeManager";
     };
 
-    NixOS-Hardware = {
-      url = "github:NixOS/nixos-hardware";
+    NixOSHardware = {
+      url = "github:NixOS/NixOS-Hardware";
       inputs.nixpkgs.follows = "NixPkgs";
     };
   };
@@ -40,7 +40,7 @@
       HomeManager,
       PlasmaManager,
       NUR,
-      NixOS-Hardware,
+      NixOSHardware,
       ...
     }:
     let
@@ -180,7 +180,7 @@
 
           extraSystemModules = [
             # NixOS Hardware
-            NixOS-Hardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
+            NixOSHardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
 
             ./Packages/Spotify.nix
             # ./Packages/VirtManager.nix
