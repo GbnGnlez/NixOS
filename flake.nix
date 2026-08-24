@@ -190,6 +190,33 @@
             ./Packages/VSCode.nix
           ];
         };
+
+        Desktop = mkHost {
+          hostName = "Desktop";
+
+          sysLocale = "en_US.UTF-8";
+          kbdLayout = "us";
+          kbdVariant = "colemak_dh";
+
+          extraSystemModules = [
+            ./Packages/Spotify.nix
+            # ./Packages/VirtManager.nix
+          ];
+
+          extraHomeArgs = {
+            ThemeColor = "blue";
+            IconVariant = "Dark";
+            CursorVariant = "Ice";
+            AccentColor = "61,174,233";
+            LookAndFeel = "dark";
+          };
+
+          extraHomeModules = [
+            ./Packages/Firefox.nix
+            ./Packages/PhotoGIMP.nix
+            ./Packages/VSCode.nix
+          ];
+        };
       };
     };
 }
