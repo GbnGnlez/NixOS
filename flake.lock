@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787553713,
-        "narHash": "sha256-p8MtyfrVMhzQcsCj/kk5TP2n2+a6ISPJ8OX+7Jrp/ok=",
+        "lastModified": 1787557073,
+        "narHash": "sha256-IC3za8s1SRcdb0Ga74aQv5S+vAc05Ws7lNPhXSid+8o=",
         "owner": "Nix-Community",
         "repo": "NUR",
-        "rev": "6567b432377e55de563efe1e0deb5fed978735e0",
+        "rev": "1516ca0659dedc215c448b55ede09b58a8fab321",
         "type": "github"
       },
       "original": {
@@ -41,7 +41,7 @@
         "type": "github"
       }
     },
-    "NixOS-Hardware": {
+    "NixOSHardware": {
       "inputs": {
         "nixpkgs": [
           "NixPkgs"
@@ -51,13 +51,13 @@
         "lastModified": 1787144466,
         "narHash": "sha256-HHfv2/HkNSKbbSyU9iD/g8lbP6r4tl33sSw1W4rXCk0=",
         "owner": "NixOS",
-        "repo": "nixos-hardware",
+        "repo": "NixOS-Hardware",
         "rev": "0471accf8d0a8210b31d947497d179ecc99e0021",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "repo": "nixos-hardware",
+        "repo": "NixOS-Hardware",
         "type": "github"
       }
     },
@@ -125,7 +125,7 @@
       "inputs": {
         "HomeManager": "HomeManager",
         "NUR": "NUR",
-        "NixOS-Hardware": "NixOS-Hardware",
+        "NixOSHardware": "NixOSHardware",
         "NixPkgs": "NixPkgs",
         "PlasmaManager": "PlasmaManager"
       }
