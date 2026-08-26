@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     tree # Command to produce a depth indented directory listing.
     # kdePackages.kolourpaint # Easy-to-use paint program.
+    texliveFull
     kdePackages.konsole # Terminal emulator by KDE.
     kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
     # kdePackagesskanpage # Utility to scan images and multi-page documents.
