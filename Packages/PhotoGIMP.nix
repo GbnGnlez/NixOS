@@ -16,8 +16,8 @@ in
   ];
 
   # Attribute set of files to link into the user home.
-  home.file.".config/GIMP/3.0" = {
-    source = "${PhotoGIMP}/.config/GIMP/3.0"; # Path of the source file or directory.
+  home.file.".config/GIMP/3.2" = {
+    source = "${PhotoGIMP}/.config/GIMP/3.2"; # Path of the source file or directory.
     recursive = true; # If the file source is a directory, then this option determines whether the directory should be recursively linked to the target location.
   };
 }
