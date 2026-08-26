@@ -7,7 +7,7 @@
     settings = {
       user = {
         name = "GbnGnlez";
-        email = "GibranN.GonzalezS@outlook.com";
+        email = "GbnGnlez@outlook.com";
       };
 
       init = {
