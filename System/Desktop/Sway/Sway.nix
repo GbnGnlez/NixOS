@@ -4,9 +4,12 @@
   config,
   pkgs,
   lib,
-  SwayFX ? false,
   ...
 }:
+
+let
+  cfg = config.desktop.swayfx;
+in
 
 {
   imports = [
@@ -25,9 +28,6 @@
   # Enable Sway.
   programs.sway = {
     enable = true;
-
-    package = if SwayFX then pkgs.swayfx else pkgs.sway;
-
     wrapperFeatures.gtk = true;
   };
 

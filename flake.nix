@@ -44,7 +44,6 @@
           sysLocale ? "es_MX.UTF-8",
           kbdLayout ? "latam",
           kbdVariant ? "",
-          SwayFX ? false,
           extraHomeArgs ? { },
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
@@ -58,7 +57,6 @@
               sysLocale
               kbdLayout
               kbdVariant
-              SwayFX
               ;
           };
 
@@ -76,7 +74,7 @@
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
 
-            # Sway System Module
+            # Hyprland
             ./System/Desktop/Sway/Sway.nix
 
             # Hostname
@@ -100,7 +98,6 @@
                 extraSpecialArgs = extraHomeArgs // {
                   CursorSize = 16;
                   FontSize = 10;
-                  SwayFX = false;
                 };
 
                 users.nixos = {
@@ -112,11 +109,10 @@
                     ./Packages/Firefox.nix
                     ./Packages/OnlyOffice.nix
 
-                    # Base Sway configuration for ALL hosts
+                    # Hyprland
                     ./System/Desktop/Sway/Sway-Home.nix
+                    # ./System/Desktop/WayBar.nix
                   ]
-                  # Conditionally import SwayFX module if SwayFX is enabled
-                  ++ (if SwayFX then [ ./System/Desktop/Sway/SwayFX.nix ] else [ ])
                   ++ extraHomeModules;
                 };
               };
@@ -128,7 +124,6 @@
       nixosConfigurations = {
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
-          SwayFX = false;
 
           extraHomeArgs = {
             ThemeColor = "pink";
@@ -141,7 +136,6 @@
 
         IdeaPad = mkHost {
           hostName = "IdeaPad";
-          SwayFX = false;
 
           extraHomeArgs = {
             ThemeColor = "pink";
@@ -154,8 +148,8 @@
 
         Pavilion = mkHost {
           hostName = "Pavilion";
+
           GPU = "i915";
-          SwayFX = false;
 
           extraSystemModules = [
             ./Packages/Spotify.nix
@@ -172,14 +166,17 @@
 
         ThinkPad = mkHost {
           hostName = "ThinkPad";
+
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
           kbdVariant = "colemak";
-          SwayFX = true; # Automatically includes SwayFX.nix
 
           extraSystemModules = [
+            # NixOS Hardware
             NixOSHardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
+
             ./Packages/Spotify.nix
+            # ./Packages/VirtManager.nix
           ];
 
           extraHomeArgs = {
@@ -191,6 +188,7 @@
           };
 
           extraHomeModules = [
+            ./Packages/Firefox.nix
             ./Packages/PhotoGIMP.nix
             ./Packages/Development/VSCode.nix
           ];
@@ -198,10 +196,10 @@
 
         Desktop = mkHost {
           hostName = "Desktop";
+
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
           kbdVariant = "colemak_dh";
-          SwayFX = true; # Automatically includes SwayFX.nix
 
           extraSystemModules = [
             ./Packages/Spotify.nix
@@ -214,10 +212,10 @@
             CursorVariant = "Ice";
             AccentColor = "61,174,233";
             LookAndFeel = "dark";
-            SwayFX = true;
           };
 
           extraHomeModules = [
+            ./Packages/Firefox.nix
             ./Packages/PhotoGIMP.nix
             ./Packages/Development/VSCode.nix
           ];

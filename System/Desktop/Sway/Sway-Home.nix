@@ -1,10 +1,6 @@
 # https://wiki.nixos.org/wiki/Sway
 
-{
-  pkgs,
-  SwayFX ? false,
-  ...
-}:
+{ ... }:
 
 {
   imports = [
@@ -15,9 +11,6 @@
 
   wayland.windowManager.sway = {
     enable = true;
-
-    package = if SwayFX then pkgs.swayfx else pkgs.sway;
-
     wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
     config = rec {
       modifier = "Mod4";

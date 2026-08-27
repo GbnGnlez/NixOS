@@ -4,6 +4,9 @@
 
 {
   wayland.windowManager.sway = {
+    enable = true;
+    package = pkgs.swayfx;
+
     # Needed to build without errors.
     checkConfig = false;
 
