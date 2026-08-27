@@ -17,6 +17,7 @@
     wl-clipboard # Copy/Paste functionality.
     mako # Notification utility.
     kitty
+    thunar
   ];
 
   # Enable Sway.
