@@ -22,7 +22,7 @@
   security.polkit.enable = true;
 
   services.greetd.enable = true;
-  programs.regreet.enable = true;
+  services.displayManager.regreet.enable = true;
 
   # Enables Gnome Keyring to store secrets for applications.
   services.gnome.gnome-keyring.enable = true;
