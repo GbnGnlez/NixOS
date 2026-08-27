@@ -21,17 +21,29 @@
         layer = "top";
         position = "top";
 
-        modules-center = [
-          "clock"
+        modules-left = [
+          "sway/workspaces"
         ];
 
-        modules-right = [
-          "tray"
+        "sway/workspaces" = {
+          persistent-workspaces = {
+            "*" = 5;
+          };
+
+          format = "{name}";
+        };
+
+        modules-center = [
+          "clock"
         ];
 
         clock = {
           format = "{:%H:%M}";
         };
+
+        modules-right = [
+          "tray"
+        ];
       };
     };
 
@@ -45,11 +57,15 @@
         background: transparent;
       }
 
+      #workspaces {
+        padding: 0 10px;
+      }
+
       #clock {
         padding: 0 10px;
       }
 
-      #network {
+      #tray {
         padding: 0 10px;
       }
     '';
