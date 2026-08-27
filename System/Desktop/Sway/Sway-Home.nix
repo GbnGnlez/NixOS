@@ -15,5 +15,8 @@
         { command = "firefox"; }
       ];
     };
+
+    input."*".xkb_layout = "us";
+    input."*".xkb_variant = "colemak_dh";
   };
 }
