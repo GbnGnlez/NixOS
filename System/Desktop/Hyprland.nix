@@ -4,7 +4,7 @@
 { ... }:
 
 {
-  services.getty.autologinUser = "nixos";
+  services.getty.autologinOnce = "nixos";
 
   programs.hyprland = {
     enable = true;
