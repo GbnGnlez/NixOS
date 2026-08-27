@@ -21,6 +21,7 @@
 
         modules-right = [
           "network"
+          "tray"
         ];
 
         clock = {
