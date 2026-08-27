@@ -18,13 +18,6 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-
-    extraConfig = ''
-      input * {
-        xkb_layout "us"
-        xkb_variant "colemak_dh"
-      }
-    '';
   };
 
   security.polkit.enable = true;
