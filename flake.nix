@@ -135,6 +135,7 @@
                   # Hyprland siempre está disponible.
                   ++ [
                     ./System/Desktop/Hyprland-Home.nix
+                    ./System/Desktop/WayBar.nix
                   ]
                   ++ extraHomeModules;
                 };
