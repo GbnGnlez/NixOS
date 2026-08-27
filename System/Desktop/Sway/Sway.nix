@@ -18,6 +18,7 @@
     mako # Notification utility.
     kitty
     thunar
+    kdePackages.dolphin
   ];
 
   # Enable Sway.
