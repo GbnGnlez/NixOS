@@ -26,7 +26,6 @@
         ];
 
         modules-right = [
-          "network"
           "tray"
         ];
 
