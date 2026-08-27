@@ -9,6 +9,8 @@
   home.packages = with pkgs; [
     waybar
     hyprlock
+    hyprlauncher
+    kde.dolphin
   ];
 
   wayland.windowManager.hyprland = {
