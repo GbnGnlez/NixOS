@@ -100,6 +100,7 @@
                 extraSpecialArgs = extraHomeArgs // {
                   CursorSize = 16;
                   FontSize = 10;
+                  SwayFX = false;
                 };
 
                 users.nixos = {
@@ -213,6 +214,7 @@
             CursorVariant = "Ice";
             AccentColor = "61,174,233";
             LookAndFeel = "dark";
+            SwayFX = true;
           };
 
           extraHomeModules = [
