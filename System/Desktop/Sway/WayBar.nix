@@ -1,3 +1,5 @@
+# https://wiki.nixos.org/wiki/Waybar
+
 { ... }:
 
 {
@@ -13,8 +15,19 @@
           "clock"
         ];
 
+        modules-right = [
+          "network"
+        ];
+
         clock = {
           format = "{:%H:%M}";
+        };
+
+        network = {
+          format-wifi = "";
+          format-ethernet = "󰈀";
+          format-disconnected = "󰖪";
+          tooltip = false;
         };
       };
     };
@@ -30,6 +43,10 @@
       }
 
       #clock {
+        padding: 0 10px;
+      }
+
+      #network {
         padding: 0 10px;
       }
     '';
