@@ -10,6 +10,16 @@
   # Enlazamos de forma declarativa tu archivo Lua a la ruta de configuración de Hyprland
   xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
 
+  # Lanzador automático oficial para Bash usando UWSM
+  programs.bash = {
+    enable = true;
+    profileExtra = ''
+      if uwsm check may-start; then
+        exec uwsm start hyprland.desktop
+      fi
+    '';
+  };
+
   # Terminal utilizada por la configuración inicial de Hyprland.
   programs.kitty.enable = true;
 
