@@ -42,8 +42,16 @@
         };
 
         modules-right = [
+          "backlight"
           "tray"
         ];
+
+        backlight = {
+          format = "☀ {percent}%";
+          tooltip = false;
+          on-scroll-up = "light -A 5";
+          on-scroll-down = "light -U 5";
+        };
       };
     };
 
@@ -62,6 +70,10 @@
       }
 
       #clock {
+        padding: 0 10px;
+      }
+
+      #backlight {
         padding: 0 10px;
       }
 
