@@ -4,8 +4,7 @@
 { ... }:
 
 {
-  # 1. Autologin en la consola TTY1 al bootear (Sin Display Manager)
-  services.getty.autologinUser = "nixos"; # <-- Reemplaza "nixos" por tu usuario real si fuera diferente
+  services.getty.autologinUser = "nixos";
 
   programs.hyprland = {
     enable = true;
