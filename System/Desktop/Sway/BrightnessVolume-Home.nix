@@ -1,3 +1,5 @@
+# https://wiki.nixos.org/wiki/Sway#Brightness_and_volume
+
 { ... }:
 
 {

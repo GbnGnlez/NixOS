@@ -8,6 +8,10 @@
 }:
 
 {
+  imports = [
+    ./BrightnessVolume.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     wl-clipboard # Copy/Paste functionality.
     mako # Notification utility.
