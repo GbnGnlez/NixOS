@@ -28,8 +28,10 @@ in
     jetbrains-mono
     papirus-folders
     Papirus-Icon-Theme-Custom
+    glib # 🌟 Necesario para que las herramientas de configuración se comuniquen con dconf
   ];
 
+  # Configuración del Cursor (Global para GTK y X11)
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;
@@ -39,11 +41,12 @@ in
     size = CursorSize;
   };
 
+  # 🌟 CONFIGURACIÓN DEL TEMA OSCURO PARA GTK (Firefox, VS Code, etc.)
   gtk = {
     enable = true;
 
     theme = {
-      name = "Breeze";
+      name = "Breeze-Dark"; # 🌟 Cambiado a Breeze-Dark para activar el tema oscuro nativo
       package = pkgs.kdePackages.breeze-gtk;
     };
 
@@ -64,6 +67,20 @@ in
 
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
+    };
+  };
+
+  # 🌟 CONFIGURACIÓN PARA APLICACIONES Qt (Dolphin, Kdenlive, etc.)
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk"; # 🌟 Le ordena a Qt heredar el tema Breeze-Dark e iconos de GTK
+    style.name = "breeze"; # Aplica el motor de renderizado Breeze
+  };
+
+  # 🌟 CONFIGURACIÓN DE DCONF (Fuerza el modo oscuro en aplicaciones Libadwaita/GTK4 modernas)
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
   };
 }
