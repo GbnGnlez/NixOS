@@ -18,8 +18,8 @@
       # Use kitty as default terminal
       terminal = "kitty";
       startup = [
-        # Launch on start
-        { command = "nm-applet firefox"; }
+        # Launch Firefox on start
+        { command = "firefox"; }
       ];
 
       bars = [

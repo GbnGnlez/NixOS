@@ -7,6 +7,12 @@
     networkmanagerapplet
   ];
 
+  wayland.windowManager.sway = {
+    config.startup = [
+      { command = "nm-applet"; }
+    ];
+  };
+
   programs.waybar = {
     enable = true;
 
