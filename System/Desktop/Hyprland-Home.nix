@@ -10,7 +10,7 @@
     waybar
     hyprlock
     hyprlauncher
-    kde.dolphin
+    kdePackages.dolphin
   ];
 
   wayland.windowManager.hyprland = {
