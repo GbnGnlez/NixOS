@@ -215,6 +215,7 @@
           };
 
           extraHomeModules = [
+            /home/nixos/NixOS/System/Desktop/Sway/SwayFX.nix
             ./Packages/Firefox.nix
             ./Packages/PhotoGIMP.nix
             ./Packages/Development/VSCode.nix
