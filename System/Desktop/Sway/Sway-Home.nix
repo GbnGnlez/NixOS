@@ -5,6 +5,7 @@
 {
   imports = [
     ./BrightnessVolume-Home.nix
+    ./Screenshots-Home.nix
     ./Touchpad.nix
   ];
 

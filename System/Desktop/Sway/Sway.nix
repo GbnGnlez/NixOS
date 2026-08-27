@@ -10,6 +10,7 @@
 {
   imports = [
     ./BrightnessVolume.nix
+    ./Screenshots.nix
   ];
 
   environment.systemPackages = with pkgs; [
