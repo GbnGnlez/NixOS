@@ -50,6 +50,7 @@
         modules-right = [
           "backlight"
           "tray"
+          "custom/power"
         ];
 
         backlight = {
@@ -57,6 +58,12 @@
           tooltip = false;
           on-scroll-up = "light -A 5";
           on-scroll-down = "light -U 5";
+        };
+
+        "custom/power" = {
+          format = "⏻";
+          tooltip = "Apagar";
+          on-click = "systemctl poweroff";
         };
       };
     };
@@ -86,6 +93,11 @@
       #tray {
         padding: 0 10px;
       }
+
+      #power {
+        padding: 0 10px;
+      }
+
     '';
   };
 }
