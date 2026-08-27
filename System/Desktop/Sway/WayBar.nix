@@ -8,9 +8,15 @@
   ];
 
   wayland.windowManager.sway = {
-    config.startup = [
-      { command = "nm-applet"; }
-    ];
+    config = {
+      bars = [
+        { command = "waybar"; }
+      ];
+
+      startup = [
+        { command = "nm-applet"; }
+      ];
+    };
   };
 
   programs.waybar = {

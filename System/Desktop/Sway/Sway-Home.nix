@@ -22,10 +22,6 @@
         { command = "firefox"; }
       ];
 
-      bars = [
-        { command = "waybar"; }
-      ];
-
       input = {
         "*" = {
           xkb_layout = "us";
