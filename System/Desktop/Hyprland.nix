@@ -1,5 +1,5 @@
-# https://wiki.nixos.org/wiki/Hyprland
 # https://wiki.hypr.land/Nix/Hyprland-on-NixOS/
+# https://wiki.nixos.org/wiki/Hyprland
 
 { ... }:
 
@@ -10,7 +10,15 @@
     # Integración recomendada con systemd.
     withUWSM = true;
 
-    # Compatibilidad con aplicaciones X11.
+    # Permite ejecutar aplicaciones X11 dentro de Hyprland.
     xwayland.enable = true;
+  };
+
+  # PAM necesario para que Hyprlock pueda autenticar al usuario.
+  security.pam.services.hyprlock = { };
+
+  # A set of environment variables used in the global environment.
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
   };
 }

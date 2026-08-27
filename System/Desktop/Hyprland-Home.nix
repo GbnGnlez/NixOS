@@ -1,10 +1,15 @@
 # https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager/
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Terminal utilizada por la configuración inicial de Hyprland.
   programs.kitty.enable = true;
+
+  home.packages = with pkgs; [
+    waybar
+    hyprlock
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
