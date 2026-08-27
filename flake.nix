@@ -26,19 +26,12 @@
       url = "github:Nix-Community/Home-Manager";
       inputs.nixpkgs.follows = "NixPkgs";
     };
-
-    PlasmaManager = {
-      url = "github:Nix-Community/Plasma-Manager";
-      inputs.nixpkgs.follows = "NixPkgs";
-      inputs.home-manager.follows = "HomeManager";
-    };
   };
 
   outputs =
     {
       NixPkgs,
       HomeManager,
-      PlasmaManager,
       NUR,
       NixOSHardware,
       ...
@@ -51,7 +44,6 @@
           sysLocale ? "es_MX.UTF-8",
           kbdLayout ? "latam",
           kbdVariant ? "",
-          enablePlasma ? true,
           extraHomeArgs ? { },
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
@@ -85,13 +77,6 @@
             # Hyprland
             ./System/Desktop/Hyprland.nix
 
-            # Plasma
-            # Se omite en equipos donde enablePlasma = false.
-          ]
-          ++ NixPkgs.lib.optionals enablePlasma [
-            ./System/Desktop/Plasma.nix
-          ]
-          ++ [
             # Hostname
             {
               networking.hostName = hostName;
@@ -123,17 +108,8 @@
                     # Common packages
                     ./Packages/Firefox.nix
                     ./Packages/OnlyOffice.nix
-                  ]
-                  # Plasma solamente cuando está habilitado.
-                  ++ NixPkgs.lib.optionals enablePlasma [
-                    # Plasma Manager
-                    PlasmaManager.homeModules.plasma-manager
 
-                    # Shared Plasma configuration
-                    ./System/Desktop/Plasma-Home.nix
-                  ]
-                  # Hyprland siempre está disponible.
-                  ++ [
+                    # Hyprland
                     ./System/Desktop/Hyprland-Home.nix
                     ./System/Desktop/WayBar.nix
                   ]
@@ -220,9 +196,6 @@
 
         Desktop = mkHost {
           hostName = "Desktop";
-
-          # Desktop será Hyprland-only.
-          enablePlasma = false;
 
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
