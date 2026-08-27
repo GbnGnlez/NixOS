@@ -75,7 +75,7 @@
             ./Services/GarbageCollector.nix
 
             # Hyprland
-            ./System/Desktop/Hyprland.nix
+            ./System/Desktop/Sway/Sway.nix
 
             # Hostname
             {
@@ -110,8 +110,8 @@
                     ./Packages/OnlyOffice.nix
 
                     # Hyprland
-                    ./System/Desktop/Hyprland-Home.nix
-                    ./System/Desktop/WayBar.nix
+                    ./System/Desktop/Sway/Sway-Home.nix
+                    # ./System/Desktop/WayBar.nix
                   ]
                   ++ extraHomeModules;
                 };

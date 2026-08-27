@@ -13,9 +13,6 @@
     mako # Notification utility.
   ];
 
-  # Enables Gnome Keyring to store secrets for applications.
-  services.gnome.gnome-keyring.enable = true;
-
   # Enable Sway.
   programs.sway = {
     enable = true;
@@ -24,13 +21,14 @@
 
   security.polkit.enable = true;
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";
-      };
-    };
+  services.greetd.enable = true;
+  programs.regreet.enable = true;
+
+  # Enables Gnome Keyring to store secrets for applications.
+  services.gnome.gnome-keyring.enable = true;
+
+  security.pam.services = {
+    greetd.enableGnomeKeyring = true;
+    swaylock.enableGnomeKeyring = true;
   };
 }
