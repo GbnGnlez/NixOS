@@ -6,7 +6,7 @@
   imports = [
     ./BrightnessVolume-Home.nix
     ./Screenshots-Home.nix
-    ./Touchpad.nix
+    # ./Touchpad.nix
   ];
 
   wayland.windowManager.sway = {

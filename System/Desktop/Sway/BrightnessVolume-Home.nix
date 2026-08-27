@@ -1,12 +1,12 @@
 # https://wiki.nixos.org/wiki/Sway#Brightness_and_volume
 
-{ ... }:
+{ lib, ... }:
 
 {
   wayland.windowManager.sway = {
     enable = true;
     config = {
-      keybindings = {
+      keybindings = lib.mkOptionDefault {
         # Brightness Controls
         "XF86MonBrightnessDown" = "exec light -U 10";
         "XF86MonBrightnessUp" = "exec light -A 10";
