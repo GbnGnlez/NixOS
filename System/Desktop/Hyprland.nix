@@ -4,11 +4,8 @@
 { ... }:
 
 {
-  # Auto login configuration attrset.
-  services.displayManager.autoLogin = {
-    user = "nixos"; # User to be used for the automatic login.
-    enable = true; # Automatically log in as services.displayManager.autoLogin.user.
-  };
+  # 1. Autologin en la consola TTY1 al bootear (Sin Display Manager)
+  services.getty.autologinUser = "nixos"; # <-- Reemplaza "nixos" por tu usuario real si fuera diferente
 
   programs.hyprland = {
     enable = true;
