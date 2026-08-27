@@ -23,9 +23,7 @@
       ];
 
       bars = [
-        {
-          command = "waybar";
-        }
+        { command = "waybar"; }
       ];
 
       input = {
