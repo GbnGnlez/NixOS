@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     wl-clipboard # Copy/Paste functionality.
     mako # Notification utility.
+    kitty
   ];
 
   # Enable Sway.
