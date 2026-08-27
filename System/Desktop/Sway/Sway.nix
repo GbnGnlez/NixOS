@@ -1,15 +1,6 @@
 # https://wiki.nixos.org/wiki/Sway
 
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
-let
-  cfg = config.desktop.swayfx;
-in
+{ pkgs, ... }:
 
 {
   imports = [
