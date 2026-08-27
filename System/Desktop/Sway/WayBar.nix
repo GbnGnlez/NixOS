@@ -32,13 +32,6 @@
         clock = {
           format = "{:%H:%M}";
         };
-
-        network = {
-          format-wifi = "";
-          format-ethernet = "󰈀";
-          format-disconnected = "󰖪";
-          tooltip = false;
-        };
       };
     };
 
