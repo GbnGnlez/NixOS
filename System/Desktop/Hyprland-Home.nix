@@ -3,11 +3,17 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./WayBar.nix
+  ];
+
+  # Enlazamos de forma declarativa tu archivo Lua a la ruta de configuración de Hyprland
+  xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
+
   # Terminal utilizada por la configuración inicial de Hyprland.
   programs.kitty.enable = true;
 
   home.packages = with pkgs; [
-    waybar
     hyprlock
     hyprlauncher
     kdePackages.dolphin
