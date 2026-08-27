@@ -70,11 +70,11 @@ in
     };
   };
 
-  # 🌟 CONFIGURACIÓN PARA APLICACIONES Qt (Dolphin, Kdenlive, etc.)
+  # CONFIGURACIÓN PARA APLICACIONES Qt (Dolphin, Kdenlive, etc.)
   qt = {
     enable = true;
-    platformTheme.name = "gtk"; # 🌟 Le ordena a Qt heredar el tema Breeze-Dark e iconos de GTK
-    style.name = "breeze"; # Aplica el motor de renderizado Breeze
+    platformTheme.name = "gtk3"; # 🌟 Cambiado de "gtk" a "gtk3" para eliminar la advertencia
+    style.name = "breeze";
   };
 
   # 🌟 CONFIGURACIÓN DE DCONF (Fuerza el modo oscuro en aplicaciones Libadwaita/GTK4 modernas)
