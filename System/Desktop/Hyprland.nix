@@ -4,6 +4,12 @@
 { ... }:
 
 {
+  # Auto login configuration attrset.
+  services.displayManager.autoLogin = {
+    user = "nixos"; # User to be used for the automatic login.
+    enable = true; # Automatically log in as services.displayManager.autoLogin.user.
+  };
+
   programs.hyprland = {
     enable = true;
 
