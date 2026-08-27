@@ -7,6 +7,10 @@
   ...
 }:
 
+let
+  cfg = config.desktop.swayfx;
+in
+
 {
   imports = [
     ./BrightnessVolume.nix
@@ -24,6 +28,9 @@
   # Enable Sway.
   programs.sway = {
     enable = true;
+
+    package = if cfg.enable then pkgs.swayfx else pkgs.sway;
+
     wrapperFeatures.gtk = true;
   };
 
