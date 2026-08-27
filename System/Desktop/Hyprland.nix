@@ -1,40 +1,16 @@
 # https://wiki.nixos.org/wiki/Hyprland
+# https://wiki.hypr.land/Nix/Hyprland-on-NixOS/
 
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
+
+    # Integración recomendada con systemd.
     withUWSM = true;
+
+    # Compatibilidad con aplicaciones X11.
+    xwayland.enable = true;
   };
-
-  # Integración de sistema para Thunar y servicios D-Bus/GVfs
-  programs.thunar.enable = true;
-  programs.xfconf.enable = true;
-  services.gvfs.enable = true;
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
-
-  xdg.portal = {
-    enable = true;
-
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-    ];
-  };
-
-  programs.dconf.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    kitty
-    thunar
-  ];
 }

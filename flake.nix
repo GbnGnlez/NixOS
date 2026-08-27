@@ -51,6 +51,7 @@
           sysLocale ? "es_MX.UTF-8",
           kbdLayout ? "latam",
           kbdVariant ? "",
+          enablePlasma ? true,
           extraHomeArgs ? { },
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
@@ -80,8 +81,17 @@
             ./System/PipeWire.nix
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
-            ./System/Desktop/Plasma.nix
 
+            # Hyprland
+            ./System/Desktop/Hyprland.nix
+
+            # Plasma
+            # Se omite en equipos donde enablePlasma = false.
+          ]
+          ++ NixPkgs.lib.optionals enablePlasma [
+            ./System/Desktop/Plasma.nix
+          ]
+          ++ [
             # Hostname
             {
               networking.hostName = hostName;
@@ -108,17 +118,23 @@
                 users.nixos = {
                   imports = [
                     ./Hosts/${hostName}/${hostName}.nix
-
-                    # Plasma Manager
-                    PlasmaManager.homeModules.plasma-manager
-
-                    # Shared Home Manager configuration
-                    ./System/Desktop/Plasma-Home.nix
                     ./Hosts/Common-Home.nix
 
                     # Common packages
                     ./Packages/Firefox.nix
                     ./Packages/OnlyOffice.nix
+                  ]
+                  # Plasma solamente cuando está habilitado.
+                  ++ NixPkgs.lib.optionals enablePlasma [
+                    # Plasma Manager
+                    PlasmaManager.homeModules.plasma-manager
+
+                    # Shared Plasma configuration
+                    ./System/Desktop/Plasma-Home.nix
+                  ]
+                  # Hyprland siempre está disponible.
+                  ++ [
+                    ./System/Desktop/Hyprland-Home.nix
                   ]
                   ++ extraHomeModules;
                 };
@@ -203,6 +219,9 @@
 
         Desktop = mkHost {
           hostName = "Desktop";
+
+          # Desktop será Hyprland-only.
+          enablePlasma = false;
 
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
