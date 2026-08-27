@@ -1,8 +1,12 @@
 # https://wiki.nixos.org/wiki/Waybar
 
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    networkmanagerapplet
+  ];
+
   programs.waybar = {
     enable = true;
 
