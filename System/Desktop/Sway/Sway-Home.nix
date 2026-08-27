@@ -4,6 +4,7 @@
 
 {
   imports = [
+    ./WayBar.nix
     ./BrightnessVolume-Home.nix
     ./Screenshots-Home.nix
     # ./Touchpad.nix
