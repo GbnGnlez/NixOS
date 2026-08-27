@@ -6,8 +6,6 @@
     ./Hardware.nix
   ];
 
-  desktop.swayfx.enable = true;
-
   # List of default packages to exclude from the configuration.
   # environment.plasma6.excludePackages = with pkgs.kdePackages; [
   # okular # KDE document viewer.
