@@ -4,7 +4,6 @@
 
 {
   wayland.windowManager.sway = {
-    enable = true;
     config = {
       keybindings = lib.mkOptionDefault {
         # Brightness Controls
