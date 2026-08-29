@@ -352,7 +352,8 @@ window-rule {
 
 // Spotify
 window-rule {
-    match app-id="Spotify"
+    match title="Spotify"
+    // match app-id="Spotify"
 
     open-fullscreen true
     open-maximized false
