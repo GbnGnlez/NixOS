@@ -3,7 +3,14 @@
 
 { pkgs, ... }:
 
+let
+  papirus = pkgs.papirus-icon-theme;
+in
 {
+  home.packages = [
+    papirus
+  ];
+
   programs.waybar = {
     enable = true;
 
@@ -15,7 +22,7 @@
         margin = "15 15 0 15";
 
         modules-left = [
-          "custom/nixos"
+          "image/nixos"
           "niri/workspaces"
         ];
 
@@ -24,11 +31,12 @@
         ];
 
         modules-right = [
-          "custom/power"
+          "image/power"
         ];
 
-        "custom/nixos" = {
-          format = "";
+        "image/nixos" = {
+          path = "${papirus}/share/icons/Papirus-Dark/64x64/places/distributor-logo-nixos.svg";
+          size = 22;
           tooltip = false;
           on-click = "fuzzel";
         };
@@ -39,7 +47,7 @@
           all-outputs = true;
 
           format-icons = {
-            active = "";
+            active = "";
             default = "";
           };
         };
@@ -48,11 +56,11 @@
           tooltip = false;
         };
 
-        "custom/power" = {
-          format = "⏻";
+        "image/power" = {
+          path = "${papirus}/share/icons/Papirus-Dark/64x64/actions/system-shutdown.svg";
+          size = 20;
           tooltip = false;
           on-click = "fuzzel --dmenu --prompt='Power: ' < <(printf 'Apagar\\nReiniciar\\nCancelar')";
-          on-click-release = "";
         };
       };
     };
@@ -63,17 +71,16 @@
         border-radius: 15px;
       }
 
-      #clock {
+      #image-nixos {
         background: #1e1e2e;
         border-radius: 15px;
         padding: 0 15px;
       }
 
-      #custom-nixos {
+      #clock {
         background: #1e1e2e;
         border-radius: 15px;
         padding: 0 15px;
-        font-size: 20px;
       }
 
       #workspaces {
@@ -94,11 +101,10 @@
         background: #313244;
       }
 
-      #custom-power {
+      #image-power {
         background: #1e1e2e;
         border-radius: 15px;
         padding: 0 15px;
-        font-size: 18px;
       }
     '';
   };
