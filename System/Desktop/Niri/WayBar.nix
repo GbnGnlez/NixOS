@@ -22,6 +22,7 @@
 
     style = ''
       window#waybar {
+        background: transparent;
         border-radius: 15px;
       }
     '';
