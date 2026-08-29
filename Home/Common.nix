@@ -1,10 +1,7 @@
 {
   pkgs,
-  ThemeColor ? "pink",
-  IconVariant ? "Light",
-  CursorVariant ? "Classic",
-  CursorSize ? 16,
-  FontSize ? 10,
+  Theme,
+  Color,
   ...
 }:
 
@@ -14,7 +11,21 @@ let
     nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.papirus-folders ];
     postInstall = (oldAttrs.postInstall or "") + ''
       export XDG_DATA_HOME="$out/share"
-      papirus-folders -o -C ${ThemeColor} -t Papirus-${IconVariant}
+      papirus-folders -o -C ${
+        if Color == "Pink" then
+          "pink"
+        else if Color == "Blue" then
+          "blue"
+        else
+          "pink"
+      } -t Papirus-${
+        if Theme == "Light" then
+          "Light"
+        else if Theme == "Dark" then
+          "Dark"
+        else
+          "Dark"
+      }
     '';
   });
 in
@@ -36,9 +47,15 @@ in
     enable = true;
     gtk.enable = true;
     x11.enable = true;
-    name = "Bibata-Modern-${CursorVariant}";
+    name =
+      if Theme == "Light" then
+        "Bibata-Modern-Classic"
+      else if Theme == "Dark" then
+        "Bibata-Modern-Ice"
+      else
+        "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;
-    size = CursorSize;
+    size = 16;
   };
 
   # CONFIGURACIÓN GTK
@@ -46,23 +63,41 @@ in
     enable = true;
 
     theme = {
-      name = "Breeze-Dark";
+      name =
+        if Theme == "Light" then
+          "Breeze"
+        else if Theme == "Dark" then
+          "Breeze-Dark"
+        else
+          "Breeze-Dark";
       package = pkgs.kdePackages.breeze-gtk;
     };
 
     iconTheme = {
-      name = "Papirus-${IconVariant}";
+      name =
+        if Theme == "Light" then
+          "Papirus-Light"
+        else if Theme == "Dark" then
+          "Papirus-Dark"
+        else
+          "Papirus-Dark";
       package = Papirus-Icon-Theme-Custom;
     };
 
     font = {
       name = "Inter";
-      size = FontSize;
+      size = 10;
       package = pkgs.inter;
     };
 
     gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
+      gtk-application-prefer-dark-theme =
+        if Theme == "Light" then
+          0
+        else if Theme == "Dark" then
+          1
+        else
+          1;
 
       # Barra de título:
       # SIN minimizar | maximizar | cerrar
@@ -70,7 +105,13 @@ in
     };
 
     gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
+      gtk-application-prefer-dark-theme =
+        if Theme == "Light" then
+          0
+        else if Theme == "Dark" then
+          1
+        else
+          1;
 
       # Barra de título:
       # SIN minimizar | maximizar | cerrar
@@ -88,7 +129,13 @@ in
   # DCONF
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
+      color-scheme =
+        if Theme == "Light" then
+          "prefer-light"
+        else if Theme == "Dark" then
+          "prefer-dark"
+        else
+          "prefer-dark";
     };
   };
 }
