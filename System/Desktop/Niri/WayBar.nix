@@ -32,6 +32,10 @@
           on-click = "fuzzel";
         };
 
+        "clock" = {
+          tooltip = false;
+        };
+
         "custom/power" = {
           format = "⏻";
           tooltip = false;
