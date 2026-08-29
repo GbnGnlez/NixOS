@@ -2,10 +2,12 @@
   nixConfig = {
     extra-substituters = [
       "https://gbngnlez.cachix.org"
+      "https://spicetify.cachix.org"
     ];
 
     extra-trusted-public-keys = [
       "gbngnlez.cachix.org-1:4087tPR0DCehBmp1z8gmoRk91VcUOjmcV9KdKI64MOU="
+      "spicetify.cachix.org-1:ibKfZ5J5NZm7n4l1as1x87u8m+5oQWb9a4c="
     ];
   };
 
@@ -28,6 +30,12 @@
     };
 
     Catppuccin.url = "github:Catppuccin/Nix";
+
+    # Spicetify Nix
+    Spicetify = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "NixPkgs";
+    };
   };
 
   outputs =
@@ -37,6 +45,7 @@
       NUR,
       NixOSHardware,
       Catppuccin,
+      Spicetify,
       ...
     }:
     let
@@ -52,14 +61,15 @@
           system = "x86_64-linux";
 
           specialArgs = {
-            inherit
-              GPU
-              ;
+            inherit GPU Spicetify;
           };
 
           modules = [
             # NUR
             NUR.modules.nixos.default
+
+            # Spicetify (NixOS Module)
+            Spicetify.nixosModules.default
 
             # Host
             ./Hosts/${hostName}/Configuration.nix
@@ -94,11 +104,16 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
 
-                extraSpecialArgs = extraHomeArgs;
+                extraSpecialArgs = extraHomeArgs {
+                  inherit Spicetify;
+                };
 
                 users.nixos = {
                   imports = [
                     ./Home/Common.nix
+
+                    # Spicetify (Home Manager Module)
+                    Spicetify.homeManagerModules.default
 
                     # Common packages
                     ./Home/Programs/Firefox.nix
