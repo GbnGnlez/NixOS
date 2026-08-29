@@ -45,6 +45,7 @@
           hostName,
           GPU ? "amdgpu",
           extraSystemModules ? [ ],
+          extraHomeArgs ? { },
           extraHomeModules ? [ ],
         }:
         NixPkgs.lib.nixosSystem {
@@ -92,6 +93,8 @@
 
                 backupFileExtension = "backup";
                 overwriteBackup = true;
+
+                extraSpecialArgs = extraHomeArgs;
 
                 users.nixos = {
                   imports = [
