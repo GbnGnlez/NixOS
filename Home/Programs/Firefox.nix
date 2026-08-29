@@ -16,12 +16,15 @@
       name = "NixOS";
       isDefault = true;
 
-      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-        ublock-origin
-        sponsorblock
-        darkreader
-        pwas-for-firefox
-      ];
+      extensions = {
+        force = true; # Permite a Catppuccin configurar extensiones sin fallar la aserción
+        packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin
+          sponsorblock
+          darkreader
+          pwas-for-firefox
+        ];
+      };
 
       settings = {
         # --- Startup & Search ---
