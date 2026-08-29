@@ -27,7 +27,7 @@
       inputs.nixpkgs.follows = "NixPkgs";
     };
 
-    Catppuccin.url = "github:Catppuccin/Nix";
+    Catppuccin.url = "github:Catppuccin/nix";
   };
 
   outputs =
