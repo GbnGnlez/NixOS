@@ -352,9 +352,9 @@ window-rule {
 
 // Terminal && File Manager
 window-rule {
-    match title="Alacritty"
-    match title="Nemo"
-    match title="Nautilus"
+    match app-id="Alacritty"
+    match app-id="nemo"
+    match app-id="org.gnome.Nautilus"
 
     open-floating true
     default-column-width { proportion 0.5; }
@@ -363,9 +363,9 @@ window-rule {
 
 // Spotify
 window-rule {
-    match title="Spotify"
+    match app-id="spotify"
 
-    open-fullscreen false
+    // open-fullscreen false
     open-maximized true
 }
 
