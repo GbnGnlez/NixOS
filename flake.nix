@@ -159,9 +159,6 @@
         ThinkPad = mkHost {
           hostName = "ThinkPad";
 
-          kbdLayout = "us";
-          kbdVariant = "colemak";
-
           extraSystemModules = [
             # NixOS Hardware
             NixOSHardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
@@ -187,9 +184,6 @@
 
         Desktop = mkHost {
           hostName = "Desktop";
-
-          kbdLayout = "us";
-          kbdVariant = "colemak_dh";
 
           extraSystemModules = [
             ./Home/Programs/Spotify.nix
