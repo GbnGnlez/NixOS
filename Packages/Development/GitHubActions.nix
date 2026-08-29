@@ -12,7 +12,6 @@
     profiles.default.userSettings = {
       "[yaml]" = {
         "editor.defaultFormatter" = "redhat.vscode-yaml";
-        "editor.formatOnSave" = true;
       };
 
       "yaml.disableSchemaDetection" = [
