@@ -16,13 +16,9 @@
     profiles.default.userSettings = {
       "[nix]" = {
         "editor.defaultFormatter" = "jnoortheen.nix-ide";
-        "editor.formatOnSave" = true;
       };
 
-      "[css]" = {
-        "editor.formatOnSave" = true;
-      };
-
+      "editor.formatOnSave" = true;
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil";
       "nix.serverSettings" = {
