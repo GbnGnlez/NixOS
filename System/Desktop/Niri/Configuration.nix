@@ -1,6 +1,8 @@
 # https://wiki.nixos.org/wiki/Niri/en
 
 {
+  imports = [ ../Catppuccin.nix ];
+
   # https://wiki.nixos.org/wiki/Niri/en#Installation
   programs.niri.enable = true;
 
