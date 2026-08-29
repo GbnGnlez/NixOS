@@ -1,8 +1,8 @@
 # https://wiki.nixos.org/wiki/Spicetify-Nix
 
-{ pkgs, SpicetifyNix, ... }:
+{ pkgs, Spicetify, ... }:
 let
-  spicePkgs = SpicetifyNix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+  spicePkgs = Spicetify.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   programs.spicetify = {
