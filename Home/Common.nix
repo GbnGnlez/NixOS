@@ -122,8 +122,8 @@ in
   # CONFIGURACIÓN PARA APLICACIONES Qt
   qt = {
     enable = true;
-    platformTheme.name = "gtk3";
-    style.name = "breeze";
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
   };
 
   # DCONF

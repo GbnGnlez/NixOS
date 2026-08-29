@@ -57,7 +57,7 @@
       };
     };
 
-    style = ./WayBar.css;
+    # style = ./WayBar.css;
 
   };
 }
