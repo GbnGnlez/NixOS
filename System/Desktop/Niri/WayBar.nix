@@ -25,6 +25,11 @@
         background: transparent;
         border-radius: 15px;
       }
+
+      #clock { 
+        background: #1e1e2e; 
+        border-radius: 15px;  
+        padding: 0 15px; }
     '';
   };
 }
