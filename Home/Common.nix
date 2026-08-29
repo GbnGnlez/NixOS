@@ -5,30 +5,30 @@
   ...
 }:
 
-let
-  Papirus-Icon-Theme-Custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
-    dontFixup = true;
-    nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.papirus-folders ];
-    postInstall = (oldAttrs.postInstall or "") + ''
-      export XDG_DATA_HOME="$out/share"
-      papirus-folders -o -C ${
-        if Color == "Pink" then
-          "pink"
-        else if Color == "Blue" then
-          "blue"
-        else
-          "pink"
-      } -t Papirus-${
-        if Theme == "Light" then
-          "Light"
-        else if Theme == "Dark" then
-          "Dark"
-        else
-          "Dark"
-      }
-    '';
-  });
-in
+# let
+#   Papirus-Icon-Theme-Custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
+#     dontFixup = true;
+#     nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.papirus-folders ];
+#     postInstall = (oldAttrs.postInstall or "") + ''
+#       export XDG_DATA_HOME="$out/share"
+#       papirus-folders -o -C ${
+#         if Color == "Pink" then
+#           "pink"
+#         else if Color == "Blue" then
+#           "blue"
+#         else
+#           "pink"
+#       } -t Papirus-${
+#         if Theme == "Light" then
+#           "Light"
+#         else if Theme == "Dark" then
+#           "Dark"
+#         else
+#           "Dark"
+#       }
+#     '';
+#   });
+# in
 
 {
   home.stateVersion = "26.05";
@@ -37,8 +37,8 @@ in
     bibata-cursors
     inter
     jetbrains-mono
-    papirus-folders
-    Papirus-Icon-Theme-Custom
+    # papirus-folders
+    # Papirus-Icon-Theme-Custom
     glib
   ];
 
@@ -73,16 +73,17 @@ in
       package = pkgs.kdePackages.breeze-gtk;
     };
 
-    iconTheme = {
-      name =
-        if Theme == "Light" then
-          "Papirus-Light"
-        else if Theme == "Dark" then
-          "Papirus-Dark"
-        else
-          "Papirus-Dark";
-      package = Papirus-Icon-Theme-Custom;
-    };
+    # Catppuccin gestiona los iconos automáticamente via catppuccin-papirus-folders
+    # iconTheme = {
+    #   name =
+    #     if Theme == "Light" then
+    #       "Papirus-Light"
+    #     else if Theme == "Dark" then
+    #       "Papirus-Dark"
+    #     else
+    #       "Papirus-Dark";
+    #   package = Papirus-Icon-Theme-Custom;
+    # };
 
     font = {
       name = "Inter";
