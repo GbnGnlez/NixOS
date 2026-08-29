@@ -89,10 +89,7 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
 
-                extraSpecialArgs = extraHomeArgs // {
-                  CursorSize = 16;
-                  FontSize = 10;
-                };
+                extraSpecialArgs = extraHomeArgs;
 
                 users.nixos = {
                   imports = [
@@ -118,11 +115,8 @@
           hostName = "IdeaCentre";
 
           extraHomeArgs = {
-            ThemeColor = "pink";
-            IconVariant = "Light";
-            CursorVariant = "Classic";
-            AccentColor = "233,58,154";
-            LookAndFeel = "";
+            Theme = "Ligth";
+            Color = "Pink";
           };
         };
 
@@ -130,11 +124,8 @@
           hostName = "IdeaPad";
 
           extraHomeArgs = {
-            ThemeColor = "pink";
-            IconVariant = "Dark";
-            CursorVariant = "Ice";
-            AccentColor = "233,58,154";
-            LookAndFeel = "dark";
+            Theme = "Dark";
+            Color = "Pink";
           };
         };
 
@@ -148,11 +139,8 @@
           ];
 
           extraHomeArgs = {
-            ThemeColor = "pink";
-            IconVariant = "Light";
-            CursorVariant = "Classic";
-            AccentColor = "233,58,154";
-            LookAndFeel = "";
+            Theme = "Ligth";
+            Color = "Pink";
           };
         };
 
@@ -168,11 +156,8 @@
           ];
 
           extraHomeArgs = {
-            ThemeColor = "blue";
-            IconVariant = "Dark";
-            CursorVariant = "Ice";
-            AccentColor = "61,174,233";
-            LookAndFeel = "dark";
+            Theme = "Dark";
+            Color = "Blue";
           };
 
           extraHomeModules = [
@@ -191,11 +176,8 @@
           ];
 
           extraHomeArgs = {
-            ThemeColor = "blue";
-            IconVariant = "Dark";
-            CursorVariant = "Ice";
-            AccentColor = "61,174,233";
-            LookAndFeel = "dark";
+            Theme = "Dark";
+            Color = "Blue";
           };
 
           extraHomeModules = [
