@@ -16,6 +16,7 @@
 
         modules-left = [
           "custom/nixos"
+          "niri/workspaces"
         ];
 
         modules-center = [
@@ -30,6 +31,17 @@
           format = "";
           tooltip = false;
           on-click = "fuzzel";
+        };
+
+        "niri/workspaces" = {
+          format = "{icon}";
+          on-click = "activate";
+          all-outputs = true;
+
+          format-icons = {
+            active = "";
+            default = "";
+          };
         };
 
         "clock" = {
@@ -62,6 +74,24 @@
         border-radius: 15px;
         padding: 0 15px;
         font-size: 20px;
+      }
+
+      #workspaces {
+        background: #1e1e2e;
+        border-radius: 15px;
+        padding: 0 5px;
+      }
+
+      #workspaces button {
+        color: #cdd6f4;
+        padding: 0 8px;
+        margin: 0 2px;
+        border-radius: 10px;
+      }
+
+      #workspaces button.active {
+        color: #89b4fa;
+        background: #313244;
       }
 
       #custom-power {
