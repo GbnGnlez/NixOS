@@ -12,7 +12,7 @@
         layer = "top";
         position = "top";
         height = 35;
-        margin = "15";
+        margin = "15 15 0 15";
 
         modules-center = [
           "clock"
