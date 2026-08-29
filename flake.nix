@@ -26,6 +26,8 @@
       url = "github:Nix-Community/Home-Manager";
       inputs.nixpkgs.follows = "NixPkgs";
     };
+
+    Catppuccin.url = "github:Catppuccin/Nix";
   };
 
   outputs =
@@ -34,6 +36,7 @@
       HomeManager,
       NUR,
       NixOSHardware,
+      Catppuccin,
       ...
     }:
     let
@@ -80,6 +83,8 @@
             # Home Manager
             HomeManager.nixosModules.default
 
+            Catppuccin.nixosModules.catppuccin
+
             {
               home-manager = {
                 useGlobalPkgs = true;
@@ -98,6 +103,8 @@
 
                     # Niri
                     ./Home/Desktop/Niri/Home.nix
+
+                    Catppuccin.homeModules.catppuccin
                   ]
                   ++ extraHomeModules;
                 };
@@ -112,7 +119,7 @@
           hostName = "IdeaCentre";
 
           extraHomeArgs = {
-            Theme = "Ligth";
+            Theme = "Light";
             Color = "Pink";
           };
         };
@@ -136,7 +143,7 @@
           ];
 
           extraHomeArgs = {
-            Theme = "Ligth";
+            Theme = "Light";
             Color = "Pink";
           };
         };
