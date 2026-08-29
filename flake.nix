@@ -41,7 +41,6 @@
         {
           hostName,
           GPU ? "amdgpu",
-          extraHomeArgs ? { },
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
         }:
@@ -88,8 +87,6 @@
 
                 backupFileExtension = "backup";
                 overwriteBackup = true;
-
-                extraSpecialArgs = extraHomeArgs;
 
                 users.nixos = {
                   imports = [
