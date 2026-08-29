@@ -74,8 +74,8 @@
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
 
-            # Hyprland
-            ./System/Desktop/Sway/Sway.nix
+            # Niri
+            ./System/Desktop/Niri/Configuration.nix
 
             # Hostname
             {
@@ -109,9 +109,8 @@
                     ./Packages/Firefox.nix
                     ./Packages/OnlyOffice.nix
 
-                    # Hyprland
-                    ./System/Desktop/Sway/Sway-Home.nix
-                    # ./System/Desktop/WayBar.nix
+                    # Niri
+                    ./System/Desktop/Niri/Home.nix
                   ]
                   ++ extraHomeModules;
                 };
