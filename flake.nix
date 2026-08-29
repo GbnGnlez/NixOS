@@ -66,9 +66,6 @@
             # NUR
             NUR.modules.nixos.default
 
-            # Spicetify (NixOS Module)
-            Spicetify.nixosModules.default
-
             # Host
             ./Hosts/${hostName}/Configuration.nix
             ./Hosts/Common.nix
@@ -112,6 +109,7 @@
 
                     # Spicetify (Home Manager Module)
                     Spicetify.homeManagerModules.default
+                    ./Home/Programs/Spicetify.nix
 
                     # Common packages
                     ./Home/Programs/Firefox.nix
@@ -181,7 +179,6 @@
           };
 
           extraHomeModules = [
-            ./Home/Programs/Firefox.nix
             ./Home/Programs/PhotoGIMP.nix
             ./Home/Programs/Development/VSCode.nix
           ];
@@ -191,7 +188,7 @@
           hostName = "Desktop";
 
           extraSystemModules = [
-            ./Home/Programs/Spotify.nix
+            #./Home/Programs/Spotify.nix
             ./Home/Programs/VirtManager.nix
           ];
 
@@ -201,7 +198,7 @@
           };
 
           extraHomeModules = [
-            ./Home/Programs/Firefox.nix
+            ./Home/Programs/Spicetify.nix
             ./Home/Programs/PhotoGIMP.nix
             ./Home/Programs/Development/VSCode.nix
           ];
