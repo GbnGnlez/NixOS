@@ -177,7 +177,7 @@
 
           extraHomeArgs = {
             Theme = "Dark";
-            Color = "Pink";
+            Color = "Blue";
           };
 
           extraHomeModules = [
