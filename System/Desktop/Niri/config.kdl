@@ -1,4 +1,4 @@
-# https://github.com/niri-wm/niri/blob/main/resources/default-config.kdl
+// https://github.com/niri-wm/niri/blob/main/resources/default-config.kdl
 
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
