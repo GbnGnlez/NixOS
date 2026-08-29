@@ -3,8 +3,6 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./Spicetify.nix ];
-
   # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
     spotify # Play music from the Spotify music service.
