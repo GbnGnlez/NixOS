@@ -19,6 +19,10 @@
         "editor.formatOnSave" = true;
       };
 
+      "[css]" = {
+        "editor.formatOnSave" = true;
+      };
+
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil";
       "nix.serverSettings" = {
@@ -29,5 +33,6 @@
         };
       };
     };
+
   };
 }
