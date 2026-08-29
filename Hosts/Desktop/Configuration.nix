@@ -15,6 +15,8 @@
   environment.systemPackages = with pkgs; [
     tree # Command to produce a depth indented directory listing.
     fastfetch
+    nautilus
+    nemo
     # kdePackages.kolourpaint # Easy-to-use paint program.
     kdePackages.konsole # Terminal emulator by KDE.
     kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
