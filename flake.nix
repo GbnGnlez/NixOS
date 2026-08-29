@@ -104,7 +104,7 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
 
-                extraSpecialArgs = extraHomeArgs {
+                extraSpecialArgs = extraHomeArgs // {
                   inherit Spicetify;
                 };
 
