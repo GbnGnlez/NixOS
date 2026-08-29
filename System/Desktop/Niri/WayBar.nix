@@ -1,4 +1,5 @@
 # https://wiki.nixos.org/wiki/Waybar
+# https://github.com/nix-community/home-manager/blob/master/modules/programs/waybar.nix
 
 { pkgs, ... }:
 
@@ -18,5 +19,11 @@
         ];
       };
     };
+
+    style = ''
+      window#waybar {
+        border-radius: 15px;
+      }
+    '';
   };
 }
