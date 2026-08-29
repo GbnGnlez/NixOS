@@ -2,7 +2,7 @@
   nixConfig = {
     extra-substituters = [
       "https://gbngnlez.cachix.org"
-      "https://spicetify.cachix.org"
+      #   "https://spicetify.cachix.org"
     ];
 
     extra-trusted-public-keys = [
