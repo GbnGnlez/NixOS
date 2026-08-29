@@ -102,15 +102,14 @@
 
                 users.nixos = {
                   imports = [
-                    ./Hosts/${hostName}/${hostName}.nix
-                    ./Hosts/Common-Home.nix
+                    ./Home/Common.nix
 
                     # Common packages
-                    ./Packages/Firefox.nix
-                    ./Packages/OnlyOffice.nix
+                    ./Home/Programs/Firefox.nix
+                    ./Home/Programs/OnlyOffice.nix
 
                     # Niri
-                    ./System/Desktop/Niri/Home.nix
+                    ./Home/Desktop/Niri/Home.nix
                   ]
                   ++ extraHomeModules;
                 };
@@ -151,7 +150,7 @@
           GPU = "i915";
 
           extraSystemModules = [
-            ./Packages/Spotify.nix
+            ./Home/Programs/Spotify.nix
           ];
 
           extraHomeArgs = {
@@ -174,8 +173,8 @@
             # NixOS Hardware
             NixOSHardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
 
-            ./Packages/Spotify.nix
-            # ./Packages/VirtManager.nix
+            ./Home/Programs/Spotify.nix
+            # ./Home/Programs/VirtManager.nix
           ];
 
           extraHomeArgs = {
@@ -187,9 +186,9 @@
           };
 
           extraHomeModules = [
-            ./Packages/Firefox.nix
-            ./Packages/PhotoGIMP.nix
-            ./Packages/Development/VSCode.nix
+            ./Home/Programs/Firefox.nix
+            ./Home/Programs/PhotoGIMP.nix
+            ./Home/Programs/Development/VSCode.nix
           ];
         };
 
@@ -201,8 +200,8 @@
           kbdVariant = "colemak_dh";
 
           extraSystemModules = [
-            ./Packages/Spotify.nix
-            ./Packages/VirtManager.nix
+            ./Home/Programs/Spotify.nix
+            ./Home/Programs/VirtManager.nix
           ];
 
           extraHomeArgs = {
@@ -214,9 +213,9 @@
           };
 
           extraHomeModules = [
-            ./Packages/Firefox.nix
-            ./Packages/PhotoGIMP.nix
-            ./Packages/Development/VSCode.nix
+            ./Home/Programs/Firefox.nix
+            ./Home/Programs/PhotoGIMP.nix
+            ./Home/Programs/Development/VSCode.nix
           ];
         };
       };
