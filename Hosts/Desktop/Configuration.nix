@@ -6,6 +6,12 @@
     ./Hardware.nix
   ];
 
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "colemak_dh";
+  };
+
   # List of default packages to exclude from the configuration.
   # environment.plasma6.excludePackages = with pkgs.kdePackages; [
   # okular # KDE document viewer.

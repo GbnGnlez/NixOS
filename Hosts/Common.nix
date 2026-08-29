@@ -4,9 +4,6 @@
 
 {
   pkgs,
-  sysLocale,
-  kbdLayout,
-  kbdVariant,
   ...
 }:
 
@@ -48,13 +45,13 @@
   ];
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = kbdLayout;
-    variant = kbdVariant;
-  };
+  # services.xserver.xkb = {
+  # layout = "";
+  # variant = "";
+  # };
 
   # If set, configure the virtual console keymap from the xserver keyboard settings.
-  # console.useXkbConfig = true;
+  console.useXkbConfig = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;

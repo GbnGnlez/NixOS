@@ -41,9 +41,6 @@
         {
           hostName,
           GPU ? "amdgpu",
-          sysLocale ? "es_MX.UTF-8",
-          kbdLayout ? "latam",
-          kbdVariant ? "",
           extraHomeArgs ? { },
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
@@ -54,9 +51,6 @@
           specialArgs = {
             inherit
               GPU
-              sysLocale
-              kbdLayout
-              kbdVariant
               ;
           };
 
@@ -165,7 +159,6 @@
         ThinkPad = mkHost {
           hostName = "ThinkPad";
 
-          sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
           kbdVariant = "colemak";
 
@@ -195,7 +188,6 @@
         Desktop = mkHost {
           hostName = "Desktop";
 
-          sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
           kbdVariant = "colemak_dh";
 
