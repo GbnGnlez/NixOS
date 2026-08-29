@@ -1,14 +1,13 @@
 # https://wiki.nixos.org/wiki/Niri/en
 
 {
-  imports = [ ../Catppuccin.nix ];
+  imports = [
+    ./ReGreet.nix
+    ../Catppuccin.nix
+  ];
 
   # https://wiki.nixos.org/wiki/Niri/en#Installation
   programs.niri.enable = true;
-
-  # https://wiki.nixos.org/wiki/Niri/en#Greetd
-  services.greetd.enable = true;
-  services.displayManager.regreet.enable = true;
 
   # https://wiki.nixos.org/wiki/Niri/en#Additional_Setup
   security.polkit.enable = true; # polkit
