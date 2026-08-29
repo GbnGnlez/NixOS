@@ -2,12 +2,10 @@
   nixConfig = {
     extra-substituters = [
       "https://gbngnlez.cachix.org"
-      #   "https://spicetify.cachix.org"
     ];
 
     extra-trusted-public-keys = [
       "gbngnlez.cachix.org-1:4087tPR0DCehBmp1z8gmoRk91VcUOjmcV9KdKI64MOU="
-      "spicetify.cachix.org-1:ibKfZ5J5NZm7n4l1as1x87u8m+5oQWb9a4c="
     ];
   };
 
