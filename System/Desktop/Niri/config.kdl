@@ -365,7 +365,6 @@ window-rule {
 window-rule {
     match app-id="spotify"
 
-    // open-fullscreen false
     open-maximized true
 }
 
