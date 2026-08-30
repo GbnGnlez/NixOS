@@ -5,7 +5,7 @@
 {
   imports = [
     #./WayBar.nix
-    ./KDL/Layout.nix
+    ./NIX/Layout.nix
   ];
 
   # https://wiki.nixos.org/wiki/Niri/en#Configuration
