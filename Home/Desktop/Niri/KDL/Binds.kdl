@@ -1,4 +1,4 @@
-// https://niri-wm.github.io/niri/Configuration%3A-Key-Bindings.html
+// https://niri-wm.github.io/niri/Configuration:-Key-Bindings.html
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
