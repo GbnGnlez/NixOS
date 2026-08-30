@@ -5,14 +5,11 @@
 {
   imports = [
     #./WayBar.nix
-    ./NIX/Layout.nix
+    #./NIX/Layout.nix
   ];
 
   # https://wiki.nixos.org/wiki/Niri/en#Configuration
-  xdg.configFile."niri" = {
-    source = ./KDL;
-    recursive = true;
-  };
+  xdg.configFile."niri".source = ./KDL;
 
   # https://wiki.nixos.org/wiki/Niri/en#Additional_Setup
   programs.alacritty.enable = true; # Super+T in the default setting (terminal)
