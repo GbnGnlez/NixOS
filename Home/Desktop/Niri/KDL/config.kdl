@@ -1,8 +1,0 @@
-include "animations.kdl"
-include "binds.kdl"
-include "input.kdl"
-include "layout.kdl"
-include "output.kdl"
-include "recent-windows.kdl"
-include "startup.kdl"
-include "window-rule.kdl"

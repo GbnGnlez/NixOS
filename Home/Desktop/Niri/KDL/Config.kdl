@@ -1,0 +1,15 @@
+// https://github.com/niri-wm/niri/blob/main/resources/default-config.kdl
+
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://niri-wm.github.io/niri/Configuration:-Introduction
+
+include "Animations.kdl"
+include "Binds.kdl"
+include "Input.kdl"
+include "Layout.kdl"
+include "Output.kdl"
+include "RecentWindows.kdl"
+include "Startup.kdl"
+include "WindowRule.kdl"
