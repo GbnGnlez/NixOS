@@ -1,7 +1,7 @@
 { Theme, Color, ... }:
 
 {
-  xdg.configFile."niri/layout.kdl".text = ''
+  xdg.configFile."niri/Layout.kdl".text = ''
     // Settings that influence how windows are positioned and sized.
     // Find more information on the wiki:
     // https://niri-wm.github.io/niri/Configuration:-Layout
