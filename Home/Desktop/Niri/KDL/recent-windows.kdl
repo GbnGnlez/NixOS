@@ -1,0 +1,15 @@
+// https://niri-wm.github.io/niri/Configuration%3A-Recent-Windows.html
+
+recent-windows {
+    highlight {
+        // Change the background color (Hex #RRGGBBAA, #RRGGBB, or CSS color names)
+        active-color "#7fc8ff80"
+        urgent-color "#ff999980"
+
+        // Set the corner radius in logical pixels to round the borders
+        corner-radius 15
+
+        // Optional: adjust the padding around the window preview
+        padding 15
+    }
+}

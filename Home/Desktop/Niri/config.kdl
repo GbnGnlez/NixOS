@@ -158,7 +158,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        off
+        // off
 
         // How many logical pixels the ring extends out from the windows.
         width 1.5
@@ -366,6 +366,22 @@ window-rule {
 
     open-maximized true
 }
+
+// https://niri-wm.github.io/niri/Configuration%3A-Recent-Windows.html
+recent-windows {
+    highlight {
+        // Change the background color (Hex #RRGGBBAA, #RRGGBB, or CSS color names)
+        active-color "#7fc8ff80"
+        urgent-color "#ff999980"
+
+        // Set the corner radius in logical pixels to round the borders
+        corner-radius 15
+
+        // Optional: adjust the padding around the window preview
+        padding 15
+    }
+}
+
 
 
 binds {
