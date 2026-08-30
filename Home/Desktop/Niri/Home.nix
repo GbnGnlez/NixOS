@@ -9,7 +9,10 @@
   ];
 
   # https://wiki.nixos.org/wiki/Niri/en#Configuration
-  xdg.configFile."niri".source = ./KDL;
+  xdg.configFile."niri" = {
+    source = ./KDL;
+    recursive = true;
+  };
 
   # https://wiki.nixos.org/wiki/Niri/en#Additional_Setup
   programs.alacritty.enable = true; # Super+T in the default setting (terminal)
