@@ -51,6 +51,8 @@
         {
           hostName,
           GPU ? "amdgpu",
+          Theme,
+          Color,
           extraSystemModules ? [ ],
           extraHomeArgs ? { },
           extraHomeModules ? [ ],
@@ -59,7 +61,12 @@
           system = "x86_64-linux";
 
           specialArgs = {
-            inherit GPU Spicetify;
+            inherit
+              GPU
+              Theme
+              Color
+              Spicetify
+              ;
           };
 
           modules = [
@@ -71,6 +78,7 @@
             ./Hosts/Common.nix
 
             # System
+            ./System/Desktop/Catppuccin.nix
             ./System/Plymouth.nix
             ./System/PipeWire.nix
             ./Services/Avahi.nix
@@ -99,13 +107,15 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
 
-                extraSpecialArgs = extraHomeArgs // {
-                  inherit Spicetify;
-                };
+                extraSpecialArgs = {
+                  inherit Theme Color Spicetify;
+                }
+                // extraHomeArgs;
 
                 users.nixos = {
                   imports = [
                     ./Home/Common.nix
+                    ./Home/Desktop/Catppuccin.nix
 
                     # Spicetify (Home Manager Module)
                     Spicetify.homeManagerModules.default
@@ -131,52 +141,36 @@
       nixosConfigurations = {
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
-
-          extraHomeArgs = {
-            Theme = "Light";
-            Color = "Pink";
-          };
+          Theme = "latte";
+          Color = "pink";
         };
 
         IdeaPad = mkHost {
           hostName = "IdeaPad";
-
-          extraHomeArgs = {
-            Theme = "Dark";
-            Color = "Pink";
-          };
+          Theme = "mocha";
+          Color = "pink";
         };
 
         Pavilion = mkHost {
           hostName = "Pavilion";
-
           GPU = "i915";
+          Theme = "latte";
+          Color = "pink";
 
           extraSystemModules = [
             ./Home/Programs/Spotify.nix
           ];
-
-          extraHomeArgs = {
-            Theme = "Light";
-            Color = "Pink";
-          };
         };
 
         ThinkPad = mkHost {
           hostName = "ThinkPad";
+          Theme = "mocha";
+          Color = "blue";
 
           extraSystemModules = [
-            # NixOS Hardware
             NixOSHardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
-
             ./Home/Programs/Spotify.nix
-            # ./Home/Programs/VirtManager.nix
           ];
-
-          extraHomeArgs = {
-            Theme = "Dark";
-            Color = "Blue";
-          };
 
           extraHomeModules = [
             ./Home/Programs/PhotoGIMP.nix
@@ -186,19 +180,14 @@
 
         Desktop = mkHost {
           hostName = "Desktop";
+          Theme = "mocha";
+          Color = "blue";
 
           extraSystemModules = [
-            #./Home/Programs/Spotify.nix
             ./Home/Programs/VirtManager.nix
           ];
 
-          extraHomeArgs = {
-            Theme = "Dark";
-            Color = "Blue";
-          };
-
           extraHomeModules = [
-            ./Home/Programs/Spicetify.nix
             ./Home/Programs/PhotoGIMP.nix
             ./Home/Programs/Development/VSCode.nix
           ];

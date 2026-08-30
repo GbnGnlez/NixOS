@@ -4,7 +4,6 @@
 
 {
   imports = [
-    ../Catppuccin.nix
     ./WayBar.nix
   ];
 

@@ -3,7 +3,6 @@
 {
   imports = [
     ./ReGreet.nix
-    ../Catppuccin.nix
   ];
 
   # https://wiki.nixos.org/wiki/Niri/en#Installation
