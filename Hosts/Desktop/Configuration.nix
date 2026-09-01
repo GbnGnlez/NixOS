@@ -17,6 +17,8 @@
   # okular # KDE document viewer.
   # ];
 
+  services.udisks2.enable = true;
+
   # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
     tree # Command to produce a depth indented directory listing.
