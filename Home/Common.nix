@@ -39,7 +39,7 @@
     jetbrains-mono
     # papirus-folders
     # Papirus-Icon-Theme-Custom
-    papirus-icon-theme
+    # papirus-icon-theme
     glib
   ];
 
@@ -83,6 +83,8 @@
           "Papirus-Dark"
         else
           "Papirus-Dark";
+
+      # package = pkgs.papirus-icon-theme;
     };
 
     font = {
