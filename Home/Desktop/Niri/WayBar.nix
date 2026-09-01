@@ -16,6 +16,8 @@
         spacing = 4;
 
         modules-left = [
+          "custom/nix"
+          "custom/sep"
           "niri/workspaces"
           "custom/sep"
           "niri/window"
@@ -34,12 +36,15 @@
           "custom/sep"
           "disk"
           "custom/sep"
-          # "battery"
-          # "custom/sep"
           "clock"
           "custom/sep"
           "tray"
         ];
+
+        "custom/nix" = {
+          format = "";
+          tooltip = false;
+        };
 
         "niri/workspaces" = {
           disable-scroll = true;

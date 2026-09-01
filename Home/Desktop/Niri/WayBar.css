@@ -21,6 +21,14 @@ window#waybar {
   color: @fg;
 }
 
+/* NixOS */
+#custom-nix {
+  padding: 0 10px;
+  color: @blu;
+  font-size: 18px;
+}
+
+/* Workspaces */
 #workspaces button {
   padding: 0 6px;
   color: @cyn;
@@ -51,6 +59,7 @@ button:hover {
   box-shadow: inset 0 -3px #ffffff;
 }
 
+/* Separadores y módulos */
 #clock,
 #custom-sep,
 #battery,
