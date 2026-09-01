@@ -83,8 +83,6 @@
           "Papirus-Dark"
         else
           "Papirus-Dark";
-
-      package = pkgs.papirus-icon-theme;
     };
 
     font = {
