@@ -45,7 +45,7 @@
           disable-scroll = true;
           all-outputs = true;
           warp-on-scroll = false;
-          format = "{name}";
+          #format = "{name}";
         };
 
         "niri/window" = {
@@ -58,7 +58,7 @@
         };
 
         clock = {
-          format = "󰥔 {:%H:%M}";
+          format-alt = "{:%Y-%m-%d}";
         };
 
         cpu = {
