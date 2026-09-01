@@ -16,9 +16,9 @@
         spacing = 4;
 
         modules-left = [
-          "hyprland/workspaces"
+          "niri/workspaces"
           "custom/sep"
-          "hyprland/window"
+          "niri/window"
           "custom/sep"
         ];
 
@@ -39,7 +39,7 @@
           "tray"
         ];
 
-        "hyprland/workspaces" = {
+        "niri/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
           warp-on-scroll = false;
@@ -50,7 +50,7 @@
           };
         };
 
-        "hyprland/window" = {
+        "niri/window" = {
           max-length = 40;
           separate-outputs = false;
         };
