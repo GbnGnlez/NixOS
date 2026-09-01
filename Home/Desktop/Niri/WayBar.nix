@@ -34,8 +34,8 @@
           "custom/sep"
           "disk"
           "custom/sep"
-          "battery"
-          "custom/sep"
+          # "battery"
+          # "custom/sep"
           "clock"
           "custom/sep"
           "tray"
@@ -45,7 +45,6 @@
           disable-scroll = true;
           all-outputs = true;
           warp-on-scroll = false;
-          #format = "{name}";
         };
 
         "niri/window" = {
