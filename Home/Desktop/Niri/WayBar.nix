@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.packages = with pkgs; [
@@ -110,6 +110,6 @@
       };
     };
 
-    style = ./WayBar.css;
+    style = lib.mkForce ./WayBar.css;
   };
 }
