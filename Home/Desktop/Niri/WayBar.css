@@ -19,7 +19,6 @@
 window#waybar {
   background-color: @bg;
   color: @fg;
-  border-radius: 15px;
 }
 
 /* NixOS */
