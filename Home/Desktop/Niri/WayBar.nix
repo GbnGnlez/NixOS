@@ -14,7 +14,7 @@
         position = "top";
         height = 30;
         spacing = 4;
-        margin = 15 15 0 15;
+        margin = "15px 15px 0 15px";
 
         modules-left = [
           "custom/nix"
