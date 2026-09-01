@@ -109,7 +109,3 @@ button:hover {
 #network.disconnected {
   background-color: @red;
 }
-
-#tray {
-  color: @blu;
-}

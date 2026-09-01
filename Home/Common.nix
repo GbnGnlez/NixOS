@@ -39,6 +39,7 @@
     jetbrains-mono
     # papirus-folders
     # Papirus-Icon-Theme-Custom
+    papirus-icon-theme
     glib
   ];
 
@@ -74,16 +75,17 @@
     };
 
     # Catppuccin gestiona los iconos automáticamente via catppuccin-papirus-folders
-    # iconTheme = {
-    #   name =
-    #     if Theme == "Light" then
-    #       "Papirus-Light"
-    #     else if Theme == "Dark" then
-    #       "Papirus-Dark"
-    #     else
-    #       "Papirus-Dark";
-    #   package = Papirus-Icon-Theme-Custom;
-    # };
+    iconTheme = {
+      name =
+        if Theme == "Light" then
+          "Papirus-Light"
+        else if Theme == "Dark" then
+          "Papirus-Dark"
+        else
+          "Papirus-Dark";
+
+      package = pkgs.papirus-icon-theme;
+    };
 
     font = {
       name = "Inter";
