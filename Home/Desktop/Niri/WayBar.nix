@@ -12,52 +12,104 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 35;
-        margin = "15 15 0 15";
+        height = 30;
+        spacing = 4;
 
         modules-left = [
-          "custom/nixos"
-          "niri/workspaces"
+          "hyprland/workspaces"
+          "custom/sep"
+          "hyprland/window"
+          "custom/sep"
         ];
 
-        modules-center = [
-          "clock"
-        ];
+        modules-center = [ ];
 
         modules-right = [
-          "custom/power"
+          "custom/sep"
+          "network"
+          "custom/sep"
+          "cpu"
+          "custom/sep"
+          "memory"
+          "custom/sep"
+          "disk"
+          "custom/sep"
+          "clock"
+          "custom/sep"
+          "tray"
         ];
 
-        "custom/nixos" = {
-          format = "";
-          tooltip = false;
-          on-click = "fuzzel";
-        };
-
-        "niri/workspaces" = {
-          format = "{icon}";
-          on-click = "activate";
+        "hyprland/workspaces" = {
+          disable-scroll = true;
           all-outputs = true;
+          warp-on-scroll = false;
+          format = "{name}";
 
-          format-icons = {
-            active = "";
-            default = "";
+          persistent-workspaces = {
+            "*" = 9;
           };
         };
 
-        "clock" = {
+        "hyprland/window" = {
+          max-length = 40;
+          separate-outputs = false;
+        };
+
+        tray = {
+          spacing = 10;
+        };
+
+        clock = {
+          format-alt = "{:%Y-%m-%d}";
+        };
+
+        cpu = {
+          format = "CPU: {usage}%";
           tooltip = false;
         };
 
-        "custom/power" = {
-          format = "";
-          tooltip = false;
-          on-click = "fuzzel --dmenu --prompt='Power: ' < <(printf 'Apagar\\nReiniciar\\nCancelar')";
+        memory = {
+          format = "Mem: {used}GiB";
+        };
+
+        disk = {
+          interval = 60;
+          path = "/";
+          format = "Disk: {free}";
+        };
+
+        battery = {
+          states = {
+            good = 95;
+            warning = 30;
+            critical = 15;
+          };
+
+          format = "Bat: {capacity}% {icon} {time}";
+          format-plugged = "{capacity}% ";
+          format-alt = "Bat {capacity}%";
+          format-time = "{H}:{M}";
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
+        };
+
+        network = {
+          format = "Online";
+          format-disconnected = "Disconnected ⚠";
+        };
+
+        "custom/sep" = {
+          format = "|";
+          interval = 0;
         };
       };
     };
 
     # style = ./WayBar.css;
-
   };
 }

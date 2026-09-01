@@ -4,7 +4,7 @@
 
 {
   imports = [
-    #./WayBar.nix
+    ./WayBar.nix
     #./NIX/Layout.nix
   ];
 
