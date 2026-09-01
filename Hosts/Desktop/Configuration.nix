@@ -22,6 +22,7 @@
     tree # Command to produce a depth indented directory listing.
     fastfetch
     nautilus
+    udiskie
     nemo
     # kdePackages.kolourpaint # Easy-to-use paint program.
     kdePackages.konsole # Terminal emulator by KDE.
