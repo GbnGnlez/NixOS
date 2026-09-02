@@ -37,6 +37,8 @@
           "custom/sep"
           "disk"
           "custom/sep"
+          "battery"
+          "custom/sep"
           "clock"
           "custom/sep"
           "tray"
