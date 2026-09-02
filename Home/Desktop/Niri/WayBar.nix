@@ -90,10 +90,9 @@
             critical = 15;
           };
 
-          format = "Bat: {capacity}% {icon} {time}";
+          format = "Bat: {capacity}% {icon}";
           format-plugged = "{capacity}% ";
           format-alt = "Bat {capacity}%";
-          format-time = "{H}:{M}";
           format-icons = [
             ""
             ""
