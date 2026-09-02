@@ -6,6 +6,8 @@ let
     version = "1.4.1";
 
     vscodeExtUniqueId = "kdl-org.kdl-v1";
+    vscodeExtPublisher = "kdl-org";
+    vscodeExtName = "kdl-v1";
 
     src = pkgs.fetchurl {
       url = "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/kdl-org/vsextensions/kdl-v1/1.4.1/vspackage";
