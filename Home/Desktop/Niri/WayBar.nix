@@ -92,7 +92,6 @@
 
           format = "Bat: {capacity}% {icon}";
           format-plugged = "{capacity}% ";
-          format-alt = "Bat {capacity}%";
           format-icons = [
             ""
             ""
