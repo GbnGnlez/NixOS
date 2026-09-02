@@ -65,7 +65,7 @@
         };
 
         clock = {
-          format = "{:%d-%m-%Y}";
+          # format = "{:%d-%m-%Y}";
         };
 
         cpu = {
