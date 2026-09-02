@@ -65,7 +65,7 @@
         };
 
         clock = {
-          format-alt = "{:%Y-%m-%d}";
+          format = "{:%d-%m-%Y}";
         };
 
         cpu = {
