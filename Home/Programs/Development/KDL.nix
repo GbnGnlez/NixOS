@@ -11,7 +11,7 @@ let
 
     src = pkgs.fetchurl {
       url = "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/kdl-org/vsextensions/kdl-v1/1.4.1/vspackage";
-      hash = pkgs.lib.fakeHash;
+      hash = "sha256-xE/Zerw7/ZyI5JYq7PaF5UjMxhINeydkUSz+qR7g4AM=";
     };
   };
 in
