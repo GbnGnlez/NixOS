@@ -5,8 +5,9 @@
 {
   imports = [
     ./Git.nix
-    ./NixIDE.nix
     ./GitHubActions.nix
+    ./NixIDE.nix
+    ./KDL.nix
   ];
 
   home.packages = with pkgs; [
