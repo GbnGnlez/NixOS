@@ -6,7 +6,7 @@ let
       publisher = "kdl-org";
       name = "kdl-v1";
       version = "1.4.1";
-      hash = "sha256-xE/Zerw7/ZyI5JYq7PaF5UjMxhINeydkUSz+qR7g4AM=";
+      hash = "sha256-9hC+0GEj6cxCgPk2R9OMPUrkqXaztV7xDLrQYPqAedg=";
     };
   };
 in
