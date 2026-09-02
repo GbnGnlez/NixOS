@@ -168,22 +168,6 @@
           Color = "blue";
 
           extraSystemModules = [
-            NixOSHardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
-            ./Home/Programs/Spotify.nix
-          ];
-
-          extraHomeModules = [
-            ./Home/Programs/PhotoGIMP.nix
-            ./Home/Programs/Development/VSCode.nix
-          ];
-        };
-
-        Desktop = mkHost {
-          hostName = "Desktop";
-          Theme = "mocha";
-          Color = "blue";
-
-          extraSystemModules = [
             ./Home/Programs/VirtManager.nix
           ];
 
