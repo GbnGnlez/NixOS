@@ -11,7 +11,19 @@ let
   };
 in
 {
-  programs.vscode.profiles.default.extensions = [
-    kdl-v1
+  home.packages = with pkgs; [
+    kdlfmt
   ];
+
+  programs.vscode = {
+    profiles.default.extensions = [
+      kdl-v1
+    ];
+
+    profiles.default.userSettings = {
+      "[kdl]" = {
+        "editor.formatOnSave" = true;
+      };
+    };
+  };
 }
