@@ -10,9 +10,8 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./KScreenLocker.nix
-    ./Panels.nix
+    # ./KScreenLocker.nix
+    # ./Panels.nix
     # ./Fonts.nix
   ];
 
