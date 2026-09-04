@@ -36,6 +36,7 @@
   home.packages = with pkgs; [
     bibata-cursors
     inter
+    gtk3
     papirus-icon-theme
     jetbrains-mono
     papirus-folders
