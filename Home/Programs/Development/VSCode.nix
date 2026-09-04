@@ -7,7 +7,7 @@
     ./Git.nix
     ./GitHubActions.nix
     ./NixIDE.nix
-    ./KDL.nix
+    # ./KDL.nix
   ];
 
   home.packages = with pkgs; [
