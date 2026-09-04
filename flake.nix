@@ -63,7 +63,7 @@
         {
           hostName,
           GPU ? "amdgpu",
-          Theme,
+          DarkTheme ? false,
           Color,
           extraSystemModules ? [ ],
           extraHomeArgs ? { },
@@ -75,7 +75,7 @@
           specialArgs = {
             inherit
               GPU
-              Theme
+              DarkTheme
               Color
               Stylix
               ;
@@ -131,7 +131,7 @@
 
                 extraSpecialArgs = {
                   inherit
-                    Theme
+                    DarkTheme
                     Color
                     Stylix
                     ;
@@ -175,20 +175,18 @@
       nixosConfigurations = {
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
-          Theme = "Light";
           Color = "pink";
         };
 
         IdeaPad = mkHost {
           hostName = "IdeaPad";
-          Theme = "Dark";
+          DarkTheme = true;
           Color = "pink";
         };
 
         Pavilion = mkHost {
           hostName = "Pavilion";
           GPU = "i915";
-          Theme = "Light";
           Color = "pink";
 
           extraHomeArgs = {
@@ -203,7 +201,7 @@
 
         ThinkPad = mkHost {
           hostName = "ThinkPad";
-          Theme = "Dark";
+          DarkTheme = true;
           Color = "blue";
 
           extraSystemModules = [
