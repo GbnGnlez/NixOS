@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./ReGreet.nix
+    # ./ReGreet.nix
   ];
 
   # https://wiki.nixos.org/wiki/Niri/en#Installation
