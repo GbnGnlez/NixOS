@@ -29,7 +29,6 @@
 
     Catppuccin.url = "github:Catppuccin/Nix";
 
-    # Spicetify Nix
     Spicetify = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "NixPkgs";
