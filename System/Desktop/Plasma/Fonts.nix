@@ -1,13 +1,8 @@
 # https://github.com/nix-community/plasma-manager/blob/trunk/modules/fonts.nix
 
-{ pkgs, ... }:
+{ ... }:
 
 {
-  home.packages = with pkgs; [
-    inter
-    nerd-fonts.jetbrains-mono
-  ];
-
   programs.plasma.fonts = {
     general = {
       family = "Inter"; # The font family of this font.

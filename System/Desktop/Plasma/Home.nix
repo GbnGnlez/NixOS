@@ -13,7 +13,7 @@
     # Include the results of the hardware scan.
     ./KScreenLocker.nix
     ./Panels.nix
-    ./Fonts.nix
+    # ./Fonts.nix
   ];
 
   # Set resolution to 1280x720 automatically upon graphical session startup
