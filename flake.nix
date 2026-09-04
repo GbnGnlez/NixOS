@@ -175,7 +175,7 @@
         ThinkPad = mkHost {
           hostName = "ThinkPad";
           DarkTheme = true;
-          Color = "blue";
+          Color = "pink";
 
           extraSystemModules = [
             NixOSHardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
