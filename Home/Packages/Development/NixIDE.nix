@@ -4,8 +4,8 @@
 
 {
   home.packages = with pkgs; [
-    nixd # Language server
-    nixfmt # Formatter
+    nixd
+    nixfmt-rfc-style # o pkgs.nixfmt
   ];
 
   programs.vscode = {
@@ -21,11 +21,19 @@
       "editor.formatOnSave" = true;
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
-
       "nix.serverSettings" = {
         "nixd" = {
           "formatting" = {
             "command" = [ "nixfmt" ];
+          };
+          "options" = {
+            "nixos" = {
+              "expr" = "(builtins.getFlake \"/home/nixos/NixOS\").nixosConfigurations.ThinkPad.options";
+            };
+            "home-manager" = {
+              "expr" =
+                "(builtins.getFlake \"/home/nixos/NixOS\").nixosConfigurations.ThinkPad.options.home-manager.users.type.getSubOptions [ ]";
+            };
           };
         };
       };
