@@ -38,6 +38,12 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "NixPkgs";
     };
+
+    PlasmaManager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "NixPkgs";
+      inputs.home-manager.follows = "HomeManager";
+    };
   };
 
   outputs =
@@ -49,6 +55,7 @@
       # Catppuccin,
       Stylix,
       Spicetify,
+      PlasmaManager,
       ...
     }:
     let
@@ -71,7 +78,6 @@
               Theme
               Color
               Stylix
-              Spicetify
               ;
           };
 
@@ -94,10 +100,10 @@
             ./Services/GarbageCollector.nix
 
             # Plasma
-            # ./System/Desktop/Plasma/Configuration.nix
+            ./System/Desktop/Plasma/Configuration.nix
 
             # XFCE
-            ./System/Desktop/Xfce.nix
+            # ./System/Desktop/Xfce.nix
 
             # Niri
             # ./System/Desktop/Niri/Configuration.nix
@@ -128,7 +134,6 @@
                     Theme
                     Color
                     Stylix
-                    Spicetify
                     ;
                 }
                 // extraHomeArgs;
@@ -140,16 +145,16 @@
                     # Catppuccin
                     # ./Home/Desktop/Catppuccin.nix
 
-                    # Spicetify (Home Manager Module)
-                    Spicetify.homeManagerModules.default
-                    ./Home/Packages/Spicetify.nix
-
                     # Common packages
                     ./Home/Packages/Firefox.nix
                     ./Home/Packages/OnlyOffice.nix
 
                     # Xfce
-                    ./System/Desktop/Xfce/Home.nix
+                    # ./System/Desktop/Xfce/Home.nix
+
+                    # Plasma Manager
+                    PlasmaManager.homeModules.plasma-manager
+
                     # Plasma
                     # ./System/Desktop/Plasma/Home.nix
 
@@ -186,8 +191,13 @@
           Theme = "Light";
           Color = "pink";
 
-          extraSystemModules = [
-            ./Home/Packages/Spotify.nix
+          extraHomeArgs = {
+            inherit Spicetify;
+          };
+
+          extraHomeModules = [
+            Spicetify.homeManagerModules.default
+            ./Home/Packages/Spicetify.nix
           ];
         };
 
@@ -201,7 +211,13 @@
             ./Home/Packages/VirtManager.nix
           ];
 
+          extraHomeArgs = {
+            inherit Spicetify;
+          };
+
           extraHomeModules = [
+            Spicetify.homeManagerModules.default
+            ./Home/Packages/Spicetify.nix
             ./Home/Packages/PhotoGIMP.nix
             ./Home/Packages/Development/VSCode.nix
           ];
