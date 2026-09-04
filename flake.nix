@@ -94,7 +94,10 @@
             ./Services/GarbageCollector.nix
 
             # Plasma
-            ./System/Desktop/Plasma/Configuration.nix
+            # ./System/Desktop/Plasma/Configuration.nix
+
+            # XFCE
+            ./System/Desktop/Xfce.nix
 
             # Niri
             # ./System/Desktop/Niri/Configuration.nix
