@@ -27,7 +27,7 @@
       inputs.nixpkgs.follows = "NixPkgs";
     };
 
-    Catppuccin.url = "github:Catppuccin/Nix";
+    # Catppuccin.url = "github:Catppuccin/Nix";
 
     Spicetify = {
       url = "github:Gerg-L/spicetify-nix";
@@ -41,7 +41,7 @@
       HomeManager,
       NUR,
       NixOSHardware,
-      Catppuccin,
+      # Catppuccin,
       Spicetify,
       ...
     }:
@@ -77,7 +77,7 @@
             ./Hosts/Common.nix
 
             # System
-            ./System/Desktop/Catppuccin.nix
+            # ./System/Desktop/Catppuccin.nix
             ./System/Plymouth.nix
             ./System/PipeWire.nix
             ./Services/Avahi.nix
@@ -99,7 +99,7 @@
             # Home Manager
             HomeManager.nixosModules.default
 
-            Catppuccin.nixosModules.catppuccin
+            # Catppuccin.nixosModules.catppuccin
 
             {
               home-manager = {
@@ -117,7 +117,7 @@
                 users.nixos = {
                   imports = [
                     ./Home/Common.nix
-                    ./Home/Desktop/Catppuccin.nix
+                    # ./Home/Desktop/Catppuccin.nix
 
                     # Spicetify (Home Manager Module)
                     Spicetify.homeManagerModules.default
@@ -133,7 +133,7 @@
                     # Niri
                     # ./Home/Desktop/Niri/Home.nix
 
-                    Catppuccin.homeModules.catppuccin
+                    # Catppuccin.homeModules.catppuccin
                   ]
                   ++ extraHomeModules;
                 };
