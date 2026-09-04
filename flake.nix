@@ -148,6 +148,8 @@
                     ./Home/Packages/Firefox.nix
                     ./Home/Packages/OnlyOffice.nix
 
+                    # Xfce
+                    ./System/Desktop/Xfce/Home.nix
                     # Plasma
                     # ./System/Desktop/Plasma/Home.nix
 
