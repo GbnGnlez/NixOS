@@ -17,20 +17,20 @@
   ];
 
   # Set resolution to 1280x720 automatically upon graphical session startup
-  systemd.user.services.set-display-resolution = {
-    Unit = {
-      Description = "Set KDE display resolution to 1280x720";
-      After = [ "graphical-session.target" ];
-      PartOf = [ "graphical-session.target" ];
-    };
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-    Service = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.eDP-1.mode.1280x720@60";
-    };
-  };
+  # systemd.user.services.set-display-resolution = {
+  # Unit = {
+  # Description = "Set KDE display resolution to 1280x720";
+  # After = [ "graphical-session.target" ];
+  # PartOf = [ "graphical-session.target" ];
+  # };
+  # Install = {
+  # WantedBy = [ "graphical-session.target" ];
+  # };
+  # Service = {
+  # Type = "oneshot";
+  # ExecStart = "${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor output.eDP-1.mode.1280x720@60";
+  # };
+  # };
 
   programs.plasma = {
     enable = true;

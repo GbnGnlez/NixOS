@@ -84,7 +84,7 @@
             ./Services/GarbageCollector.nix
 
             # Plasma
-            ./System/Desktop/Plasma/Plasma.nix
+            ./System/Desktop/Plasma/Configuration.nix
 
             # Niri
             # ./System/Desktop/Niri/Configuration.nix
@@ -126,6 +126,9 @@
                     # Common packages
                     ./Home/Packages/Firefox.nix
                     ./Home/Packages/OnlyOffice.nix
+
+                    # Plasma
+                    ./System/Desktop/Plasma/Home.nix
 
                     # Niri
                     # ./Home/Desktop/Niri/Home.nix
