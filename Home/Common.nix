@@ -36,10 +36,10 @@
   home.packages = with pkgs; [
     bibata-cursors
     inter
+    papirus-icon-theme
     jetbrains-mono
-    # papirus-folders
+    papirus-folders
     # Papirus-Icon-Theme-Custom
-    # papirus-icon-theme
     glib
   ];
 
@@ -59,7 +59,6 @@
     size = 16;
   };
 
-  # CONFIGURACIÓN GTK
   gtk = {
     enable = true;
 
@@ -74,7 +73,6 @@
       package = pkgs.kdePackages.breeze-gtk;
     };
 
-    # Catppuccin gestiona los iconos automáticamente via catppuccin-papirus-folders
     iconTheme = {
       name =
         if Theme == "Light" then
@@ -84,61 +82,13 @@
         else
           "Papirus-Dark";
 
-      # package = pkgs.papirus-icon-theme;
+      package = pkgs.papirus-icon-theme;
     };
 
     font = {
       name = "Inter";
       size = 10;
       package = pkgs.inter;
-    };
-
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme =
-        if Theme == "Light" then
-          0
-        else if Theme == "Dark" then
-          1
-        else
-          1;
-
-      # Barra de título:
-      # SIN minimizar | maximizar | cerrar
-      gtk-decoration-layout = "menu:maximize,close";
-    };
-
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme =
-        if Theme == "Light" then
-          0
-        else if Theme == "Dark" then
-          1
-        else
-          1;
-
-      # Barra de título:
-      # SIN minimizar | maximizar | cerrar
-      gtk-decoration-layout = "menu:maximize,close";
-    };
-  };
-
-  # CONFIGURACIÓN PARA APLICACIONES Qt
-  qt = {
-    enable = true;
-    platformTheme.name = "kvantum";
-    style.name = "kvantum";
-  };
-
-  # DCONF
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme =
-        if Theme == "Light" then
-          "prefer-light"
-        else if Theme == "Dark" then
-          "prefer-dark"
-        else
-          "prefer-dark";
     };
   };
 }
