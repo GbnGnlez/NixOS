@@ -61,10 +61,10 @@
 
   <property name="plugins" type="empty">
 
-    <!-- Menú -->
+    <!-- Whisker Menu -->
     <property name="plugin-1" type="string" value="whiskermenu"/>
 
-    <!-- Ventanas -->
+    <!-- Tasklist -->
     <property name="plugin-2" type="string" value="tasklist">
       <property name="grouping" type="uint" value="1"/>
     </property>
@@ -81,7 +81,8 @@
     <property name="clipman" type="empty">
       <property name="settings" type="empty">
         <property name="show-qr-code" type="bool" value="false"/>
-        <property name="add-primary-clipboard" type="bool" value="true"/>
+        <property name="add-primary-clipboard" type="bool" value="false"/>
+        <property name="persistent-primary-clipboard" type="bool" value="true"/>
       </property>
 
       <property name="tweaks" type="empty">
@@ -90,16 +91,16 @@
       </property>
     </property>
 
-    <!-- Audio -->
+    <!-- PulseAudio -->
     <property name="plugin-20" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="volume-max" type="uint" value="100"/>
     </property>
 
-    <!-- Power manager -->
+    <!-- Power Manager -->
     <property name="plugin-19" type="string" value="power-manager-plugin"/>
 
-    <!-- Bandeja del sistema -->
+    <!-- System Tray -->
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="icon-size" type="int" value="0"/>
@@ -153,25 +154,28 @@
     <!-- Separador -->
     <property name="plugin-12" type="string" value="separator"/>
 
-    <!-- Lanzadores -->
+    <!-- Launcher 1 -->
     <property name="plugin-13" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17885134621.desktop"/>
       </property>
     </property>
 
+    <!-- Launcher 2 -->
     <property name="plugin-14" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17885134622.desktop"/>
       </property>
     </property>
 
+    <!-- Launcher 3 -->
     <property name="plugin-15" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17885134623.desktop"/>
       </property>
     </property>
 
+    <!-- Launcher 4 -->
     <property name="plugin-16" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17885134634.desktop"/>
@@ -181,7 +185,7 @@
     <!-- Separador -->
     <property name="plugin-17" type="string" value="separator"/>
 
-    <!-- Directorio home -->
+    <!-- Home -->
     <property name="plugin-18" type="string" value="directorymenu">
       <property name="base-directory" type="string" value="/home/nixos"/>
     </property>
