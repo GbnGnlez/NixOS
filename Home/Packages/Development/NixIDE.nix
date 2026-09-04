@@ -4,7 +4,7 @@
 
 {
   home.packages = with pkgs; [
-    nil # Language server
+    nixd # Language server
     nixfmt # Formatter
   ];
 
@@ -20,15 +20,15 @@
 
       "editor.formatOnSave" = true;
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nil";
+      "nix.serverPath" = "nixd";
+
       "nix.serverSettings" = {
-        "nil" = {
+        "nixd" = {
           "formatting" = {
             "command" = [ "nixfmt" ];
           };
         };
       };
     };
-
   };
 }

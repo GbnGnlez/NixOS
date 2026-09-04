@@ -1,7 +1,7 @@
 # https://wiki.nixos.org/wiki/Plymouth
 
 {
-  GPU ? "amdgpu",
+  GPU,
   ...
 }:
 
