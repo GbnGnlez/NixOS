@@ -84,7 +84,7 @@
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
 
-# Plasma
+            # Plasma
             ./System/Desktop/Plasma/Plasma.nix
 
             # Niri
@@ -122,11 +122,11 @@
 
                     # Spicetify (Home Manager Module)
                     Spicetify.homeManagerModules.default
-                    ./Home/Programs/Spicetify.nix
+                    ./Home/Packages/Spicetify.nix
 
                     # Common packages
-                    ./Home/Programs/Firefox.nix
-                    ./Home/Programs/OnlyOffice.nix
+                    ./Home/Packages/Firefox.nix
+                    ./Home/Packages/OnlyOffice.nix
 
                     # Niri
                     # ./Home/Desktop/Niri/Home.nix
@@ -161,7 +161,7 @@
           Color = "pink";
 
           extraSystemModules = [
-            ./Home/Programs/Spotify.nix
+            ./Home/Packages/Spotify.nix
           ];
         };
 
@@ -171,12 +171,12 @@
           Color = "blue";
 
           extraSystemModules = [
-            ./Home/Programs/VirtManager.nix
+            ./Home/Packages/VirtManager.nix
           ];
 
           extraHomeModules = [
-            ./Home/Programs/PhotoGIMP.nix
-            ./Home/Programs/Development/VSCode.nix
+            ./Home/Packages/PhotoGIMP.nix
+            ./Home/Packages/Development/VSCode.nix
           ];
         };
       };
