@@ -29,6 +29,11 @@
 
     # Catppuccin.url = "github:Catppuccin/Nix";
 
+    Stylix = {
+      url = "github:Nix-Community/Stylix";
+      inputs.nixpkgs.follows = "NixPkgs";
+    };
+
     Spicetify = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "NixPkgs";
@@ -42,6 +47,7 @@
       NUR,
       NixOSHardware,
       # Catppuccin,
+      Stylix,
       Spicetify,
       ...
     }:
@@ -64,6 +70,7 @@
               GPU
               Theme
               Color
+              Stylix
               Spicetify
               ;
           };
@@ -71,6 +78,9 @@
           modules = [
             # NUR
             NUR.modules.nixos.default
+
+            # Stylix
+            Stylix.nixosModules.stylix
 
             # Host
             ./Hosts/${hostName}/Configuration.nix
@@ -99,6 +109,7 @@
             # Home Manager
             HomeManager.nixosModules.default
 
+            # Catppuccin
             # Catppuccin.nixosModules.catppuccin
 
             {
@@ -110,13 +121,20 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  inherit Theme Color Spicetify;
+                  inherit
+                    Theme
+                    Color
+                    Stylix
+                    Spicetify
+                    ;
                 }
                 // extraHomeArgs;
 
                 users.nixos = {
                   imports = [
                     ./Home/Common.nix
+
+                    # Catppuccin
                     # ./Home/Desktop/Catppuccin.nix
 
                     # Spicetify (Home Manager Module)
@@ -133,6 +151,7 @@
                     # Niri
                     # ./Home/Desktop/Niri/Home.nix
 
+                    # Catppuccin
                     # Catppuccin.homeModules.catppuccin
                   ]
                   ++ extraHomeModules;
