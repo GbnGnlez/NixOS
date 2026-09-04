@@ -1,10 +1,10 @@
-#https://github.com/Diolinux/Photogimp
+# https://github.com/Diolinux/Photogimp
 
 { pkgs, ... }:
 
 let
   PhotoGIMP = pkgs.fetchzip {
-    url = "https://github.com/Diolinux/PhotoGIMP/releases/download/3.0/PhotoGIMP-linux.zip";
+    url = "https://github.com/Diolinux/PhotoGIMP/releases/latest/download/PhotoGIMP-linux.zip";
     hash = "sha256-g7JNSr6LczV0uHvy5UjRwDwVkWTGMFRd0bW9RaBoDjM=";
   };
 in
