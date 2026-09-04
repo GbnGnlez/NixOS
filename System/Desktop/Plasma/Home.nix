@@ -11,9 +11,9 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./Plasma/KScreenLocker.nix
-    ./Plasma/Panels.nix
-    ./Plasma/Fonts.nix
+    ./KScreenLocker.nix
+    ./Panels.nix
+    ./Fonts.nix
   ];
 
   # Set resolution to 1280x720 automatically upon graphical session startup

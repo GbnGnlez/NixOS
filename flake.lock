@@ -1,23 +1,5 @@
 {
   "nodes": {
-    "Catppuccin": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1786696832,
-        "narHash": "sha256-wjdfX+jCJCJsteGD75xEfsDR3yATFFEx4mwelhlDXdU=",
-        "owner": "Catppuccin",
-        "repo": "Nix",
-        "rev": "35d78c213b65e38789bcb359aae2380fcb4dc3e8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Catppuccin",
-        "repo": "Nix",
-        "type": "github"
-      }
-    },
     "HomeManager": {
       "inputs": {
         "nixpkgs": [
@@ -137,22 +119,8 @@
         "type": "github"
       }
     },
-    "nixpkgs": {
-      "locked": {
-        "lastModified": 1786534138,
-        "narHash": "sha256-Cwffw7dPM56d8spt4/queFQ1cKg69D9qrsp+wfwKvfo=",
-        "rev": "044bfe75bfe4c7bbe043dc17b5e42ea823b84a09",
-        "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1052792.044bfe75bfe4/nixexprs.tar.xz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz"
-      }
-    },
     "root": {
       "inputs": {
-        "Catppuccin": "Catppuccin",
         "HomeManager": "HomeManager",
         "NUR": "NUR",
         "NixOSHardware": "NixOSHardware",
