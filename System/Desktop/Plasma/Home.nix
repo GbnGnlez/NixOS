@@ -1,6 +1,6 @@
 {
   pkgs,
-  DarkTheme ? false,
+  DarkTheme,
   Color,
   ...
 }:
