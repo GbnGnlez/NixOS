@@ -171,6 +171,7 @@
           Color = "blue";
 
           extraSystemModules = [
+            NixOSHardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
             ./Home/Packages/VirtManager.nix
           ];
 
