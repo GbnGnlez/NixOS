@@ -10,9 +10,9 @@
 
 {
   imports = [
-    # ./KScreenLocker.nix
-    # ./Panels.nix
-    # ./Fonts.nix
+    ./KScreenLocker.nix
+    ./Panels.nix
+    ./Fonts.nix
   ];
 
   # Set resolution to 1280x720 automatically upon graphical session startup

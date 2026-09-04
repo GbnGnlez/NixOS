@@ -128,7 +128,7 @@
                     ./Home/Packages/OnlyOffice.nix
 
                     # Plasma
-                    ./System/Desktop/Plasma/Home.nix
+                    # ./System/Desktop/Plasma/Home.nix
 
                     # Niri
                     # ./Home/Desktop/Niri/Home.nix
