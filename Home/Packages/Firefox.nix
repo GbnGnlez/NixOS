@@ -12,7 +12,6 @@
       isDefault = true;
 
       extensions = {
-        force = true; # Permite a Catppuccin configurar extensiones sin fallar la aserción
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           sponsorblock
