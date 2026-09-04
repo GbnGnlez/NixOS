@@ -2,22 +2,26 @@
 
 <channel name="xfce4-panel" version="1.0">
   <property name="configver" type="int" value="2"/>
+
   <property name="panels" type="array">
     <value type="int" value="1"/>
     <value type="int" value="2"/>
+
     <property name="dark-mode" type="bool" value="true"/>
+
+    <!-- Panel principal -->
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=6;x=0;y=0"/>
       <property name="length" type="double" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="0"/>
       <property name="size" type="uint" value="26"/>
+
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
-        <value type="int" value="5"/>
         <value type="int" value="20"/>
         <value type="int" value="19"/>
         <value type="int" value="6"/>
@@ -26,18 +30,22 @@
         <value type="int" value="9"/>
         <value type="int" value="10"/>
       </property>
+
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="leave-opacity" type="uint" value="100"/>
       <property name="mode" type="uint" value="0"/>
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="length-adjust" type="bool" value="true"/>
     </property>
+
+    <!-- Panel inferior -->
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="1"/>
       <property name="position" type="string" value="p=10;x=0;y=0"/>
       <property name="length" type="uint" value="1"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="48"/>
+
       <property name="plugin-ids" type="array">
         <value type="int" value="11"/>
         <value type="int" value="12"/>
@@ -50,21 +58,48 @@
       </property>
     </property>
   </property>
+
   <property name="plugins" type="empty">
+
+    <!-- Menú -->
     <property name="plugin-1" type="string" value="whiskermenu"/>
+
+    <!-- Ventanas -->
     <property name="plugin-2" type="string" value="tasklist">
       <property name="grouping" type="uint" value="1"/>
     </property>
+
+    <!-- Separador expandible -->
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-4" type="string" value="pager">
-      <property name="rows" type="uint" value="1"/>
+
+    <!-- Clipman -->
+    <property name="plugin-4" type="string" value="xfce4-clipman-plugin"/>
+
+    <property name="clipman" type="empty">
+      <property name="settings" type="empty">
+        <property name="show-qr-code" type="bool" value="false"/>
+        <property name="add-primary-clipboard" type="bool" value="true"/>
+      </property>
+
+      <property name="tweaks" type="empty">
+        <property name="popup-at-pointer" type="bool" value="true"/>
+        <property name="never-confirm-history-clear" type="bool" value="true"/>
+      </property>
     </property>
-    <property name="plugin-5" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
+
+    <!-- Audio -->
+    <property name="plugin-20" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="volume-max" type="uint" value="100"/>
     </property>
+
+    <!-- Power manager -->
+    <property name="plugin-19" type="string" value="power-manager-plugin"/>
+
+    <!-- Bandeja del sistema -->
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="icon-size" type="int" value="0"/>
@@ -73,15 +108,24 @@
       <property name="menu-is-primary" type="bool" value="false"/>
       <property name="symbolic-icons" type="bool" value="false"/>
     </property>
+
+    <!-- Separador -->
     <property name="plugin-7" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
+
+    <!-- Reloj -->
     <property name="plugin-8" type="string" value="clock">
       <property name="mode" type="uint" value="2"/>
+      <property name="digital-layout" type="uint" value="0"/>
     </property>
+
+    <!-- Separador -->
     <property name="plugin-9" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
+
+    <!-- Acciones -->
     <property name="plugin-10" type="string" value="actions">
       <property name="items" type="array">
         <value type="string" value="-lock-screen"/>
@@ -97,40 +141,50 @@
         <value type="string" value="-logout"/>
         <value type="string" value="-logout-dialog"/>
       </property>
+
       <property name="appearance" type="uint" value="0"/>
       <property name="button-title" type="uint" value="3"/>
       <property name="ask-confirmation" type="bool" value="true"/>
     </property>
+
+    <!-- Mostrar escritorio -->
     <property name="plugin-11" type="string" value="showdesktop"/>
+
+    <!-- Separador -->
     <property name="plugin-12" type="string" value="separator"/>
+
+    <!-- Lanzadores -->
     <property name="plugin-13" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17885134621.desktop"/>
       </property>
     </property>
+
     <property name="plugin-14" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17885134622.desktop"/>
       </property>
     </property>
+
     <property name="plugin-15" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17885134623.desktop"/>
       </property>
     </property>
+
     <property name="plugin-16" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17885134634.desktop"/>
       </property>
     </property>
+
+    <!-- Separador -->
     <property name="plugin-17" type="string" value="separator"/>
+
+    <!-- Directorio home -->
     <property name="plugin-18" type="string" value="directorymenu">
       <property name="base-directory" type="string" value="/home/nixos"/>
     </property>
-    <property name="plugin-19" type="string" value="power-manager-plugin"/>
-    <property name="plugin-20" type="string" value="pulseaudio">
-      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="volume-max" type="uint" value="100"/>
-    </property>
+
   </property>
 </channel>
