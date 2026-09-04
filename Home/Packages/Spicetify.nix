@@ -4,7 +4,7 @@
 {
   pkgs,
   Spicetify,
-  Theme,
+  DarkTheme,
   ...
 }:
 
@@ -16,9 +16,9 @@ in
   programs.spicetify = {
     enable = true;
 
-    # Asigna dinámicamente el flavor ("mocha" o "latte")
+    # Asigna dinámicamente el flavor ("mocha" si es oscuro, "latte" si es claro)
     # theme = spicePkgs.themes.catppuccin;
-    # colorScheme = Theme;
+    # colorScheme = if DarkTheme then "mocha" else "latte";
 
     enabledExtensions = with spicePkgs.extensions; [
       adblock

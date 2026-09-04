@@ -1,10 +1,7 @@
 {
   pkgs,
-  IconVariant ? "Light",
-  CursorVariant ? "Classic",
-  CursorSize ? 16,
-  AccentColor ? "233,58,154",
-  LookAndFeel ? "",
+  DarkTheme ? false,
+  Color,
   ...
 }:
 
@@ -43,17 +40,19 @@
     configFile."kwinrc"."NightColor"."NightTemperature" = 3750;
 
     workspace = {
-      lookAndFeel = "org.kde.breeze" + LookAndFeel + ".desktop";
-      iconTheme = "Papirus-" + IconVariant;
+      lookAndFeel = if DarkTheme then "org.kde.breezedark.desktop" else "org.kde.breeze.desktop";
+      iconTheme = if DarkTheme then "Papirus-Dark" else "Papirus-Light";
 
       cursor = {
-        theme = "Bibata-Modern-" + CursorVariant;
-        size = CursorSize;
+        theme = if DarkTheme then "Bibata-Modern-Ice" else "Bibata-Modern-Classic";
+        size = 16;
       };
     };
 
-    configFile."kdeglobals"."General"."AccentColor" = AccentColor;
-    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = AccentColor;
+    configFile."kdeglobals"."General"."AccentColor" =
+      if Color == "blue" then "61,174,233" else "233,58,154";
+    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" =
+      if Color == "blue" then "61,174,233" else "233,58,154";
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
     configFile."ksplashrc"."KSplash"."Theme" = "None";
   };
