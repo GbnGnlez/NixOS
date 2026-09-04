@@ -168,6 +168,7 @@
           Color = "blue";
 
           extraSystemModules = [
+            ./System/Desktop/Plasma/Plasma.nix
             ./Home/Programs/VirtManager.nix
           ];
 
