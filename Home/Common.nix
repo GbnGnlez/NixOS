@@ -1,6 +1,6 @@
 {
   pkgs,
-  Theme,
+  DarkTheme,
   Color,
   ...
 }:
@@ -12,19 +12,15 @@
 #     postInstall = (oldAttrs.postInstall or "") + ''
 #       export XDG_DATA_HOME="$out/share"
 #       papirus-folders -o -C ${
-#         if Color == "Pink" then
-#           "pink"
-#         else if Color == "Blue" then
+#         if Color == "blue" || Color == "Blue" then
 #           "blue"
 #         else
 #           "pink"
 #       } -t Papirus-${
-#         if Theme == "Light" then
-#           "Light"
-#         else if Theme == "Dark" then
+#         if DarkTheme then
 #           "Dark"
 #         else
-#           "Dark"
+#           "Light"
 #       }
 #     '';
 #   });
@@ -49,13 +45,7 @@
     enable = true;
     gtk.enable = true;
     x11.enable = true;
-    name =
-      if Theme == "Light" then
-        "Bibata-Modern-Classic"
-      else if Theme == "Dark" then
-        "Bibata-Modern-Ice"
-      else
-        "Bibata-Modern-Ice";
+    name = if DarkTheme then "Bibata-Modern-Ice" else "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
     size = 16;
   };
@@ -64,25 +54,12 @@
     enable = true;
 
     theme = {
-      name =
-        if Theme == "Light" then
-          "Breeze"
-        else if Theme == "Dark" then
-          "Breeze-Dark"
-        else
-          "Breeze-Dark";
+      name = if DarkTheme then "Breeze-Dark" else "Breeze";
       package = pkgs.kdePackages.breeze-gtk;
     };
 
     iconTheme = {
-      name =
-        if Theme == "Light" then
-          "Papirus-Light"
-        else if Theme == "Dark" then
-          "Papirus-Dark"
-        else
-          "Papirus-Dark";
-
+      name = if DarkTheme then "Papirus-Dark" else "Papirus-Light";
       package = pkgs.papirus-icon-theme;
     };
 

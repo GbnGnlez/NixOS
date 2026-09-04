@@ -77,6 +77,29 @@
         "type": "github"
       }
     },
+    "PlasmaManager": {
+      "inputs": {
+        "home-manager": [
+          "HomeManager"
+        ],
+        "nixpkgs": [
+          "NixPkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785762349,
+        "narHash": "sha256-jZhZkzAwc7f3exzcTDJWP2WCAchCv0iNC3UF/QsahdQ=",
+        "owner": "nix-community",
+        "repo": "plasma-manager",
+        "rev": "a19a2a029fa180911bd89c554dca1616e10f4c1d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "plasma-manager",
+        "type": "github"
+      }
+    },
     "Spicetify": {
       "inputs": {
         "nixpkgs": [
@@ -323,6 +346,7 @@
         "NUR": "NUR",
         "NixOSHardware": "NixOSHardware",
         "NixPkgs": "NixPkgs",
+        "PlasmaManager": "PlasmaManager",
         "Spicetify": "Spicetify",
         "Stylix": "Stylix"
       }

@@ -27,6 +27,12 @@
       inputs.nixpkgs.follows = "NixPkgs";
     };
 
+    PlasmaManager = {
+      url = "github:Nix-Community/Plasma-Manager";
+      inputs.nixpkgs.follows = "NixPkgs";
+      inputs.home-manager.follows = "HomeManager";
+    };
+
     # Catppuccin.url = "github:Catppuccin/Nix";
 
     Stylix = {
@@ -37,12 +43,6 @@
     Spicetify = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "NixPkgs";
-    };
-
-    PlasmaManager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "NixPkgs";
-      inputs.home-manager.follows = "HomeManager";
     };
   };
 
