@@ -1,30 +1,28 @@
 {
   pkgs,
-  lib,
   DarkTheme,
   Color,
   ...
 }:
 
-{
-  home.activation.setPapirusFolderColor = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    run ${pkgs.papirus-folders}/bin/papirus-folders -C ${Color}
-  '';
+let
+  papirusWithColor = pkgs.papirus-icon-theme.override {
+    color = Color;
+  };
+in
 
+{
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     bibata-cursors
     inter
     gtk3
-    papirus-icon-theme
+    papirusWithColor
     jetbrains-mono
-    papirus-folders
-    # Papirus-Icon-Theme-Custom
     glib
   ];
 
-  # Configuración del Cursor (Global para GTK y X11)
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;
@@ -44,7 +42,7 @@
 
     iconTheme = {
       name = if DarkTheme then "Papirus-Dark" else "Papirus-Light";
-      package = pkgs.papirus-icon-theme;
+      package = papirusWithColor;
     };
 
     font = {
