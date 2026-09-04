@@ -6,9 +6,16 @@
 }:
 
 let
-  papirusWithColor = pkgs.papirus-icon-theme.override {
-    color = Color;
-  };
+  papirusCustom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
+    dontFixup = true;
+    nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.papirus-folders ];
+    postInstall = (oldAttrs.postInstall or "") + ''
+      export XDG_DATA_HOME="$out/share"
+      ${pkgs.papirus-folders}/bin/papirus-folders -C ${Color} -t Papirus
+      ${pkgs.papirus-folders}/bin/papirus-folders -C ${Color} -t Papirus-Dark
+      ${pkgs.papirus-folders}/bin/papirus-folders -C ${Color} -t Papirus-Light
+    '';
+  });
 in
 
 {
@@ -18,11 +25,12 @@ in
     bibata-cursors
     inter
     gtk3
-    papirusWithColor
+    papirusCustom
     jetbrains-mono
     glib
   ];
 
+  # Configuración del Cursor (Global para GTK y X11)
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;
@@ -42,7 +50,7 @@ in
 
     iconTheme = {
       name = if DarkTheme then "Papirus-Dark" else "Papirus-Light";
-      package = papirusWithColor;
+      package = papirusCustom;
     };
 
     font = {
