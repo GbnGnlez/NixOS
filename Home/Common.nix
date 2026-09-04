@@ -1,32 +1,16 @@
 {
   pkgs,
+  lib,
   DarkTheme,
   Color,
   ...
 }:
 
-# let
-#   Papirus-Icon-Theme-Custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
-#     dontFixup = true;
-#     nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.papirus-folders ];
-#     postInstall = (oldAttrs.postInstall or "") + ''
-#       export XDG_DATA_HOME="$out/share"
-#       papirus-folders -o -C ${
-#         if Color == "blue" || Color == "Blue" then
-#           "blue"
-#         else
-#           "pink"
-#       } -t Papirus-${
-#         if DarkTheme then
-#           "Dark"
-#         else
-#           "Light"
-#       }
-#     '';
-#   });
-# in
-
 {
+  home.activation.setPapirusFolderColor = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run ${pkgs.papirus-folders}/bin/papirus-folders -C ${Color}
+  '';
+
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
