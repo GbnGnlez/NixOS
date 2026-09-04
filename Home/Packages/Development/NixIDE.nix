@@ -5,7 +5,7 @@
 {
   home.packages = with pkgs; [
     nixd
-    nixfmt-rfc-style # o pkgs.nixfmt
+    nixfmt # o pkgs.nixfmt
   ];
 
   programs.vscode = {
