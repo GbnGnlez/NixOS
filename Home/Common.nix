@@ -5,8 +5,6 @@
 }:
 
 {
-  home.stateVersion = "26.05";
-
   home.packages = with pkgs; [
     bibata-cursors
     inter
@@ -45,4 +43,6 @@
       package = pkgs.inter;
     };
   };
+
+  home.stateVersion = "26.05";
 }
