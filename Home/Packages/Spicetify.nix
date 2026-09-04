@@ -17,7 +17,7 @@ in
     enable = true;
 
     # Asigna dinámicamente el flavor ("mocha" o "latte")
-    theme = spicePkgs.themes.catppuccin;
+    # theme = spicePkgs.themes.catppuccin;
     colorScheme = Theme;
 
     enabledExtensions = with spicePkgs.extensions; [
