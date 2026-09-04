@@ -168,20 +168,20 @@
       nixosConfigurations = {
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
-          Theme = "latte";
+          Theme = "Light";
           Color = "pink";
         };
 
         IdeaPad = mkHost {
           hostName = "IdeaPad";
-          Theme = "mocha";
+          Theme = "Dark";
           Color = "pink";
         };
 
         Pavilion = mkHost {
           hostName = "Pavilion";
           GPU = "i915";
-          Theme = "latte";
+          Theme = "Light";
           Color = "pink";
 
           extraSystemModules = [
@@ -191,7 +191,7 @@
 
         ThinkPad = mkHost {
           hostName = "ThinkPad";
-          Theme = "mocha";
+          Theme = "Dark";
           Color = "blue";
 
           extraSystemModules = [
