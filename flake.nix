@@ -33,8 +33,6 @@
       inputs.home-manager.follows = "HomeManager";
     };
 
-    # Catppuccin.url = "github:Catppuccin/Nix";
-
     Stylix = {
       url = "github:Nix-Community/Stylix";
       inputs.nixpkgs.follows = "NixPkgs";
@@ -52,7 +50,6 @@
       HomeManager,
       NUR,
       NixOSHardware,
-      # Catppuccin,
       Stylix,
       Spicetify,
       PlasmaManager,
@@ -93,7 +90,6 @@
             ./Hosts/Common.nix
 
             # System
-            # ./System/Desktop/Catppuccin.nix
             ./System/Plymouth.nix
             ./System/PipeWire.nix
             ./Services/Avahi.nix
@@ -101,12 +97,6 @@
 
             # Plasma
             ./System/Desktop/Plasma/Configuration.nix
-
-            # XFCE
-            # ./System/Desktop/Xfce.nix
-
-            # Niri
-            # ./System/Desktop/Niri/Configuration.nix
 
             # Hostname
             {
@@ -117,9 +107,6 @@
           ++ [
             # Home Manager
             HomeManager.nixosModules.default
-
-            # Catppuccin
-            # Catppuccin.nixosModules.catppuccin
 
             {
               home-manager = {
@@ -142,27 +129,13 @@
                   imports = [
                     ./Home/Common.nix
 
-                    # Catppuccin
-                    # ./Home/Desktop/Catppuccin.nix
-
                     # Common packages
                     ./Home/Packages/Firefox.nix
                     ./Home/Packages/OnlyOffice.nix
 
-                    # Xfce
-                    # ./System/Desktop/Xfce/Home.nix
-
-                    # Plasma Manager
-                    PlasmaManager.homeModules.plasma-manager
-
                     # Plasma
+                    PlasmaManager.homeModules.plasma-manager
                     ./System/Desktop/Plasma/Home.nix
-
-                    # Niri
-                    # ./Home/Desktop/Niri/Home.nix
-
-                    # Catppuccin
-                    # Catppuccin.homeModules.catppuccin
                   ]
                   ++ extraHomeModules;
                 };
