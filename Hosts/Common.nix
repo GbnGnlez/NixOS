@@ -13,6 +13,14 @@
       "nix-command"
       "flakes"
     ];
+
+    extra-substituters = [
+      "https://gbngnlez.cachix.org"
+    ];
+
+    extra-trusted-public-keys = [
+      "gbngnlez.cachix.org-1:4087tPR0DCehBmp1z8gmoRk91VcUOjmcV9KdKI64MOU="
+    ];
   };
 
   # Bootloader.
