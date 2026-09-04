@@ -86,6 +86,7 @@
       </property>
 
       <property name="tweaks" type="empty">
+        <property name="inhibit" type="bool" value="false"/>
         <property name="popup-at-pointer" type="bool" value="true"/>
         <property name="never-confirm-history-clear" type="bool" value="true"/>
       </property>
