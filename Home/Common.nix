@@ -1,22 +1,8 @@
 {
   pkgs,
-  DarkTheme,
-  Color,
+  DarkTheme ? false,
   ...
 }:
-
-let
-  papirusCustom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
-    dontFixup = true;
-    nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.papirus-folders ];
-    postInstall = (oldAttrs.postInstall or "") + ''
-      export XDG_DATA_HOME="$out/share"
-      ${pkgs.papirus-folders}/bin/papirus-folders -C ${Color} -t Papirus
-      ${pkgs.papirus-folders}/bin/papirus-folders -C ${Color} -t Papirus-Dark
-      ${pkgs.papirus-folders}/bin/papirus-folders -C ${Color} -t Papirus-Light
-    '';
-  });
-in
 
 {
   home.stateVersion = "26.05";
@@ -25,7 +11,7 @@ in
     bibata-cursors
     inter
     gtk3
-    papirusCustom
+    papirus-icon-theme
     jetbrains-mono
     glib
   ];
@@ -50,7 +36,7 @@ in
 
     iconTheme = {
       name = if DarkTheme then "Papirus-Dark" else "Papirus-Light";
-      package = papirusCustom;
+      package = pkgs.papirus-icon-theme;
     };
 
     font = {
