@@ -84,8 +84,11 @@
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
 
+# Plasma
+            ./System/Desktop/Plasma/Plasma.nix
+
             # Niri
-            ./System/Desktop/Niri/Configuration.nix
+            # ./System/Desktop/Niri/Configuration.nix
 
             # Hostname
             {
@@ -126,7 +129,7 @@
                     ./Home/Programs/OnlyOffice.nix
 
                     # Niri
-                    ./Home/Desktop/Niri/Home.nix
+                    # ./Home/Desktop/Niri/Home.nix
 
                     Catppuccin.homeModules.catppuccin
                   ]
@@ -168,7 +171,6 @@
           Color = "blue";
 
           extraSystemModules = [
-            ./System/Desktop/Plasma/Plasma.nix
             ./Home/Programs/VirtManager.nix
           ];
 
