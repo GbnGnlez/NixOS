@@ -13,8 +13,7 @@
 
     # stylix.image es obligatorio para inicializar el módulo.
     # Usa una imagen local (.png o .jpg) en la misma carpeta o ruta absoluta en Nix.
-    image = ${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Cascade/contents/images/5120x2880.png;
-
+    image = ./wallpaper.png;
 
     # Opcional: define un esquema directo para evitar el cálculo automático de colores
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/breeze.yaml";
