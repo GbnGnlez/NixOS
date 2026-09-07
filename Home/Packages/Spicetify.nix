@@ -4,8 +4,6 @@
 {
   pkgs,
   Spicetify,
-  DarkTheme,
-  Color,
   ...
 }:
 
@@ -16,23 +14,20 @@ in
   programs.spicetify = {
     enable = true;
 
-    # theme = spicePkgs.themes.default;
-    # colorSpotifyScheme = Color;
-
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       hidePodcasts
+      spicyLyrics
       shuffle
     ];
 
     enabledCustomApps = with spicePkgs.apps; [
-      newReleases
-      ncsVisualizer
     ];
 
     enabledSnippets = with spicePkgs.snippets; [
-      rotatingCoverart
       pointer
+      hideLyricsButton
+      hideMiniPlayerButton
     ];
   };
 }
