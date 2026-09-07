@@ -13,9 +13,7 @@
 
     # stylix.image es obligatorio para inicializar el módulo.
     # Usa una imagen local (.png o .jpg) en la misma carpeta o ruta absoluta en Nix.
-image = if DarkTheme
-      then "${pkgs.kdePackages.breeze}/share/wallpapers/Next/contents/images_dark/5120x2880.png"
-      else "${pkgs.kdePackages.breeze}/share/wallpapers/Next/contents/images/5120x2880.png";
+image = /.1440x2960.png;
 
  
     # Opcional: define un esquema directo para evitar el cálculo automático de colores
