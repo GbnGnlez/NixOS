@@ -1,10 +1,17 @@
-# System/Desktop/Stylix.nix (o dentro de configuration.nix)
-
+# System/Desktop/Stylix.nix
 {
   pkgs,
-  DarkTheme ? true,
+  DarkTheme,
+  Color,
   ...
 }:
+
+let
+  iconThemeName = if DarkTheme then "Papirus-Dark" else "Papirus-Light";
+  papirusPersonalizado = pkgs.papirus-icon-theme.override {
+    color = Color;
+  };
+in
 
 {
   stylix = {
@@ -23,4 +30,21 @@
       size = 24;
     };
   };
+
+  # 1. Disponibiliza el paquete de iconos modificado globalmente
+  environment.systemPackages = [
+    papirusPersonalizado
+  ];
+
+  # 2. Inyección de Papirus en aplicaciones GTK 3 y GTK 4 a nivel sistema
+  environment.etc."xdg/gtk-3.0/settings.ini".text = ''
+    s
+        [Settings]
+        gtk-icon-theme-name=${iconThemeName}
+  '';
+
+  environment.etc."xdg/gtk-4.0/settings.ini".text = ''
+    [Settings]
+    gtk-icon-theme-name=${iconThemeName}
+  '';
 }
