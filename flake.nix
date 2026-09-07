@@ -13,6 +13,13 @@
       inputs.nixpkgs.follows = "NixPkgs";
     };
 
+    # Stylix (sigue tus inputs de NixPkgs y HomeManager)
+    Stylix = {
+      url = "github:Nix-Community/Stylix";
+      inputs.nixpkgs.follows = "NixPkgs";
+      inputs.home-manager.follows = "HomeManager";
+    };
+
     # PlasmaManager
     PlasmaManager = {
       url = "github:Nix-Community/Plasma-Manager";
@@ -21,7 +28,7 @@
 
     # Spicetify
     Spicetify = {
-      url = "github:Gerg-L/spicetify-nix";
+      url = "github:Gerg-L/Spicetify-Nix";
       inputs.nixpkgs.follows = "NixPkgs";
     };
   };
@@ -33,6 +40,7 @@
       NUR,
       Spicetify,
       PlasmaManager,
+      Stylix,
       ...
     }:
     let
@@ -60,6 +68,10 @@
           modules = [
             # NUR
             NUR.modules.nixos.default
+
+            # Módulo Stylix de NixOS (inyecta automáticamente las reglas a SDDM y Home Manager)
+            Stylix.nixosModules.stylix
+            ./System/Desktop/Stylix.nix
 
             # Host
             ./Hosts/${hostName}/Configuration.nix
@@ -112,7 +124,6 @@
                     # Plasma
                     PlasmaManager.homeModules.plasma-manager
                     ./System/Desktop/Plasma/Home.nix
-
                   ]
                   ++ extraHomeModules;
                 };
