@@ -53,8 +53,8 @@ in
 
       sizes = {
         desktop = 10;
-        applications = 11;
-        terminal = 11;
+        applications = 12;
+        terminal = 12;
         popups = 10;
       };
     };
