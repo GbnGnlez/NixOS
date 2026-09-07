@@ -20,7 +20,7 @@
     cursor = {
       package = pkgs.bibata-cursors;
       name = if DarkTheme then "Bibata-Modern-Ice" else "Bibata-Modern-Classic";
-      size = 24; # Tamaño estándar (16, 24, 32 o 48)
+      size = 24;
     };
   };
 }
