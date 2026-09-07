@@ -20,7 +20,7 @@
 
     profiles.default.userSettings = {
       "git.enableSmartCommit" = true;
-      "editor.fontFamily" = "JetBrainsMono Nerd Font";
+      # "editor.fontFamily" = "JetBrainsMono Nerd Font";
     };
 
   };
