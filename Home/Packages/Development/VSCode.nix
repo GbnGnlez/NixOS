@@ -7,11 +7,6 @@
     ./Git.nix
     ./GitHubActions.nix
     ./NixIDE.nix
-    # ./KDL.nix
-  ];
-
-  home.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
   ];
 
   programs.vscode = {
@@ -20,7 +15,6 @@
 
     profiles.default.userSettings = {
       "git.enableSmartCommit" = true;
-      # "editor.fontFamily" = "JetBrainsMono Nerd Font";
     };
 
   };
