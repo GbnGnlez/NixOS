@@ -19,7 +19,8 @@
     "ehci_pci"
     "xhci_pci_renesas"
     "xhci_pci"
-    "usbhid"
+    "usb_storage"
+    "sd_mod"
     "rtsx_pci_sdmmc"
   ];
   boot.initrd.kernelModules = [ ];
@@ -27,12 +28,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/823c7c78-04ce-478a-add0-c1830e0a2f51";
+    device = "/dev/disk/by-uuid/d76d591d-d966-4c36-815f-663c921100d9";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/75A0-BD7A";
+    device = "/dev/disk/by-uuid/37A1-8ECA";
     fsType = "vfat";
     options = [
       "fmask=0077"
@@ -41,7 +42,7 @@
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/9378877a-66d4-4499-973b-b640772c624a"; }
+    { device = "/dev/disk/by-uuid/1b7946de-eac9-4385-bd91-05b08a60beac"; }
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

@@ -1,48 +1,54 @@
 {
-  pkgs,
-  DarkTheme,
+  # pkgs,
+  # DarkTheme,
+  # Color,
   ...
 }:
 
+# let
+# papirusPersonalizado = pkgs.papirus-icon-theme.override {
+# color = Color;
+# };
+# in
 {
-  home.packages = with pkgs; [
-    bibata-cursors
-    inter
-    gtk3
-    papirus-icon-theme
-    jetbrains-mono
-    glib
-  ];
+  # home.packages = with pkgs; [
+  # bibata-cursors
+  # inter
+  # gtk3
+  # papirusPersonalizado
+  # jetbrains-mono
+  # glib
+  # ];
 
   # Configuración del Cursor (Global para GTK y X11)
-  home.pointerCursor = {
-    enable = true;
-    gtk.enable = true;
-    x11.enable = true;
-    name = if DarkTheme then "Bibata-Modern-Ice" else "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
-    size = 16;
-  };
+  # home.pointerCursor = {
+  # enable = true;
+  # gtk.enable = true;
+  # x11.enable = true;
+  # name = if DarkTheme then "Bibata-Modern-Ice" else "Bibata-Modern-Classic";
+  # package = pkgs.bibata-cursors;
+  # size = 16;
+  # };
 
-  gtk = {
-    enable = true;
+  # gtk = {
+  # enable = true;
 
-    theme = {
-      name = if DarkTheme then "Breeze-Dark" else "Breeze";
-      package = pkgs.kdePackages.breeze-gtk;
-    };
+  # theme = {
+  # name = if DarkTheme then "Breeze-Dark" else "Breeze";
+  # package = pkgs.kdePackages.breeze-gtk;
+  # };
 
-    iconTheme = {
-      name = if DarkTheme then "Papirus-Dark" else "Papirus-Light";
-      package = pkgs.papirus-icon-theme;
-    };
+  # iconTheme = {
+  # name = if DarkTheme then "Papirus-Dark" else "Papirus-Light";
+  # package = papirusPersonalizado;
+  # };
 
-    font = {
-      name = "Inter";
-      size = 10;
-      package = pkgs.inter;
-    };
-  };
+  # font = {
+  # name = "Inter";
+  # size = 10;
+  # package = pkgs.inter;
+  # };
+  # };
 
   home.stateVersion = "26.05";
 }

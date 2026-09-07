@@ -2,6 +2,7 @@
   inputs = {
     NixPkgs.url = "github:NixOS/NixPkgs/nixos-unstable";
 
+    # NUR
     NUR = {
       url = "github:Nix-Community/NUR";
       inputs.nixpkgs.follows = "NixPkgs";
@@ -12,17 +13,13 @@
       inputs.nixpkgs.follows = "NixPkgs";
     };
 
+    # PlasmaManager
     PlasmaManager = {
       url = "github:Nix-Community/Plasma-Manager";
       inputs.nixpkgs.follows = "NixPkgs";
-      inputs.home-manager.follows = "HomeManager";
     };
 
-    Stylix = {
-      url = "github:Nix-Community/Stylix";
-      inputs.nixpkgs.follows = "NixPkgs";
-    };
-
+    # Spicetify
     Spicetify = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "NixPkgs";
@@ -34,7 +31,6 @@
       NixPkgs,
       HomeManager,
       NUR,
-      Stylix,
       Spicetify,
       PlasmaManager,
       ...
@@ -58,7 +54,6 @@
               GPU
               DarkTheme
               Color
-              Stylix
               ;
           };
 
@@ -66,18 +61,15 @@
             # NUR
             NUR.modules.nixos.default
 
-            # Stylix
-            Stylix.nixosModules.stylix
-
             # Host
             ./Hosts/${hostName}/Configuration.nix
             ./Hosts/Common.nix
 
             # System
-            ./System/Plymouth.nix
+            # ./System/Plymouth.nix
             ./System/PipeWire.nix
-            ./Services/Avahi.nix
-            ./Services/GarbageCollector.nix
+            # ./Services/Avahi.nix
+            # ./Services/GarbageCollector.nix
 
             # Plasma
             ./System/Desktop/Plasma/Configuration.nix
@@ -104,22 +96,23 @@
                   inherit
                     DarkTheme
                     Color
-                    Stylix
                     ;
                 }
                 // extraHomeArgs;
 
                 users.nixos = {
                   imports = [
+                    # Common
                     ./Home/Common.nix
 
                     # Common packages
-                    ./Home/Packages/Firefox.nix
-                    ./Home/Packages/OnlyOffice.nix
+                    # ./Home/Packages/Firefox.nix
+                    # ./Home/Packages/OnlyOffice.nix
 
                     # Plasma
                     PlasmaManager.homeModules.plasma-manager
                     ./System/Desktop/Plasma/Home.nix
+
                   ]
                   ++ extraHomeModules;
                 };
@@ -161,10 +154,6 @@
           DarkTheme = true;
           Color = "blue";
 
-          extraSystemModules = [
-            ./Home/Packages/VirtManager.nix
-          ];
-
           extraHomeArgs = {
             inherit Spicetify;
           };
@@ -172,7 +161,6 @@
           extraHomeModules = [
             Spicetify.homeManagerModules.default
             ./Home/Packages/Spicetify.nix
-            ./Home/Packages/PhotoGIMP.nix
             ./Home/Packages/Development/VSCode.nix
           ];
         };

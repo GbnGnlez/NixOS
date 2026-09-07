@@ -5,20 +5,19 @@
   pkgs,
   Spicetify,
   DarkTheme,
+  Color,
   ...
 }:
 
 let
   spicePkgs = Spicetify.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
-
 {
   programs.spicetify = {
     enable = true;
 
-    # Asigna dinámicamente el flavor ("mocha" si es oscuro, "latte" si es claro)
-    # theme = spicePkgs.themes.catppuccin;
-    # colorScheme = if DarkTheme then "mocha" else "latte";
+    # theme = spicePkgs.themes.default;
+    # colorSpotifyScheme = Color;
 
     enabledExtensions = with spicePkgs.extensions; [
       adblock
