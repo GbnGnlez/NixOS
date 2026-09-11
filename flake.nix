@@ -77,7 +77,7 @@
             ./Hosts/Common.nix
 
             # System
-            # ./System/Plymouth.nix
+            ./System/Plymouth.nix
             ./System/PipeWire.nix
             # ./Services/Avahi.nix
             # ./Services/GarbageCollector.nix
