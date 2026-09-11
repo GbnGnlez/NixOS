@@ -19,7 +19,10 @@
   users.users."nixos" = {
     isNormalUser = true;
     description = "NixOS";
-    extraGroups = [ "scanner" ];
+    extraGroups = [
+      "scanner"
+      "lp"
+    ];
   };
 
   # List of default packages to exclude from the configuration.
