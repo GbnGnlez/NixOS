@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -20,6 +19,7 @@
     "xhci_pci_renesas"
     "xhci_pci"
     "usb_storage"
+    "usbhid"
     "sd_mod"
     "rtsx_pci_sdmmc"
   ];
