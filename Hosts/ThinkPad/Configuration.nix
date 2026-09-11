@@ -15,7 +15,15 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Scanner support
+  hardware.sane = {
+    enable = true;
+    extraBackends = with pkgs; [
+      epkowa
+    ];
+  };
+
+  # Define a user account.
   users.users."nixos" = {
     isNormalUser = true;
     description = "NixOS";
@@ -25,23 +33,25 @@
     ];
   };
 
-  # List of default packages to exclude from the configuration.
-  # environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  # okular # KDE document viewer.
-  # ];
-
-  # The set of packages that appear in /run/current-system/sw.
+  # System packages
   environment.systemPackages = with pkgs; [
-    tree # Command to produce a depth indented directory listing.
+    tree
     firefox
     wget
+
+    # Scanner tools
+    sane-backends
+    usbutils
+
+    # Scanner GUI
     kdePackages.skanpage
-    # kdePackages.kolourpaint # Easy-to-use paint program.
-    kdePackages.konsole # Terminal emulator by KDE.
-    kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
+
+    # KDE applications
+    kdePackages.konsole
+    kdePackages.partitionmanager
   ];
 
-  programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
+  programs.kdeconnect.enable = true;
 
-  programs.nix-ld.enable = true; # Whether to enable nix-ld.
+  programs.nix-ld.enable = true;
 }
