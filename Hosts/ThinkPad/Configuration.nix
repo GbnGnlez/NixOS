@@ -15,6 +15,13 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users."nixos" = {
+    isNormalUser = true;
+    description = "NixOS";
+    extraGroups = [ "scanner" ];
+  };
+
   # List of default packages to exclude from the configuration.
   # environment.plasma6.excludePackages = with pkgs.kdePackages; [
   # okular # KDE document viewer.
