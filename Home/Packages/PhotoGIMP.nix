@@ -1,4 +1,4 @@
-# https://github.com/Diolinux/Photogimp
+# https://github.com/Diolinux/PhotoGIMP
 
 { pkgs, ... }:
 
