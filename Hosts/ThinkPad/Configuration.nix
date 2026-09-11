@@ -22,6 +22,7 @@
     tree # Command to produce a depth indented directory listing.
     firefox
     wget
+    skanpage
     # kdePackages.kolourpaint # Easy-to-use paint program.
     kdePackages.konsole # Terminal emulator by KDE.
     kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
