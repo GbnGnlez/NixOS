@@ -16,12 +16,7 @@
   services.printing.enable = true;
 
   # Scanner support
-  hardware.sane = {
-    enable = true;
-    extraBackends = with pkgs; [
-      epkowa
-    ];
-  };
+  hardware.sane.enable = true;
 
   # Define a user account.
   users.users."nixos" = {
