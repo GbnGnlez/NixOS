@@ -170,6 +170,7 @@
 
           extraHomeModules = [
             Spicetify.homeManagerModules.default
+            ./Home/Packages/OnlyOffice.nix
             ./Home/Packages/Spicetify.nix
             ./Home/Packages/Development/VSCode.nix
           ];
