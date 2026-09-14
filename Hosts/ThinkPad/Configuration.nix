@@ -32,7 +32,10 @@
   environment.systemPackages = with pkgs; [
     tree
     firefox
+    brave
     wget
+
+    kdePackages.okular
 
     # Scanner tools
     sane-backends
