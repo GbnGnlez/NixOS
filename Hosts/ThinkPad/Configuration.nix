@@ -32,7 +32,7 @@
   environment.systemPackages = with pkgs; [
     tree
     firefox
-    brave
+    brave-origin
     wget
 
     kdePackages.okular
