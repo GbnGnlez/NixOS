@@ -45,6 +45,7 @@
     kdePackages.skanpage
 
     # KDE applications
+    kdePackages.kolourpaint
     kdePackages.konsole
     kdePackages.partitionmanager
   ];
