@@ -14,7 +14,7 @@ in
     enable = true;
     polarity = if DarkTheme then "dark" else "light";
 
-    targets.plymouth.enable = false;
+    # targets.plymouth.enable = false;
 
     base16Scheme =
       if DarkTheme then
@@ -22,17 +22,17 @@ in
       else
         "${pkgs.base16-schemes}/share/themes/default-light.yaml";
 
-    cursor = {
-      package = pkgs.bibata-cursors;
-      name = if DarkTheme then "Bibata-Modern-Ice" else "Bibata-Modern-Classic";
-      size = 24;
-    };
-
     icons = {
       enable = true;
       package = Papirus;
       light = "Papirus-Light";
       dark = "Papirus-Dark";
+    };
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = if DarkTheme then "Bibata-Modern-Ice" else "Bibata-Modern-Classic";
+      size = 24;
     };
 
     fonts = {

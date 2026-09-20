@@ -1,22 +1,18 @@
 # https://wiki.nixos.org/wiki/Plymouth
 
-{
-  GPU,
-  ...
-}:
+{ GPU, ... }:
 
 {
   boot = {
-    plymouth.enable = true; # Whether to enable Plymouth boot splash screen.
-    consoleLogLevel = 3; # The kernel console loglevel.
-    loader.timeout = 0; # Timeout (in seconds) until loader boots the default menu item.
+    # plymouth.enable = true;
+    consoleLogLevel = 3;
+    loader.timeout = 0;
 
     initrd = {
-      verbose = false; # Verbosity of the initrd.
-      kernelModules = [ GPU ]; # Set of modules that are always loaded by the initrd.
+      verbose = false;
+      kernelModules = [ GPU ];
     };
 
-    # Parameters added to the kernel command line.
     kernelParams = [
       "quiet"
       "rd.udev.log_level=3"
