@@ -28,6 +28,12 @@ in
       size = 24;
     };
 
+    icons = {
+      package = Papirus;
+      light = "Papirus-Light";
+      dark = "Papirus-Dark";
+    };
+
     fonts = {
       sansSerif = {
         package = pkgs.inter;
