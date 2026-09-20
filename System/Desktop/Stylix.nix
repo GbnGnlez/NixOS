@@ -5,16 +5,10 @@
   ...
 }:
 
-let
-  Papirus = pkgs.papirus-icon-theme.override { color = Color; };
-in
-
 {
   stylix = {
     enable = true;
     polarity = if DarkTheme then "dark" else "light";
-
-    # targets.plymouth.enable = false;
 
     base16Scheme =
       if DarkTheme then
@@ -24,7 +18,7 @@ in
 
     icons = {
       enable = true;
-      package = Papirus;
+      package = pkgs.papirus-icon-theme.override { color = Color; };
       light = "Papirus-Light";
       dark = "Papirus-Dark";
     };
