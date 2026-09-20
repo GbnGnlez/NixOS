@@ -35,8 +35,6 @@
     # brave-origin
     wget
 
-    kdePackages.okular
-
     # Scanner tools
     sane-backends
     usbutils
