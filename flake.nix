@@ -84,7 +84,7 @@
 
             # Plasma
             ./System/Desktop/Plasma/Configuration.nix
-
+            #
             # Hostname
             {
               networking.hostName = hostName;
