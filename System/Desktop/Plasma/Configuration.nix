@@ -3,39 +3,37 @@
 { pkgs, ... }:
 
 {
-  # Definition of systemd service units; see systemd.service(5).
   services = {
-    displayManager.plasma-login-manager.enable = true; # Whether to enable Plasma Login Manager.
-    desktopManager.plasma6.enable = true; # Enable the Plasma 6 (KDE 6) desktop environment.
+    displayManager.plasma-login-manager.enable = true;
+    desktopManager.plasma6.enable = true;
   };
 
-  # List of default packages to exclude from the configuratio
+  # https://github.com/NixOS/nixpkgs/blob/7e495b747b51f95ae15e74377c5ce1fe69c1765f/nixos/modules/services/desktop-managers/plasma6.nix#L150-L170
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    # ark # File archiver by KDE.
-    aurorae # Aurorae is a themeable window decoration for KWin.
-    baloo-widgets # Widgets for Baloo.
-    discover # Helps you find and install applications, games, and tools.
-    # dolphin # File manager by KDE.
-    dolphin-plugins # Plugins for Dolphin.
-    elisa # Simple music player aiming to provide a nice experience for its users.
-    # ffmpegthumbs # FFmpeg-based thumbnail creator for video files.
-    # gwenview # Image viewer by KDE.
-    kate # Advanced text editor.
-    khelpcenter # Software documentation viewer.
-    konsole # Terminal emulator by KDE.
-    krdp # Library and examples for creating an RDP server.
-    ktexteditor # KTextEditor Framework.
-    kwin-x11 # Easy to use, but flexible, X Window Manager.
-    okular # KDE document viewer.
-    # plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
-    plasma-workspace-wallpapers # Wallpapers for Plasma Workspaces.
-    qrca # QR code scanner for Plasma Mobile.
-    qtsensors # Cross-platform application framework for C++.
-    # (lib.getBin qttools) # Cross-platform application framework for C++.
-    # spectacle # Screenshot capture utility.
+    discover
+    qrca
+
+    # aurorae
+    # plasma-browser-integration
+    # plasma-workspace-wallpapers
+    # konsole
+    # kwin-x11
+    # (lib.getBin qttools)
+    # ark
+    elisa
+    # gwenview
+    okular
+    kate
+    # ktexteditor
+    khelpcenter
+    # dolphin
+    # baloo-widgets
+    # dolphin-plugins
+    # spectacle
+    # ffmpegthumbs
+    # krdp
   ];
 
-  # A set of environment variables used in the global environment.
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
