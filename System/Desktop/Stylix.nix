@@ -10,10 +10,6 @@ let
 in
 
 {
-  environment.systemPackages = [
-    Papirus
-  ];
-
   stylix = {
     enable = true;
     polarity = if DarkTheme then "dark" else "light";
@@ -33,6 +29,7 @@ in
     };
 
     icons = {
+      enable = true;
       package = Papirus;
       light = "Papirus-Light";
       dark = "Papirus-Dark";
