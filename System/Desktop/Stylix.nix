@@ -10,6 +10,10 @@ let
 in
 
 {
+  environment.systemPackages = [
+    Papirus
+  ];
+
   stylix = {
     enable = true;
     polarity = if DarkTheme then "dark" else "light";
