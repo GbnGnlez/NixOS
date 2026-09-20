@@ -1,4 +1,3 @@
-# System/Desktop/Stylix.nix
 {
   pkgs,
   DarkTheme,
@@ -14,6 +13,8 @@ in
   stylix = {
     enable = true;
     polarity = if DarkTheme then "dark" else "light";
+
+    targets.plymouth.enable = false;
 
     base16Scheme =
       if DarkTheme then
