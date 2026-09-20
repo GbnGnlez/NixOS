@@ -5,6 +5,7 @@
 {
   programs.plasma = {
     enable = true;
+    overrideConfig = true;
 
     kscreenlocker = {
       autoLock = false; # Whether the screen will be locked after the specified time.
