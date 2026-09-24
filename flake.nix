@@ -20,10 +20,10 @@
     };
 
     # PlasmaManager
-    PlasmaManager = {
-      url = "github:Nix-Community/Plasma-Manager";
-      inputs.nixpkgs.follows = "NixPkgs";
-    };
+    # PlasmaManager = {
+    #   url = "github:Nix-Community/Plasma-Manager";
+    #   inputs.nixpkgs.follows = "NixPkgs";
+    # };
 
     # Spicetify
     Spicetify = {
@@ -38,7 +38,7 @@
       HomeManager,
       NUR,
       Spicetify,
-      PlasmaManager,
+      # PlasmaManager,
       Stylix,
       ...
     }:
@@ -82,8 +82,10 @@
             # ./Services/Avahi.nix
             # ./Services/GarbageCollector.nix
 
-            # Plasma
-            ./System/Desktop/Plasma/Configuration.nix
+            # Sway (NixOS System Modules)
+            ./System/Desktop/Sway/Sway.nix
+            ./System/Desktop/Sway/BrightnessVolume.nix
+            ./System/Desktop/Sway/Screenshots.nix
 
             # Hostname
             {
@@ -116,19 +118,20 @@
                     # Common
                     ./Home/Common.nix
 
-                    # Common packages
-                    # ./Home/Packages/Firefox.nix
-                    # ./Home/Packages/OnlyOffice.nix
-
-                    # Plasma
-                    PlasmaManager.homeModules.plasma-manager
-                    ./System/Desktop/Plasma/Home.nix
+                    # Sway (Home Manager Modules)
+                    ./System/Desktop/Sway/Sway-Home.nix
+                    ./System/Desktop/Sway/SwayFX.nix
+                    ./System/Desktop/Sway/BrightnessVolume-Home.nix
+                    ./System/Desktop/Sway/Screenshots-Home.nix
+                    ./System/Desktop/Sway/Touchpad.nix
+                    ./System/Desktop/Sway/WayBar.nix
                   ]
                   ++ extraHomeModules;
                 };
               };
             }
           ];
+
         };
     in
     {

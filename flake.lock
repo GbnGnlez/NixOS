@@ -57,27 +57,6 @@
         "type": "github"
       }
     },
-    "PlasmaManager": {
-      "inputs": {
-        "home-manager": "home-manager",
-        "nixpkgs": [
-          "NixPkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1785762349,
-        "narHash": "sha256-jZhZkzAwc7f3exzcTDJWP2WCAchCv0iNC3UF/QsahdQ=",
-        "owner": "Nix-Community",
-        "repo": "Plasma-Manager",
-        "rev": "a19a2a029fa180911bd89c554dca1616e10f4c1d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Nix-Community",
-        "repo": "Plasma-Manager",
-        "type": "github"
-      }
-    },
     "Spicetify": {
       "inputs": {
         "nixpkgs": [
@@ -293,27 +272,6 @@
         "type": "gitlab"
       }
     },
-    "home-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "PlasmaManager",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1756579987,
-        "narHash": "sha256-duCce8zGsaMsrqqOmLOsuaV1PVIw/vXWnKuLKZClsGg=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "99a69bdf8a3c6bf038c4121e9c4b6e99706a187a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -344,7 +302,6 @@
         "HomeManager": "HomeManager",
         "NUR": "NUR",
         "NixPkgs": "NixPkgs",
-        "PlasmaManager": "PlasmaManager",
         "Spicetify": "Spicetify",
         "Stylix": "Stylix"
       }

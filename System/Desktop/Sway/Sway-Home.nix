@@ -25,7 +25,7 @@
       input = {
         "*" = {
           xkb_layout = "us";
-          xkb_variant = "colemak_dh";
+          # xkb_variant = "colemak_dh";
         };
       };
     };
