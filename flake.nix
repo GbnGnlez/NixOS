@@ -83,9 +83,12 @@
             ./Services/GarbageCollector.nix
 
             # Sway (NixOS System Modules)
-            ./System/Desktop/Sway/Sway.nix
-            ./System/Desktop/Sway/BrightnessVolume.nix
-            ./System/Desktop/Sway/Screenshots.nix
+            # ./System/Desktop/Sway/Sway.nix
+            # ./System/Desktop/Sway/BrightnessVolume.nix
+            # ./System/Desktop/Sway/Screenshots.nix
+
+            # Niri (NixOS System Modules)
+            ./System/Desktop/Niri/Configuration.nix
 
             # Hostname
             {
@@ -119,12 +122,15 @@
                     ./Home/Common.nix
 
                     # Sway (Home Manager Modules)
-                    ./System/Desktop/Sway/Sway-Home.nix
-                    ./System/Desktop/Sway/SwayFX.nix
-                    ./System/Desktop/Sway/BrightnessVolume-Home.nix
-                    ./System/Desktop/Sway/Screenshots-Home.nix
-                    ./System/Desktop/Sway/Touchpad.nix
-                    ./System/Desktop/Sway/WayBar.nix
+                    # ./System/Desktop/Sway/Sway-Home.nix
+                    # ./System/Desktop/Sway/SwayFX.nix
+                    # ./System/Desktop/Sway/BrightnessVolume-Home.nix
+                    # ./System/Desktop/Sway/Screenshots-Home.nix
+                    # ./System/Desktop/Sway/Touchpad.nix
+                    # ./System/Desktop/Sway/WayBar.nix
+
+                    # Niri (Home Manager Modules)
+                    ./Home/Niri/Home.nix
                   ]
                   ++ extraHomeModules;
                 };

@@ -1,9 +1,8 @@
 # https://wiki.nixos.org/wiki/Niri/en
 
 {
-  imports = [
-    ./ReGreet.nix
-  ];
+  services.greetd.enable = true;
+  services.displayManager.regreet.enable = true;
 
   # https://wiki.nixos.org/wiki/Niri/en#Installation
   programs.niri.enable = true;
