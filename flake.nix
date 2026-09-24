@@ -79,8 +79,8 @@
             # System
             ./System/Plymouth.nix
             ./System/PipeWire.nix
-            # ./Services/Avahi.nix
-            # ./Services/GarbageCollector.nix
+            ./Services/Avahi.nix
+            ./Services/GarbageCollector.nix
 
             # Sway (NixOS System Modules)
             ./System/Desktop/Sway/Sway.nix
