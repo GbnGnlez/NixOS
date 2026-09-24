@@ -22,12 +22,12 @@
         { command = "firefox"; }
       ];
 
-      input = {
-        "*" = {
-          xkb_layout = "us";
-          # xkb_variant = "colemak_dh";
-        };
-      };
+      #input = {
+      # "*" = {
+      #  xkb_layout = "us";
+      # xkb_variant = "colemak_dh";
+      # };
+      # };
     };
   };
 }
