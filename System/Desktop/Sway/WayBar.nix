@@ -49,6 +49,7 @@
 
         modules-right = [
           "backlight"
+          "battery"
           "tray"
           "custom/power"
         ];
@@ -58,6 +59,30 @@
           tooltip = false;
           on-scroll-up = "light -A 5";
           on-scroll-down = "light -U 5";
+        };
+
+        battery = {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{icon} {capacity}%";
+          format-charging = "⚡ {capacity}%";
+          format-plugged = " {capacity}%";
+          format-alt = "{time} {icon}";
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          tooltip-format = "{timeTo}, {capacity}%";
         };
 
         "custom/power" = {
@@ -90,14 +115,29 @@
         padding: 0 10px;
       }
 
+      #battery {
+        padding: 0 10px;
+      }
+
+      #battery.charging {
+        color: #26A65B;
+      }
+
+      #battery.warning:not(.charging) {
+        color: #ffbe61;
+      }
+
+      #battery.critical:not(.charging) {
+        color: #f66151;
+      }
+
       #tray {
         padding: 0 10px;
       }
 
-      #power {
+      #custom-power {
         padding: 0 10px;
       }
-
     '';
   };
 }
