@@ -130,7 +130,7 @@
                     # ./System/Desktop/Sway/WayBar.nix
 
                     # HyprLand (Home Manager Modules)
-                    ./Home/HyprLand/Home.nix
+                    ./System/Desktop/HyprLand/Home.nix
                   ]
                   ++ extraHomeModules;
                 };
