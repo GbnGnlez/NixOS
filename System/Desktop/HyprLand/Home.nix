@@ -18,9 +18,12 @@
   # Terminal
   programs.kitty.enable = true;
 
+  # Menú de aplicaciones gestionado con módulo para que Stylix aplique temas y fuentes automáticamente
+  programs.rofi.enable = true;
+
   home.packages = with pkgs; [
     hyprlock
-    hyprlauncher
+    # hyprlauncher # Reemplazado por programs.rofi (rofi-wayland)
     # kdePackages.dolphin # Reemplazado por Thunar
     thunar
     thunar-archive-plugin # Integración para descomprimir/comprimir archivos
@@ -45,10 +48,10 @@
       "$terminal" = "uwsm app -- kitty";
       # "$terminal" = "kitty";
       "$fileManager" = "uwsm app -- thunar";
-      # "$fileManager" = "uwsm app -- dolphin";
       # "$fileManager" = "dolphin";
-      "$menu" = "uwsm app -- hyprlauncher";
+      # "$menu" = "uwsm app -- hyprlauncher"; # Reemplazado por rofi-wayland
       # "$menu" = "hyprlauncher";
+      "$menu" = "uwsm app -- rofi -show drun -show-icons";
       "$mainMod" = "SUPER";
 
       # Autostart
@@ -247,14 +250,6 @@
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
-
-      # ERROR HYPRLAND: 'windowrulev2' está deprecado y 'windowrule' no soporta filtros como 'class:.*' ni eventos como 'suppressevent'
-      # windowrule = [
-      #   "suppressevent maximize, class:.*"
-      #   "nofocus, class:^$, title:^$, xwayland:1, floating:1, fullscreen:0, pinned:0"
-      #   "float, class:hyprland-run"
-      #   "move 20 monitor_h-120, class:hyprland-run"
-      # ];
     };
   };
 }
