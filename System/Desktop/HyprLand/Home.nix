@@ -21,7 +21,11 @@
   home.packages = with pkgs; [
     hyprlock
     hyprlauncher
-    kdePackages.dolphin
+    # kdePackages.dolphin # Reemplazado por Thunar
+    thunar
+    thunar-archive-plugin # Integración para descomprimir/comprimir archivos
+    thunar-volman # Gestión de volúmenes y discos extraíbles
+    file-roller # Gestor de compresión compatible con Thunar
     brightnessctl
     wireplumber
     playerctl
@@ -40,7 +44,8 @@
       # Se antepone 'uwsm app --' para que las aplicaciones abran dentro del entorno systemd de UWSM
       "$terminal" = "uwsm app -- kitty";
       # "$terminal" = "kitty";
-      "$fileManager" = "uwsm app -- dolphin";
+      "$fileManager" = "uwsm app -- thunar";
+      # "$fileManager" = "uwsm app -- dolphin";
       # "$fileManager" = "dolphin";
       "$menu" = "uwsm app -- hyprlauncher";
       # "$menu" = "hyprlauncher";

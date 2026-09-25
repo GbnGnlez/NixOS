@@ -1,46 +1,126 @@
-{ ... }:
+# WayBar.nix
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    networkmanagerapplet
+  ];
+
   programs.waybar = {
     enable = true;
+
     settings = {
       mainBar = {
         layer = "top";
         position = "top";
-        height = 32;
+
         modules-left = [
           "hyprland/workspaces"
-          "hyprland/submap"
         ];
-        modules-center = [ "hyprland/window" ];
-        modules-right = [
-          "pulseaudio"
-          "network"
-          "cpu"
-          "memory"
+
+        "hyprland/workspaces" = {
+          format = "{name}";
+          persistent-workspaces = {
+            "*" = 5;
+          };
+        };
+
+        modules-center = [
           "clock"
         ];
 
         clock = {
-          format = "{:%H:%M - %d/%m/%Y}";
+          format = "{:%H:%M}";
         };
-        cpu = {
-          format = "CPU: {usage}%";
+
+        modules-right = [
+          "backlight"
+          "battery"
+          "tray"
+          "custom/power"
+        ];
+
+        backlight = {
+          format = "☀ {percent}%";
+          tooltip = false;
+          # Uses brightnessctl to match your Hyprland keybindings
+          on-scroll-up = "brightnessctl set 5%+";
+          on-scroll-down = "brightnessctl set 5%-";
         };
-        memory = {
-          format = "RAM: {}%";
+
+        battery = {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{icon} {capacity}%";
+          format-charging = "⚡ {capacity}%";
+          format-plugged = " {capacity}%";
+          format-alt = "{time} {icon}";
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          tooltip-format = "{timeTo}, {capacity}%";
+        };
+
+        "custom/power" = {
+          format = "⏻";
+          tooltip = "Apagar";
+          on-click = "systemctl poweroff";
         };
       };
     };
+
     style = ''
-      * {
-        border: none;
-        font-family: "Sans";
-        font-size: 13px;
-      }
+      /* Removed hardcoded font-family and font-size to allow Stylix to manage typography */
+
       window#waybar {
-        background: rgba(30, 30, 46, 0.8);
-        color: #cdd6f4;
+        background: transparent;
+      }
+
+      #workspaces {
+        padding: 0 10px;
+      }
+
+      #clock {
+        padding: 0 10px;
+      }
+
+      #backlight {
+        padding: 0 10px;
+      }
+
+      #battery {
+        padding: 0 10px;
+      }
+
+      #battery.charging {
+        color: #26A65B;
+      }
+
+      #battery.warning:not(.charging) {
+        color: #ffbe61;
+      }
+
+      #battery.critical:not(.charging) {
+        color: #f66151;
+      }
+
+      #tray {
+        padding: 0 10px;
+      }
+
+      #custom-power {
+        padding: 0 10px;
       }
     '';
   };
