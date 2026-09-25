@@ -87,8 +87,8 @@
             # ./System/Desktop/Sway/BrightnessVolume.nix
             # ./System/Desktop/Sway/Screenshots.nix
 
-            # Niri (NixOS System Modules)
-            ./System/Desktop/Niri/Configuration.nix
+            # HyprLand (NixOS System Modules)
+            ./System/Desktop/HyprLand/Configuration.nix
 
             # Hostname
             {
@@ -129,8 +129,8 @@
                     # ./System/Desktop/Sway/Touchpad.nix
                     # ./System/Desktop/Sway/WayBar.nix
 
-                    # Niri (Home Manager Modules)
-                    ./Home/Niri/Home.nix
+                    # HyprLand (Home Manager Modules)
+                    ./Home/HyprLand/Home.nix
                   ]
                   ++ extraHomeModules;
                 };
