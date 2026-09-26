@@ -19,7 +19,8 @@
   programs.kitty.enable = true;
 
   # Menú de aplicaciones gestionado con módulo para que Stylix aplique temas y fuentes automáticamente
-  programs.rofi.enable = true;
+  # programs.rofi.enable = true;
+  programs.fuzzel.enable = true;
 
   home.packages = with pkgs; [
     hyprlock
@@ -51,7 +52,8 @@
       # "$fileManager" = "dolphin";
       # "$menu" = "uwsm app -- hyprlauncher"; # Reemplazado por rofi-wayland
       # "$menu" = "hyprlauncher";
-      "$menu" = "uwsm app -- rofi -show drun -show-icons";
+      # "$menu" = "uwsm app -- rofi -show drun -show-icons";
+      "$menu" = "uwsm app -- fuzzel";
       "$mainMod" = "SUPER";
 
       # Autostart
