@@ -4,6 +4,10 @@
 { ... }:
 
 {
+  imports = [
+    ./greetd+ReGreet.nix
+  ];
+
   services.getty.autologinUser = "nixos";
 
   programs.hyprland = {
