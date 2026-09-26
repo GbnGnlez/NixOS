@@ -33,6 +33,15 @@
     brightnessctl
     wireplumber
     playerctl
+
+    kdePackages.dolphin
+    kdePackages.konqueror
+    nautilus
+    nemo
+    pcmanfm
+    ranger
+    thunar
+    yazi
   ];
 
   wayland.windowManager.hyprland = {

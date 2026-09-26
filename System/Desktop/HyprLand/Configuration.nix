@@ -8,7 +8,7 @@
     ./greetd+ReGreet.nix
   ];
 
-  services.getty.autologinUser = "nixos";
+#  services.getty.autologinUser = "nixos";
 
   programs.hyprland = {
     enable = true;
