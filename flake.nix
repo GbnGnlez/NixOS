@@ -180,6 +180,7 @@
 
           extraHomeModules = [
             Spicetify.homeManagerModules.default
+            ./Home/Packages/Kitty.nix
             ./Home/Packages/OnlyOffice.nix
             ./Home/Packages/PhotoGIMP.nix
             ./Home/Packages/Spicetify.nix
