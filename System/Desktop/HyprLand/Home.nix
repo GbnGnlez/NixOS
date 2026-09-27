@@ -143,7 +143,7 @@
       };
 
       scrolling = {
-        fullscreen_on_one_column = true;
+        fullscreen_on_one_column = false;
       };
 
       # Misc
