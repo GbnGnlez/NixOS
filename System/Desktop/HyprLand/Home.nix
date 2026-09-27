@@ -35,13 +35,13 @@
     playerctl
 
     kdePackages.dolphin
-    kdePackages.konqueror
+    # kdePackages.konqueror
     nautilus
     nemo
     pcmanfm
-    ranger
+    # ranger
     thunar
-    yazi
+    # yazi
   ];
 
   wayland.windowManager.hyprland = {
