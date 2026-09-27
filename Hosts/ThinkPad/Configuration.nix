@@ -47,7 +47,5 @@
     kdePackages.partitionmanager
   ];
 
-  programs.kdeconnect.enable = true;
-
   programs.nix-ld.enable = true;
 }

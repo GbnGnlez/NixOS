@@ -23,10 +23,7 @@
     enable = true;
 
     defaultApplications = {
-      "text/plain" = [ "code.desktop" ];
-      "text/x-nix" = [ "code.desktop" ];
-      "text/csv" = [ "code.desktop" ];
-      "text/yaml" = [ "code.desktop" ];
+      "text/*" = [ "code.desktop" ];
       "application/x-yaml" = [ "code.desktop" ];
     };
 
