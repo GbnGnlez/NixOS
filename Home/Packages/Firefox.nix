@@ -8,7 +8,7 @@
 
     profiles.NixOS = {
       #      id = 0;
-      #      name = "NixOS";
+      name = "NixOS";
       #      isDefault = true;
 
       extensions = {
