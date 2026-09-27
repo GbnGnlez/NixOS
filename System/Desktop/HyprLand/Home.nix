@@ -23,21 +23,21 @@
     hyprlock
     # hyprlauncher # Reemplazado por programs.rofi (rofi-wayland)
     # kdePackages.dolphin # Reemplazado por Thunar
-    thunar
-    thunar-archive-plugin # Integración para descomprimir/comprimir archivos
-    thunar-volman # Gestión de volúmenes y discos extraíbles
-    file-roller # Gestor de compresión compatible con Thunar
+    #thunar
+    #thunar-archive-plugin # Integración para descomprimir/comprimir archivos
+    #thunar-volman # Gestión de volúmenes y discos extraíbles
+    #file-roller # Gestor de compresión compatible con Thunar
     brightnessctl
     wireplumber
     playerctl
 
-    kdePackages.dolphin
+    # kdePackages.dolphin
     # kdePackages.konqueror
     nautilus
-    nemo
-    pcmanfm
+    # nemo
+    #pcmanfm
     # ranger
-    thunar
+    #thunar
     # yazi
   ];
 
@@ -54,7 +54,7 @@
       # Se antepone 'uwsm app --' para que las aplicaciones abran dentro del entorno systemd de UWSM
       "$terminal" = "uwsm app -- kitty";
       # "$terminal" = "kitty";
-      "$fileManager" = "uwsm app -- thunar";
+      "$fileManager" = "uwsm app -- nautilus";
       # "$fileManager" = "dolphin";
       # "$menu" = "uwsm app -- hyprlauncher"; # Reemplazado por rofi-wayland
       # "$menu" = "hyprlauncher";
