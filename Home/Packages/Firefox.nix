@@ -1,6 +1,6 @@
 # https://wiki.nixos.org/wiki/Firefox
 
-{ pkgs, ... }:
+{ pkgs, DarkTheme, ... }:
 
 {
   stylix.targets.firefox.profileNames = [ "NixOS" ];
@@ -14,11 +14,13 @@
       #      isDefault = true;
 
       extensions = {
-        packages = with pkgs.nur.repos.rycee.firefox-addons; [
-          ublock-origin
-          #sponsorblock
-          #darkreader
-        ];
+        packages =
+          with pkgs.nur.repos.rycee.firefox-addons;
+          [
+            ublock-origin
+            #sponsorblock
+          ]
+          ++ pkgs.lib.optional DarkTheme darkreader;
       };
 
       settings = {
