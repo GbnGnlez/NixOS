@@ -21,6 +21,10 @@
         ];
       };
 
+      settings = {
+        "extensions.autoDisableScopes" = 0;
+      };
+
       #      settings = {
       #        # --- Startup & Search ---
       #        "browser.startup.homepage" = "about:home";
