@@ -14,6 +14,8 @@
     package = pkgs.vscode.fhs;
 
     profiles.default.userSettings = {
+      "window.titleBarStyle" = "native";
+      "window.menuBarVisibility" = "hidden";
       "git.enableSmartCommit" = true;
     };
 
