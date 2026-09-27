@@ -119,7 +119,8 @@
                 users.nixos = {
                   imports = [
                     # Common
-                    ./Home/Common.nix
+                  ./Hosts/${hostName}/Home.nix
+                  ./Home/Common.nix
 
                     # Sway (Home Manager Modules)
                     # ./System/Desktop/Sway/Sway-Home.nix

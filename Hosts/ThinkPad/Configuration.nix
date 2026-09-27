@@ -51,7 +51,6 @@
 
   # Terminal
   programs.kitty.enable = true;
-  programs.ghostty.enable = true;
 
   programs.kdeconnect.enable = true;
 
