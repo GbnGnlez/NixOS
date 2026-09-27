@@ -29,6 +29,4 @@
       size = 24;
     };
   };
-
-  stylix.targets.firefox.profileNames = [ "NixOS" ];
 }
