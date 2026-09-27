@@ -49,6 +49,10 @@
     kdePackages.partitionmanager
   ];
 
+  # Terminal
+  programs.kitty.enable = true;
+  programs.ghostty.enable = true;
+
   programs.kdeconnect.enable = true;
 
   programs.nix-ld.enable = true;

@@ -15,10 +15,6 @@
     '';
   };
 
-  # Terminal
-  programs.kitty.enable = true;
-  programs.ghostty.enable = true;
-
   # Menú de aplicaciones gestionado con módulo para que Stylix aplique temas y fuentes automáticamente
   # programs.rofi.enable = true;
   programs.fuzzel.enable = true;
