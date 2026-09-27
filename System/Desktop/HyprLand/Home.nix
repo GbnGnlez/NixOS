@@ -146,8 +146,9 @@
 
       # Misc
       misc = {
-        force_default_wallpaper = -1;
         disable_hyprland_logo = false;
+        disable_splash_rendering = true;
+        force_default_wallpaper = 0;
       };
 
       # Input
