@@ -21,6 +21,8 @@
 
   home.packages = with pkgs; [
     hyprlock
+    hyprshot
+
     # hyprlauncher # Reemplazado por programs.rofi (rofi-wayland)
     # kdePackages.dolphin # Reemplazado por Thunar
     #thunar
@@ -234,6 +236,9 @@
         # Scroll through existing workspaces
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+
+        # https://github.com/Gustash/hyprshot
+        ", Print, exec, uwsm app -- hyprshot -m window -z -s --clipboard-only"
       ];
 
       # Hardware keys (Volume & Brightness) with repeat and lock
