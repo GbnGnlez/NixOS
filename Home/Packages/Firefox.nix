@@ -3,6 +3,8 @@
 { pkgs, ... }:
 
 {
+  stylix.targets.firefox.profileNames = [ "NixOS" ];
+
   programs.firefox = {
     enable = true;
 
