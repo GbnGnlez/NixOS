@@ -32,7 +32,6 @@
   # System packages
   environment.systemPackages = with pkgs; [
     tree
-    firefox
     # brave-origin
     wget
 

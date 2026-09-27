@@ -119,9 +119,10 @@
                 users.nixos = {
                   imports = [
                     # Common
-                  ./Hosts/${hostName}/Home.nix
-                  ./Home/Common.nix
+                    ./Hosts/${hostName}/Home.nix
+                    ./Home/Common.nix
 
+                    ./Home/Packages/Firefox.nix
                     # Sway (Home Manager Modules)
                     # ./System/Desktop/Sway/Sway-Home.nix
                     # ./System/Desktop/Sway/SwayFX.nix
