@@ -6,7 +6,6 @@
     networkmanagerapplet
   ];
 
-  # Habilita SwayNC (SwayNotificationCenter) como servicio
   services.swaync.enable = true;
 
   programs.waybar = {
@@ -37,6 +36,7 @@
         };
 
         modules-right = [
+          "wireplumber"
           "backlight"
           "battery"
           "tray"
@@ -44,10 +44,23 @@
           "custom/power"
         ];
 
+        wireplumber = {
+          format = "{icon} {volume}%";
+          format-muted = "󰝟 {volume}%";
+          format-icons = [
+            "󰕿"
+            "󰖀"
+            "󰕾"
+          ];
+          max-volume = 100;
+          scroll-step = 5.0;
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          tooltip = false;
+        };
+
         backlight = {
           format = "☀ {percent}%";
           tooltip = false;
-          # Uses brightnessctl to match your Hyprland keybindings
           on-scroll-up = "brightnessctl set 5%+";
           on-scroll-down = "brightnessctl set 5%-";
         };
@@ -80,13 +93,13 @@
           tooltip = false;
           format = "{icon}";
           format-icons = {
-            notification = "󰂚<span foreground='red'><sup>󰅂</sup></span>";
+            notification = "󰂚";
             none = "󰂚";
-            dnd-notification = "󰂛<span foreground='red'><sup>󰅂</sup></span>";
+            dnd-notification = "󰂛";
             dnd-none = "󰂛";
-            inhibited-notification = "󰂚<span foreground='red'><sup>󰅂</sup></span>";
+            inhibited-notification = "󰂚";
             inhibited-none = "󰂚";
-            dnd-inhibited-notification = "󰂛<span foreground='red'><sup>󰅂</sup></span>";
+            dnd-inhibited-notification = "󰂛";
             dnd-inhibited-none = "󰂛";
           };
           return-type = "json";
@@ -106,50 +119,36 @@
     };
 
     style = ''
-      /* Removed hardcoded font-family and font-size to allow Stylix to manage typography */
-
+      /* Integración total con Stylix (Variables Base16 automáticas) */
       window#waybar {
         background: transparent;
       }
 
-      #workspaces {
+      #workspaces,
+      #clock,
+      #wireplumber,
+      #backlight,
+      #battery,
+      #tray,
+      #custom-notification,
+      #custom-power {
         padding: 0 10px;
       }
 
-      #clock {
-        padding: 0 10px;
-      }
-
-      #backlight {
-        padding: 0 10px;
-      }
-
-      #battery {
-        padding: 0 10px;
+      #wireplumber.muted {
+        color: @base08;
       }
 
       #battery.charging {
-        color: #26A65B;
+        color: @base0B;
       }
 
       #battery.warning:not(.charging) {
-        color: #ffbe61;
+        color: @base0A;
       }
 
       #battery.critical:not(.charging) {
-        color: #f66151;
-      }
-
-      #tray {
-        padding: 0 10px;
-      }
-
-      #custom-notification {
-        padding: 0 10px;
-      }
-
-      #custom-power {
-        padding: 0 10px;
+        color: @base08;
       }
     '';
   };

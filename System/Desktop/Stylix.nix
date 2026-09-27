@@ -28,5 +28,34 @@
       name = if DarkTheme then "Bibata-Modern-Ice" else "Bibata-Modern-Classic";
       size = 24;
     };
+
+    fonts = {
+      sansSerif = {
+        package = pkgs.inter;
+        name = "Inter";
+      };
+
+      serif = {
+        package = pkgs.inter;
+        name = "Inter";
+      };
+
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
+      };
+
+      sizes = {
+        desktop = 10;
+        applications = 12;
+        terminal = 12;
+        popups = 10;
+      };
+    };
   };
 }
