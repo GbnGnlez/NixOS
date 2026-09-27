@@ -44,11 +44,7 @@
 
     # KDE applications
     kdePackages.kolourpaint
-    kdePackages.konsole
     kdePackages.partitionmanager
-
-    mpv
-    celluloid
   ];
 
   programs.kdeconnect.enable = true;
