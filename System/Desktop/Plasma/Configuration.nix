@@ -3,6 +3,8 @@
 { pkgs, ... }:
 
 {
+  stylix.targets.qt.platform = "kde";
+
   services = {
     displayManager.plasma-login-manager.enable = true;
     desktopManager.plasma6.enable = true;
