@@ -1,7 +1,7 @@
 # https://wiki.hypr.land/Nix/Hyprland-on-NixOS/
 # https://wiki.nixos.org/wiki/Hyprland
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   services.getty.autologinUser = "nixos";
@@ -25,4 +25,24 @@
   };
 
   services.gvfs.enable = true;
+
+  # --- SOLUCIÓN PARA GUARDAR ARCHIVOS EN HYPRLAND ---
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+      hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+      };
+    };
+  };
 }
