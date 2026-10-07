@@ -20,11 +20,11 @@
     };
 
     # PlasmaManager
-    PlasmaManager = {
-      url = "github:Nix-Community/Plasma-Manager";
-      inputs.nixpkgs.follows = "NixPkgs";
-      inputs.home-manager.follows = "HomeManager";
-    };
+    #PlasmaManager = {
+    #  url = "github:Nix-Community/Plasma-Manager";
+    #  inputs.nixpkgs.follows = "NixPkgs";
+    #  inputs.home-manager.follows = "HomeManager";
+    #};
 
     # Spicetify
     Spicetify = {
@@ -39,7 +39,7 @@
       HomeManager,
       NUR,
       Spicetify,
-      PlasmaManager,
+      # PlasmaManager,
       Stylix,
       ...
     }:
@@ -89,10 +89,10 @@
             # ./System/Desktop/Sway/Screenshots.nix
 
             # HyprLand (NixOS System Modules)
-            #./System/Desktop/HyprLand/Configuration.nix
+            ./System/Desktop/HyprLand/Configuration.nix
 
             # Plasma (NixOS System Modules)
-            ./System/Desktop/Plasma/Configuration.nix
+            #./System/Desktop/Plasma/Configuration.nix
 
             # Hostname
             {
@@ -110,9 +110,9 @@
                 useUserPackages = true;
 
                 # Carga PlasmaManager en Home Manager para todos los usuarios/hosts
-                sharedModules = [
-                  PlasmaManager.homeModules.plasma-manager
-                ];
+                #sharedModules = [
+                #  PlasmaManager.homeModules.plasma-manager
+                #];
 
                 backupFileExtension = "backup";
                 overwriteBackup = true;
@@ -133,8 +133,11 @@
 
                     ./Home/Packages/Firefox.nix
 
+                    # HyprLand (Home Manager Modules)
+                    ./System/Desktop/HyprLand/Home.nix
+
                     # Plasma (Home Manager Modules)
-                    ./System/Desktop/Plasma/Home.nix
+                    #./System/Desktop/Plasma/Home.nix
                   ]
                   ++ extraHomeModules;
                 };

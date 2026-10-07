@@ -26,22 +26,22 @@
 
   services.gvfs.enable = true;
 
-  # --- SOLUCIÓN PARA GUARDAR ARCHIVOS EN HYPRLAND ---
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
     ];
+
+    # Asigna explícitamente qué portal atiende cada función
     config = {
-      common = {
-        default = [ "gtk" ];
-      };
       hyprland = {
         default = [
           "hyprland"
           "gtk"
         ];
+        # Hyprland no implementa selector de archivos, se delega a GTK
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
       };
     };
   };
