@@ -20,10 +20,11 @@
     };
 
     # PlasmaManager
-    # PlasmaManager = {
-    #   url = "github:Nix-Community/Plasma-Manager";
-    #   inputs.nixpkgs.follows = "NixPkgs";
-    # };
+    PlasmaManager = {
+      url = "github:Nix-Community/Plasma-Manager";
+      inputs.nixpkgs.follows = "NixPkgs";
+      inputs.home-manager.follows = "HomeManager";
+    };
 
     # Spicetify
     Spicetify = {
@@ -38,7 +39,7 @@
       HomeManager,
       NUR,
       Spicetify,
-      # PlasmaManager,
+      PlasmaManager,
       Stylix,
       ...
     }:
