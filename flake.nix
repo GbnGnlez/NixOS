@@ -93,6 +93,7 @@
 
             # Plasma (NixOS System Modules)
             ./System/Desktop/Plasma/Configuration.nix
+
             # Hostname
             {
               networking.hostName = hostName;
@@ -107,6 +108,11 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+
+                # Carga PlasmaManager en Home Manager para todos los usuarios/hosts
+                sharedModules = [
+                  PlasmaManager.homeModules.plasma-manager
+                ];
 
                 backupFileExtension = "backup";
                 overwriteBackup = true;
@@ -126,16 +132,6 @@
                     ./Home/Common.nix
 
                     ./Home/Packages/Firefox.nix
-                    # Sway (Home Manager Modules)
-                    # ./System/Desktop/Sway/Sway-Home.nix
-                    # ./System/Desktop/Sway/SwayFX.nix
-                    # ./System/Desktop/Sway/BrightnessVolume-Home.nix
-                    # ./System/Desktop/Sway/Screenshots-Home.nix
-                    # ./System/Desktop/Sway/Touchpad.nix
-                    # ./System/Desktop/Sway/WayBar.nix
-
-                    # HyprLand (Home Manager Modules)
-                    # ./System/Desktop/HyprLand/Home.nix
 
                     # Plasma (Home Manager Modules)
                     ./System/Desktop/Plasma/Home.nix
