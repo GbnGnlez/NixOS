@@ -89,8 +89,10 @@
             # ./System/Desktop/Sway/Screenshots.nix
 
             # HyprLand (NixOS System Modules)
-            ./System/Desktop/HyprLand/Configuration.nix
+            #./System/Desktop/HyprLand/Configuration.nix
 
+            # Plasma (NixOS System Modules)
+            ./System/Desktop/Plasma/Configuration.nix
             # Hostname
             {
               networking.hostName = hostName;
@@ -133,7 +135,10 @@
                     # ./System/Desktop/Sway/WayBar.nix
 
                     # HyprLand (Home Manager Modules)
-                    ./System/Desktop/HyprLand/Home.nix
+                    # ./System/Desktop/HyprLand/Home.nix
+
+                    # Plasma (Home Manager Modules)
+                    ./System/Desktop/Plasma/Home.nix
                   ]
                   ++ extraHomeModules;
                 };
