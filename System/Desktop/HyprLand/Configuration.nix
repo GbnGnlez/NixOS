@@ -44,5 +44,7 @@
         "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
       };
     };
+
+    xdgOpenUsePortal = true;
   };
 }
