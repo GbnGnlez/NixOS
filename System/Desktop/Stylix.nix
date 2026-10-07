@@ -10,20 +10,20 @@
     enable = true;
     polarity = if DarkTheme then "dark" else "light";
 
-    image = pkgs.fetchurl (
-      if DarkTheme then
-        {
-          url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Waterfall/contents/images_dark/5120x2880.png";
-          hash = "sha256-IEEfpx+eyfgL8eKlAN1d+BEkimUsLLZAGwCSgxfulaQ=";
-        }
-      else
-        {
-          url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Waterfall/contents/images/5120x2880.png";
-          # Nota: Si al compilar en modo Light (DarkTheme = false) te pide el hash de la versión light,
-          # reemplázalo por el valor que te indique Nix.
-          hash = "sha256-IEEfpx+eyfgL8eKlAN1d+BEkimUsLLZAGwCSgxfulaQ=";
-        }
-    );
+    #    image = pkgs.fetchurl (
+    #      if DarkTheme then
+    #        {
+    #          url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Waterfall/contents/images_dark/5120x2880.png";
+    #          hash = "sha256-IEEfpx+eyfgL8eKlAN1d+BEkimUsLLZAGwCSgxfulaQ=";
+    #        }
+    #      else
+    #        {
+    #          url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Waterfall/contents/images/5120x2880.png";
+    #          # Nota: Si al compilar en modo Light (DarkTheme = false) te pide el hash de la versión light,
+    #          # reemplázalo por el valor que te indique Nix.
+    #          hash = "sha256-IEEfpx+eyfgL8eKlAN1d+BEkimUsLLZAGwCSgxfulaQ=";
+    #        }
+    #    );
 
     base16Scheme =
       if DarkTheme then
