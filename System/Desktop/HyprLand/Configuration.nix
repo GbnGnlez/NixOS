@@ -25,32 +25,4 @@
   };
 
   services.gvfs.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
-    ];
-
-    config = {
-      common = {
-        default = [
-          "hyprland"
-          "gtk"
-        ];
-        # Fuerza a que las ventanas de abrir/guardar archivo usen siempre GTK
-        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-      };
-      Hyprland = {
-        default = [
-          "hyprland"
-          "gtk"
-        ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-      };
-    };
-
-    xdgOpenUsePortal = true;
-  };
 }
