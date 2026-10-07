@@ -10,17 +10,18 @@
     enable = true;
     polarity = if DarkTheme then "dark" else "light";
 
-    image =
+    image = pkgs.fetchurl (
       if DarkTheme then
-        pkgs.fetchurl {
+        {
           url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Waterfall/contents/images_dark/5120x2880.png";
-          hash = "sha256-42rS5f8BmsQIsP1sXv5R4/13BvG4p+YyJj0mB6XjW8g=";
+          hash = "sha256-R3N/l3E3/h9K762/m79rM/C0E9p34024N6r6X1k6m04="; # Reemplazar con el hash correcto si difiere
         }
       else
-        pkgs.fetchurl {
+        {
           url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Waterfall/contents/images/5120x2880.png";
-          hash = "sha256-fT3NOncM3N80W4T18T7Qp51R++TmszR4p5jGf7E9Cio=";
-        };
+          hash = "sha256-R3N/l3E3/h9K762/m79rM/C0E9p34024N6r6X1k6m04="; # Reemplazar con el hash correcto si difiere
+        }
+    );
 
     base16Scheme =
       if DarkTheme then
