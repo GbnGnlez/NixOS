@@ -28,19 +28,25 @@
 
   xdg.portal = {
     enable = true;
-
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
     ];
 
-    # Asigna explícitamente qué portal atiende cada función
     config = {
-      hyprland = {
+      common = {
         default = [
           "hyprland"
           "gtk"
         ];
-        # Hyprland no implementa selector de archivos, se delega a GTK
+        # Fuerza a que las ventanas de abrir/guardar archivo usen siempre GTK
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      };
+      Hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
         "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
       };
     };
