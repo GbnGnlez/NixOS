@@ -25,6 +25,10 @@
     #        }
     #    );
 
+    targets = {
+      qt.platform = pkgs.lib.mkForce "qtct";
+    };
+
     base16Scheme =
       if DarkTheme then
         "${pkgs.base16-schemes}/share/themes/google-dark.yaml"
