@@ -180,6 +180,10 @@
           DarkTheme = true;
           Color = "blue";
 
+          extraSystemModules = [
+            ./Home/Packages/VirtManager.nix
+          ];
+
           extraHomeArgs = {
             inherit Spicetify;
           };
