@@ -35,6 +35,9 @@
     # brave-origin
     wget
 
+    #libreoffice
+    libreoffice-qt
+
     # Scanner tools
     sane-backends
     usbutils
