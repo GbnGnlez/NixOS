@@ -83,14 +83,6 @@
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
 
-            # Sway (NixOS System Modules)
-            # ./System/Desktop/Sway/Sway.nix
-            # ./System/Desktop/Sway/BrightnessVolume.nix
-            # ./System/Desktop/Sway/Screenshots.nix
-
-            # HyprLand (NixOS System Modules)
-            #./System/Desktop/HyprLand/Configuration.nix
-
             # Plasma (NixOS System Modules)
             ./System/Desktop/Plasma/Configuration.nix
 
@@ -132,9 +124,6 @@
                     ./Home/Common.nix
 
                     ./Home/Packages/Firefox.nix
-
-                    # HyprLand (Home Manager Modules)
-                    ./System/Desktop/HyprLand/Home.nix
 
                     # Plasma (Home Manager Modules)
                     ./System/Desktop/Plasma/Home.nix

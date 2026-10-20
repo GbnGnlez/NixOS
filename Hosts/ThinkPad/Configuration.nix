@@ -9,12 +9,8 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    # variant = "";
     variant = "colemak_dh";
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Scanner support
   hardware.sane.enable = true;
@@ -35,12 +31,10 @@
     # brave-origin
     wget
 
-    #libreoffice
-    libreoffice-qt
+    fastfetch
 
     # Scanner tools
     sane-backends
-    usbutils
 
     # Scanner GUI
     kdePackages.skanpage
