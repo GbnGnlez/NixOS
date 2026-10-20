@@ -30,7 +30,7 @@
     tree
     # brave-origin
     wget
-    file-roller
+    unrar
     fastfetch
 
     # Scanner tools
