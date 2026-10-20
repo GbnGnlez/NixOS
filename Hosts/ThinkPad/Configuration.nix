@@ -30,7 +30,7 @@
     tree
     # brave-origin
     wget
-
+    file-roller
     fastfetch
 
     # Scanner tools
