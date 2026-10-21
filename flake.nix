@@ -96,6 +96,8 @@
             # Home Manager
             HomeManager.nixosModules.default
 
+            ./Home/Packages/onlyoffice-font-fix.nix
+
             {
               home-manager = {
                 useGlobalPkgs = true;
