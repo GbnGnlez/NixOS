@@ -57,5 +57,7 @@
         popups = 10;
       };
     };
+
+    targets.qt.platform = pkgs.lib.mkForce "qtct";
   };
 }

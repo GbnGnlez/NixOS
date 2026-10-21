@@ -9,10 +9,10 @@
     nssmdns6 = true; # Whether to enable the mDNS NSS (Name Service Switch) plug-in for IPv6.
     openFirewall = true; # Whether to open the firewall for UDP port 5353.
 
-    publish = {
-      enable = true; # Whether to allow publishing in general.
-      addresses = true; # Whether to register mDNS address records for all local IP addresses.
-      workstation = true; # Whether to register a service of type "_workstation._tcp" on the local LAN.
+    settings.publish = {
+      publish-workstation = true; # Replaces publish.workstation
+      publish-addresses = true; # Replaces publish.addresses
+      "disable-publishing" = false; # Replaces publish.enable = true
     };
   };
 
