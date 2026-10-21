@@ -14,6 +14,7 @@
   home.file = {
     ".local/share/fonts/corefonts".source = "${pkgs.corefonts}/share/fonts/truetype"; # Path of the source file or directory.
     ".local/share/fonts/vista-fonts".source = "${pkgs.vista-fonts}/share/fonts/truetype"; # Path of the source file or directory.
+    ".local/share/fonts/custom-fonts".source = ../../Assets/Fonts;
   };
 
   xdg.mimeApps = {
