@@ -4,12 +4,11 @@
 
 {
   boot = {
-    # plymouth.enable = true;
+    plymouth.enable = true;
     consoleLogLevel = 3;
     loader.timeout = 0;
 
     initrd = {
-      verbose = false;
       kernelModules = [ GPU ];
     };
 
