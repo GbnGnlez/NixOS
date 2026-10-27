@@ -28,7 +28,6 @@
   # System packages
   environment.systemPackages = with pkgs; [
     tree
-    # brave-origin
     wget
 
     brave-origin

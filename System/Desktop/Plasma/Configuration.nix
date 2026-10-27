@@ -34,6 +34,8 @@
     # krdp
   ];
 
+  programs.kde-pim.enable = false;
+
   environment.systemPackages = with pkgs; [
     unrar
   ];

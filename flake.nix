@@ -170,7 +170,7 @@
           Color = "blue";
 
           extraSystemModules = [
-            ./Home/Packages/VirtManager.nix
+            # ./Home/Packages/VirtManager.nix
           ];
 
           extraHomeArgs = {
