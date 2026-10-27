@@ -31,6 +31,10 @@
     # brave-origin
     wget
 
+    brave-origin
+
+    microsoft-edge
+
     fastfetch
 
     # Scanner tools
