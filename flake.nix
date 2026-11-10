@@ -171,6 +171,7 @@
 
           extraSystemModules = [
             # ./Home/Packages/VirtManager.nix
+            ./System/YubiKey.nix
           ];
 
           extraHomeArgs = {
