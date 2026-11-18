@@ -30,8 +30,8 @@
     tree
     wget
 
+    google-chrome
     brave-origin
-
     microsoft-edge
 
     fastfetch
