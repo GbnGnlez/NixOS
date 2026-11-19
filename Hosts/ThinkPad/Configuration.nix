@@ -9,6 +9,7 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
+    # variant = "";
     variant = "colemak_dh";
   };
 
@@ -29,6 +30,8 @@
   environment.systemPackages = with pkgs; [
     tree
     wget
+
+    android-tools
 
     google-chrome
     brave-origin
